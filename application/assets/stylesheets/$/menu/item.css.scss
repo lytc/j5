@@ -1,0 +1,65 @@
+$x-menu-item-height: 24px;
+$x-menu-item-padding: 0 24px 0 4px;
+
+.x-menu-item {
+  position: relative;
+  height: $x-menu-item-height;
+
+  > a {
+    display: block;
+    height: $x-menu-item-height;
+    line-height: $x-menu-item-height;
+    color: #222222;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    padding: $x-menu-item-padding;
+    white-space: nowrap;
+
+    &:hover {
+      background: #0088CC;
+      color: white;
+
+      > .x-icon, > .x-text {
+        border-color: transparent;
+      }
+
+      +ul.x-menu {
+        display: block;
+      }
+    }
+
+    > .x-icon {
+      display: inline-block;
+      width: $x-menu-item-height;
+      border-right: 1px solid #E5E5E5;
+    }
+
+    .x-text {
+      display: inline-block;
+      border-left: 1px solid white;
+      padding-left: 5px;
+    }
+  }
+
+  > ul.x-menu {
+    top: 0;
+    left: 100%;
+    display: none;
+  }
+
+  &:hover {
+    > ul.x-menu {
+      display: block;
+    }
+  }
+
+  &[data-has-child] > a {
+    &:after {
+      font-family: FontAwesome;
+      content: "\f054";
+      position: absolute;
+      right: 8px;
+    }
+  }
+}

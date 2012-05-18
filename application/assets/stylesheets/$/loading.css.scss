@@ -1,0 +1,56 @@
+@import "mixins";
+
+@keyframes x-loading-spinner-fade {
+  from {opacity: 1;}
+  to {opacity: 0.25;}
+}
+
+@-moz-keyframes x-loading-spinner-fade {
+  from {opacity: 1;}
+  to {opacity: 0.25;}
+}
+
+@-webkit-keyframes x-loading-spinner-fade {
+  from {opacity: 1;}
+  to {opacity: 0.25;}
+}
+
+@-o-keyframes x-loading-spinner-fade {
+  from {opacity: 1;}
+  to {opacity: 0.25;}
+}
+
+.x-loading {
+  display: inline-block;
+
+  > .x-spinner, > .x-message {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  > .x-spinner {
+    width: 24px;
+    height: 24px;
+
+    > * {
+      width: 12%;
+      height: 26%;
+      position: absolute;
+      background: #000000;
+      top: 37%;
+      left: 44.5%;
+      border-radius: 50px;
+      @include box-shadow(0 0 3px rgba(#000, 0.2));
+      @include animation("x-loading-spinner-fade 1s linear infinite");
+    }
+  }
+
+  > .x-message {
+    margin-left: 5px;
+
+    &:empty {
+      display: none;
+    }
+  }
+}

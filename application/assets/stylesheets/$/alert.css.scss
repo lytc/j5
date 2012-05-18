@@ -1,0 +1,47 @@
+@import "mixins";
+
+.x-alert {
+  padding: 6px 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+
+  > .x-close {
+    float: right;
+    font-size: 20px;
+    line-height: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    opacity: .5;
+    @include transform(rotate(45deg));
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.x-error {
+    background: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+  }
+
+  &.x-warning {
+    background: #FCF8E3;
+    border-color: #FBEED5;
+    color: #C09853;
+  }
+
+  &.x-success {
+    background: #DFF0D8;
+    border-color: #D6E9C6;
+    color: #468847;
+  }
+
+  &.x-info {
+    background: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #3A87AD;
+  }
+}

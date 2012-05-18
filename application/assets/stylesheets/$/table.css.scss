@@ -1,0 +1,16 @@
+.x-table {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  border-radius: 4px;
+
+  &.x-striped {
+    > .x-body {
+      > .x-row:nth-child(odd) {
+        > .x-cell {
+          background: rgba(#ccc, .2);
+        }
+      }
+    }
+  }
+}

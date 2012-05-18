@@ -1,0 +1,14 @@
+.x-field {
+  &.x-field-group {
+    > .x-wrap {
+      > .x-field {
+        padding: 4px 0;
+        > .x-label, > .x-wrap {
+        }
+
+        input[type=text] {
+        }
+      }
+    }
+  }
+}

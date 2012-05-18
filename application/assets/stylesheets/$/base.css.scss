@@ -1,0 +1,16 @@
+@import "mixins";
+
+* {
+  @include box-sizing(border-box);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*, a {
+  &:focus {
+    outline: none;
+  }
+}
+
+.x-hidden {
+  display: none !important;
+}

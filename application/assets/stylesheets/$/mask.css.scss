@@ -1,0 +1,23 @@
+@import "mixins";
+
+.x-mask {
+  position: absolute;
+  display: table;
+  vertical-align: middle;
+  z-index: 1;
+  background: rgba(#000, 0.5);
+  .x-mask-message-wrap {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    .x-mask-message {
+      margin: 0 10px;
+      padding: 10px 10px;
+      background: white;
+      color: #0088CC;
+      display: inline-block;
+      border-radius: 4px;
+      @include box-shadow(0 0 5px rgba(#000, 0.6));
+    }
+  }
+}

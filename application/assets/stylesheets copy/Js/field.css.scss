@@ -1,0 +1,32 @@
+.x-field {
+  //display: box;
+  //display: -webkit-box;
+ // display: -moz-box;
+  line-height: 28px;
+  padding: 4px 0;
+  
+  label {
+    display: inline-block;
+  }
+  
+  input, textarea {
+    height: 18px;
+    line-height:18px;
+    padding: 4px;
+		border: 1px #CCCCCC solid;
+		border-radius: 3px;
+		-moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+		-webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    &:focus {
+      border-color: rgba(82, 168, 236, 0.8);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+      outline: 0 none;
+    }
+	}
+	
+  .x-field-validate-indicator {
+    position: absolute;
+    margin-left: 8px;
+  }
+}

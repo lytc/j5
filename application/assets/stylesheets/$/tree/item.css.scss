@@ -1,0 +1,69 @@
+@import "../mixins";
+
+$x-tree-item-height: 24px;
+$x-tree-item-padding: 0 10px 0 16px;
+
+.x-tree-item {
+  position: relative;
+  border-left: 1px dotted #ccc;
+
+  > .x-bow {
+    display: block;
+    width: $x-tree-item-height - 2;
+    height: $x-tree-item-height;
+    position: absolute;
+    left: -6px;
+    cursor: pointer;
+    @include linear-gradient("180deg, white 50%, #ccc 50%");
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-size: 2px 1px;
+
+    &:before {
+      font-family: 'FontAwesome';
+      content: "\f055";
+      color: #0088CC;
+      line-height: $x-tree-item-height;
+    }
+  }
+
+  > a {
+    color: #222222;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    line-height: $x-tree-item-height;
+    padding: $x-tree-item-padding;
+
+    &:active, &:focus {
+      background: #F0EDEE;
+    }
+  }
+
+  > ul.x-tree {
+    display: none;
+    margin-left: 20px;
+    padding: 0;
+  }
+
+  &.x-expanded {
+    > .x-bow {
+      &:before {
+        content: "\f056";
+      }
+    }
+
+    > ul.x-tree {
+      display: block;
+    }
+  }
+
+  &[data-has-child] > a {
+    /*&:before {
+      font-family: FontAwesome;
+      content: "\f054";
+      margin-right: 5px;
+    }*/
+  }
+}

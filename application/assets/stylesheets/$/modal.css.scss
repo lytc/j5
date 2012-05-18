@@ -1,0 +1,26 @@
+@import "mixins";
+
+.x-modal-wrap {
+  //display: table;
+  position: absolute;
+  background: rgba(#000, .4);
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  > .x-inner {
+    width: 100%;
+    height: 100%;
+    @include display-box;
+    @include box-align(center);
+    @include box-pack(center);
+
+    .x-modal {
+      > * {
+        @include box-shadow(0 0 5px rgba(#000, 0.6));
+      }
+    }
+  }
+}

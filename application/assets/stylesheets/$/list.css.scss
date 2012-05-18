@@ -1,0 +1,11 @@
+.x-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &.x-horizontal {
+    .x-item {
+      display: inline-block;
+    }
+  }
+}
