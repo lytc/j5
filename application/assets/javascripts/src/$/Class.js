@@ -106,6 +106,8 @@ $.extend($.Class, {
                     return this;
                 }
             });
+
+            klass.addProperties(setters);
         }
 
         klass.addProperties(overrides);
