@@ -1,0 +1,11 @@
+.x-table {
+  > .x-body {
+    > .x-row {
+      vertical-align: middle;
+
+      &:hover {
+        background: rgba(#0088CC, .1);
+      }
+    }
+  }
+}

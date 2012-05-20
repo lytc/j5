@@ -1,0 +1,81 @@
+@import "mixins";
+
+$x-navbar-height: 36px;
+$x-navbar-menu-item-padding: 0 12px;
+$x-menu-item-caret-size: 8px;
+
+.x-navbar {
+  height: $x-navbar-height;
+
+  &.x-fixed {
+    > .x-navbar-inner {
+      position: fixed;
+      z-index: 9999;
+    }
+  }
+
+  .x-navbar-inner {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px 4px 4px 4px;
+
+    width: 100%;
+    height: $x-navbar-height;
+    @include linear-gradient("top, #f5f5f5 0%,#eeeeee 100%");
+    @include box-shadow(0 0 8px #ccc);
+
+    > .x-menu {
+      background: none;
+      border: none;
+      @include box-shadow(none);
+      padding: 0;
+
+      > .x-menu-item {
+        display: inline-block;
+        height: $x-navbar-height - 2;
+        border-left: 1px solid whiteSmoke;
+        border-right: 1px solid #E5E5E5;
+
+        &:last-child {
+          border-right: 0;
+        }
+
+        > .x-menu {
+          top: 100%;
+          left: 0;
+          border-radius: 0 0 4px 4px;
+        }
+
+        > a {
+          height: $x-navbar-height - 2;
+          line-height: $x-navbar-height - 2;
+          padding: $x-navbar-menu-item-padding;
+          color: #0088CC;
+
+          > .x-icon, > .x-text {
+            border: none;
+          }
+
+          > .x-icon[class="x-icon"] {
+            display: none;
+          }
+
+          &:hover {
+            color: white;
+            &+ul.x-menu {
+              display: block;
+            }
+          }
+        }
+
+        &[data-has-child] > a {
+          &:after {
+            font-family: FontAwesome;
+            content: "\f078";
+            position: static;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}

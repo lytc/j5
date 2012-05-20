@@ -1,0 +1,13 @@
+@import "../mixins";
+
+.x-field {
+  &.x-field-datetime {
+    > .x-wrap {
+      > .x-calendar {
+        position: absolute;
+        z-index: 9999;
+        @include box-shadow(0 5px 10px rgba(#000, 0.2));
+      }
+    }
+  }
+}

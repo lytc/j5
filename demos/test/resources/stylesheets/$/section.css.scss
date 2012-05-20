@@ -1,0 +1,8 @@
+.x-section {
+  &.x-collapsed {
+    > .x-body {
+      display: none;
+    }
+
+  }
+}

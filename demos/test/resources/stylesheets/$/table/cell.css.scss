@@ -1,0 +1,18 @@
+.x-table {
+  .x-cell {
+    line-height: 18px;
+    padding: 8px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    &.x-numberer {
+      background: rgba(#ccc, .4) !important;
+      width: 30px;
+      text-align: center;
+    }
+  }
+}

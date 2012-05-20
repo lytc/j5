@@ -1,0 +1,23 @@
+@import "mixins";
+
+.x-notify {
+  position: fixed;
+  z-index: 9999;
+  margin: 5px;
+
+  &.x-error {
+    @include box-shadow(0 0 5px rgba(#F2DEDE, 0.6));
+  }
+
+  &.x-warning {
+    @include box-shadow(0 0 5px rgba(#FCF8E3, 0.6));
+  }
+
+  &.x-success {
+    @include box-shadow(0 0 5px rgba(#DFF0D8, 0.6));
+  }
+
+  &.x-info {
+    @include box-shadow(0 0 5px rgba(#D9EDF7, 0.6));
+  }
+}

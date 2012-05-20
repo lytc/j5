@@ -1,0 +1,107 @@
+.x-slider {
+  position: relative; }
+  .x-slider.x-horizontal {
+    width: 200px;
+    height: 20px; }
+    .x-slider.x-horizontal > .x-rule {
+      height: 20px;
+      right: 34px; }
+      .x-slider.x-horizontal > .x-rule > .x-inner {
+        height: 12px;
+        margin: 4px 0; }
+        .x-slider.x-horizontal > .x-rule > .x-inner > .x-bar {
+          width: 0%;
+          height: 100%;
+          left: 0; }
+      .x-slider.x-horizontal > .x-rule > .x-thumb {
+        margin-left: -10px;
+        top: 0; }
+    .x-slider.x-horizontal > .x-input-wrap {
+      top: 0;
+      right: 0;
+      bottom: 0; }
+  .x-slider.x-vertical {
+    width: 20px;
+    height: 200px; }
+    .x-slider.x-vertical > .x-rule {
+      width: 20px;
+      top: 34px;
+      bottom: 0; }
+      .x-slider.x-vertical > .x-rule > .x-inner {
+        width: 12px;
+        margin: 0 4px;
+        position: absolute;
+        top: 0px;
+        bottom: 0px; }
+        .x-slider.x-vertical > .x-rule > .x-inner > .x-bar {
+          position: absolute;
+          width: 100%;
+          height: 0%;
+          bottom: 0; }
+      .x-slider.x-vertical > .x-rule > .x-thumb {
+        margin-top: -10px;
+        top: 100%; }
+    .x-slider.x-vertical > .x-input-wrap {
+      top: 0; }
+  .x-slider > .x-rule {
+    position: absolute;
+    left: 0; }
+    .x-slider > .x-rule > .x-inner {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: white;
+      overflow: hidden; }
+      .x-slider > .x-rule > .x-inner > .x-bar {
+        border-radius: 4px;
+        background-color: #0e90d2;
+        background-image: linear-gradient(top, #149bdf, #0480be);
+        background-image: -moz-linear-gradient(top, #149bdf, #0480be);
+        background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+        background-image: -o-linear-gradient(top, #149bdf, #0480be); }
+    .x-slider > .x-rule > .x-thumb {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      cursor: move;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f5f5f5;
+      background-image: linear-gradient(top, #fff, #e6e6e6);
+      background-image: -moz-linear-gradient(top, #fff, #e6e6e6);
+      background-image: -webkit-linear-gradient(top, #fff, #e6e6e6);
+      background-image: -o-linear-gradient(top, #fff, #e6e6e6); }
+      .x-slider > .x-rule > .x-thumb:focus {
+        border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6); }
+  .x-slider > .x-input-wrap {
+    position: absolute;
+    width: 20px;
+    height: 20px; }
+    .x-slider > .x-input-wrap > .x-input {
+      position: absolute;
+      width: 20px !important;
+      height: 20px !important;
+      line-height: 20px;
+      font-size: 8px;
+      text-align: center;
+      border: 1px #CCCCCC solid;
+      border-radius: 3px;
+      transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      -webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      -o-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+      -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; }
+      .x-slider > .x-input-wrap > .x-input:focus {
+        border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        outline: 0 none; }

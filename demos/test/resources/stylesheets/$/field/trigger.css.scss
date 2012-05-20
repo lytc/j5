@@ -1,0 +1,19 @@
+//= require ../field
+
+.x-field {
+  &.x-field-trigger {
+    > .x-wrap {
+      > input {
+        padding-right: 26px;
+      }
+
+      > .x-trigger-button {
+        position: absolute;
+        right: 0;
+        height: 28px;
+        line-height: 26px;
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.x-color-palette > .x-item {
+  display: inline-block;
+  margin: 2px;
+  cursor: pointer;
+  border: 1px solid #ccc; }
+  .x-color-palette > .x-item:hover, .x-color-palette > .x-item.x-selected {
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6);
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6); }
+  .x-color-palette > .x-item.x-selected {
+    border-color: black; }

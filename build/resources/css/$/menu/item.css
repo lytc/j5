@@ -1,0 +1,39 @@
+.x-menu-item {
+  position: relative;
+  height: 24px; }
+  .x-menu-item > a {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    color: #222222;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    padding: 0 24px 0 4px;
+    white-space: nowrap; }
+    .x-menu-item > a:hover {
+      background: #0088CC;
+      color: white; }
+      .x-menu-item > a:hover > .x-icon, .x-menu-item > a:hover > .x-text {
+        border-color: transparent; }
+      .x-menu-item > a:hover + ul.x-menu {
+        display: block; }
+    .x-menu-item > a > .x-icon {
+      display: inline-block;
+      width: 24px;
+      border-right: 1px solid #E5E5E5; }
+    .x-menu-item > a .x-text {
+      display: inline-block;
+      border-left: 1px solid white;
+      padding-left: 5px; }
+  .x-menu-item > ul.x-menu {
+    top: 0;
+    left: 100%;
+    display: none; }
+  .x-menu-item:hover > ul.x-menu {
+    display: block; }
+  .x-menu-item[data-has-child] > a:after {
+    font-family: FontAwesome;
+    content: "\f054";
+    position: absolute;
+    right: 8px; }

@@ -1,0 +1,11 @@
+.x-field.x-field-select {
+  position: relative; }
+  .x-field.x-field-select > .x-wrap > .x-menu {
+    min-width: 100%;
+    border-radius: 0 0 4px 4px;
+    overflow: auto; }
+    .x-field.x-field-select > .x-wrap > .x-menu > .x-menu-item.x-selected > a {
+      background: #0088CC;
+      color: white; }
+      .x-field.x-field-select > .x-wrap > .x-menu > .x-menu-item.x-selected > a > .x-icon, .x-field.x-field-select > .x-wrap > .x-menu > .x-menu-item.x-selected > a > .x-text {
+        border-color: transparent; }

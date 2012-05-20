@@ -1,0 +1,59 @@
+.x-field {
+  position: relative;
+  display: block;
+  padding: 4px; }
+  .x-field > .x-label, .x-field > .x-wrap {
+    display: inline-block; }
+  .x-field > .x-label {
+    float: left;
+    padding-top: 5px; }
+  .x-field > .x-wrap {
+    position: relative; }
+    .x-field > .x-wrap > input[type=text], .x-field > .x-wrap textarea {
+      line-height: 18px;
+      padding: 4px;
+      border: 1px #CCCCCC solid;
+      border-radius: 3px; }
+    .x-field > .x-wrap > input, .x-field > .x-wrap textarea {
+      width: 100%;
+      transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      -webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      -o-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.1);
+      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.1);
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.1);
+      -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.1); }
+      .x-field > .x-wrap > input:focus, .x-field > .x-wrap textarea:focus {
+        border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6);
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6);
+        -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(82, 168, 236, 0.6);
+        outline: 0 none; }
+      .x-field > .x-wrap > input:disabled, .x-field > .x-wrap textarea:disabled {
+        background: #f7f7f7;
+        cursor: not-allowed; }
+    .x-field > .x-wrap > input[type=text] {
+      height: 28px; }
+    .x-field > .x-wrap > input[type=checkbox], .x-field > .x-wrap input[type=radio] {
+      width: 14px;
+      height: 14px;
+      margin: 7px 0; }
+    .x-field > .x-wrap > textarea {
+      height: 100px; }
+  .x-field .x-field-validate-indicator {
+    position: absolute;
+    line-height: 26px;
+    margin-left: 8px;
+    left: 100%;
+    top: 4px;
+    white-space: nowrap; }
+.x-field.x-field-trigger > .x-wrap > input {
+  padding-right: 26px; }
+.x-field.x-field-trigger > .x-wrap > .x-trigger-button {
+  position: absolute;
+  right: 0;
+  height: 28px;
+  line-height: 26px;
+  border-radius: 0 4px 4px 0; }

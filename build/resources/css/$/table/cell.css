@@ -1,0 +1,11 @@
+.x-table .x-cell {
+  line-height: 18px;
+  padding: 8px;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; }
+  .x-table .x-cell:first-child {
+    border-left: 0; }
+  .x-table .x-cell.x-numberer {
+    background: rgba(204, 204, 204, 0.4) !important;
+    width: 30px;
+    text-align: center; }

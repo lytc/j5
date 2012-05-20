@@ -1,0 +1,66 @@
+@import "mixins";
+
+.x-field {
+  position: relative;
+  display: block;
+  padding: 4px;
+
+  > .x-label, > .x-wrap {
+    display: inline-block;
+  }
+
+  > .x-label {
+    float: left;
+    padding-top: 5px;
+  }
+
+  > .x-wrap {
+    position: relative;
+
+    > input[type=text], textarea {
+      line-height: 18px;
+      padding: 4px;
+      border: 1px #CCCCCC solid;
+      border-radius: 3px;
+    }
+
+    > input, textarea {
+      width: 100%;
+      @include transition("border 0.2s linear 0s, box-shadow 0.2s linear 0s");
+      @include box-shadow("0 1px 1px #{rgba(#000, 0.075)} inset, 0 0 4px #{rgba(#52A8EC, 0.1)}");
+      &:focus {
+        border-color: rgba(#52A8EC, 0.8);
+        @include box-shadow("0 1px 1px #{rgba(#000, 0.075)} inset, 0 0 4px #{rgba(#52A8EC, 0.6)}");
+        outline: 0 none;
+      }
+      &:disabled {
+        background: #f7f7f7;
+        cursor: not-allowed;
+      }
+    }
+
+
+    > input[type=text] {
+      height: 28px;
+    }
+
+    > input[type=checkbox], input[type=radio] {
+      width: 14px;
+      height: 14px;
+      margin: 7px 0;
+    }
+
+    > textarea {
+      height: 100px;
+    }
+  }
+
+  .x-field-validate-indicator {
+    position: absolute;
+    line-height: 26px;
+    margin-left: 8px;
+    left: 100%;
+    top: 4px;
+    white-space: nowrap;
+  }
+}

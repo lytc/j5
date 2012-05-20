@@ -1,0 +1,10 @@
+.x-draggable {
+  cursor: move;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none; }
+  .x-draggable[locked] {
+    cursor: auto; }
+  .x-draggable.x-anywhere {
+    position: absolute; }

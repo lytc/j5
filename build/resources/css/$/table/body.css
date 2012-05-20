@@ -1,0 +1,5 @@
+.x-table > .x-body {
+  height: 100px;
+  overflow: auto; }
+  .x-table > .x-body .x-row:last-child > .x-cell {
+    border-bottom: none; }

@@ -1,0 +1,24 @@
+.x-notify {
+  position: fixed;
+  z-index: 9999;
+  margin: 5px; }
+  .x-notify.x-error {
+    box-shadow: 0 0 5px rgba(242, 222, 222, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(242, 222, 222, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(242, 222, 222, 0.6);
+    -o-box-shadow: 0 0 5px rgba(242, 222, 222, 0.6); }
+  .x-notify.x-warning {
+    box-shadow: 0 0 5px rgba(252, 248, 227, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(252, 248, 227, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(252, 248, 227, 0.6);
+    -o-box-shadow: 0 0 5px rgba(252, 248, 227, 0.6); }
+  .x-notify.x-success {
+    box-shadow: 0 0 5px rgba(223, 240, 216, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(223, 240, 216, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(223, 240, 216, 0.6);
+    -o-box-shadow: 0 0 5px rgba(223, 240, 216, 0.6); }
+  .x-notify.x-info {
+    box-shadow: 0 0 5px rgba(217, 237, 247, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(217, 237, 247, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(217, 237, 247, 0.6);
+    -o-box-shadow: 0 0 5px rgba(217, 237, 247, 0.6); }

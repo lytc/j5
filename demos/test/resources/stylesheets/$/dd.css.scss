@@ -1,0 +1,14 @@
+@import "mixins";
+
+.x-draggable {
+  cursor: move;
+  @include user-select(none);
+
+  &[locked] {
+    cursor: auto;
+  }
+
+  &.x-anywhere {
+    position: absolute;
+  }
+}

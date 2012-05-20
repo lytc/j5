@@ -1,0 +1,14 @@
+.x-button-group {
+  display: inline-block; }
+  .x-button-group > .x-button {
+    border: 1px solid #cccccc;
+    border-left: 0;
+    border-radius: 0; }
+    .x-button-group > .x-button:active, .x-button-group > .x-button.x-button-pressed {
+      background: #52a8ec;
+      color: white; }
+  .x-button-group > .x-button:first-child {
+    border-radius: 4px 0 0 4px;
+    border-left: 1px solid #cccccc; }
+  .x-button-group > .x-button:last-child {
+    border-radius: 0 4px 4px 0; }

@@ -1,0 +1,91 @@
+.x-progressbar {
+  position: relative;
+  overflow: hidden;
+  height: 22px;
+  background-color: #f7f7f7;
+  background-image: linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-repeat: repeat-x;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center; }
+  .x-progressbar > .x-progressbar-text-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 22px;
+    text-align: center;
+    color: #0e90d2; }
+  .x-progressbar .x-progressbar-bar {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #0e90d2;
+    background-image: linear-gradient(top, #149bdf, #0480be);
+    background-image: -moz-linear-gradient(top, #149bdf, #0480be);
+    background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+    background-image: -o-linear-gradient(top, #149bdf, #0480be);
+    background-repeat: repeat-x;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    -o-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); }
+    .x-progressbar .x-progressbar-bar > .x-progressbar-text {
+      width: 100%;
+      height: 100%;
+      color: #ffffff;
+      line-height: 22px; }
+  .x-progressbar.x-progressbar-striped > .x-progressbar-bar {
+    background-color: #149bdf;
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 40px 40px; }
+  .x-progressbar.x-progressbar-transition {
+    transition: width 0.5s ease;
+    -moz-transition: width 0.5s ease;
+    -webkit-transition: width 0.5s ease;
+    -o-transition: width 0.5s ease; }
+  .x-progressbar.x-progressbar-animate > .x-progressbar-bar {
+    animation: progressbar-stripes 2s linear infinite;
+    -moz-animation: progressbar-stripes 2s linear infinite;
+    -webkit-animation: progressbar-stripes 2s linear infinite;
+    -o-animation: progressbar-stripes 2s linear infinite; }
+
+@keyframes progressbar-stripes {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 40px 0; } }
+
+@-moz-keyframes progressbar-stripes {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 40px 0; } }
+
+@-webkit-keyframes progressbar-stripes {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 40px 0; } }
+
+@-o-keyframes progressbar-stripes {
+  from {
+    background-position: 0 0; }
+
+  to {
+    background-position: 40px 0; } }

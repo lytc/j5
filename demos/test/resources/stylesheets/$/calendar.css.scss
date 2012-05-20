@@ -1,0 +1,202 @@
+@import "mixins";
+
+.x-calendar {
+  width: 200px;
+  border: 1px solid #ccc;
+  position: relative;
+  background: white;
+
+  > .x-header {
+    position: relative;
+    height: 24px;
+    padding: 4px 0;
+    border-bottom: 1px solid #ccc;
+    @include linear-gradient("top, #f5f5f5 0%,#eeeeee 100%");
+
+    > .x-prev, > .x-next {
+      position: absolute;
+      margin: 4px;
+      top: 0;
+    }
+
+    > .x-next {
+      right: 0;
+    }
+
+    > .x-month-year-picker {
+      text-align: center;
+      cursor: pointer;
+
+      > .x-text {
+        &:after {
+          font-family: FontAwesome;
+          content: "\f078";
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  > .x-month-year-picker-panel {
+    position: absolute;
+    width: 100%;
+    top: 24px;
+    bottom: 0;
+    left: 0;
+    background: white;
+    text-align: center;
+
+    > .x-panel {
+      width: 50%;
+      height: 186px;
+      display: inline-block;
+      overflow: hidden;
+      border-bottom: 1px solid #ccc;
+      padding: 0 2px;
+
+      .x-item {
+        display: inline-block;
+        width: 100%;
+        margin: 2px 0;
+        padding: 0 10px;
+        line-height: 24px;
+        cursor: pointer;
+        border: 1px solid white;
+
+        &:hover, &.x-selected {
+          background: #e3e3e3;
+          border: 1px solid #e3e3e3;
+        }
+
+        &.x-selected {
+          border: 1px solid #ccc;
+        }
+      }
+    }
+
+    > .x-month-picker-panel {
+      border-right: 1px solid #ccc;
+      @include column-count(2);
+      @include column-gap(2px);
+    }
+
+    > .x-year-picker-panel {
+      position: relative;
+      > .x-prev, > .x-next {
+        position: absolute;
+        top: 10px;
+      }
+
+      > .x-prev {
+        left: 20px;
+      }
+
+      > .x-next {
+        right: 20px;
+      }
+
+      > .x-body {
+        @include column-count(2);
+        @include column-gap(2px);
+        margin-top: 32px;
+      }
+    }
+  }
+
+  .x-time-picker-panel {
+    width: 120px;
+    height: 75px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    @include box-shadow(0 5px 10px rgba(#000, 0.2));
+
+    input[type=text] {
+      text-align: center;
+    }
+
+    .x-input-group {
+      > * {
+        display: inline-block;
+      }
+    }
+
+    .x-field {
+      width: 57px;
+    }
+
+    .x-am-pm {
+      line-height: 36px;
+      cursor: pointer;
+    }
+
+    .x-button {
+      width: 51px;
+      margin: 4px;
+    }
+  }
+
+  > .x-body {
+    > table {
+      width: 100%;
+      > thead {
+        > th {
+          width: 14.2857%;
+          height: 24px;
+          vertical-align: middle;
+        }
+        border-bottom: 1px solid #ccc;
+      }
+      > tbody {
+
+      }
+
+      td {
+        text-align: center;
+
+        > a {
+          display: block;
+          width: 100%;
+          line-height: 24px;
+          padding: 0 4px;
+          cursor: pointer;
+          color: #999;
+          border: 1px solid white;
+          overflow: hidden;
+
+          &:hover, &.x-selected {
+            background: #e3e3e3;
+            border-color: #e3e3e3;
+          }
+
+          &.x-selected {
+            border: 1px solid #ccc;
+            font-weight: bold;
+          }
+
+          &.x-active {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  > .x-footer {
+    height: 24px;
+    border-top: 1px solid #ccc;
+
+    > .x-full-info {
+      float: left;
+      line-height: 23px;
+      margin-left: 4px;
+    }
+
+    > .x-button {
+      height: 19px;
+      line-height: 19px;
+      float: right;
+      margin: 2px;
+    }
+  }
+}

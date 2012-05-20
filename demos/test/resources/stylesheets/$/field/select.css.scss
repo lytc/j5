@@ -1,0 +1,26 @@
+.x-field {
+  &.x-field-select {
+    position: relative;
+
+    > .x-wrap {
+      > .x-menu {
+        min-width: 100%;
+        border-radius: 0 0 4px 4px;
+        overflow: auto;
+
+        > .x-menu-item {
+          &.x-selected {
+            > a {
+              background: #0088CC;
+              color: white;
+
+              > .x-icon, > .x-text {
+                border-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

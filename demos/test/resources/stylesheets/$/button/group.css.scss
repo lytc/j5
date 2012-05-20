@@ -1,0 +1,23 @@
+.x-button-group {
+  display: inline-block;
+
+  > .x-button {
+    border: 1px solid #cccccc;
+    border-left: 0;
+    border-radius: 0;
+
+    &:active, &.x-button-pressed {
+      background: rgba(#52A8EC, 1);
+      color: white;
+    }
+  }
+
+  > .x-button:first-child {
+    border-radius: 4px 0 0 4px;
+    border-left: 1px solid #cccccc;
+  }
+
+  > .x-button:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+}

@@ -1,0 +1,25 @@
+.x-paginator {
+  > .x-button {
+    margin: 0 4px;
+    float: left;
+  }
+
+  > .x-input {
+    float: left;
+    padding: 0;
+    margin: 0 4px;
+    input {
+      width: 40px !important;
+      height: 24px !important;
+      line-height: 24px;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
+
+  > .x-info {
+    float: left;
+    height: 24px;
+    line-height: 24px;
+  }
+}
