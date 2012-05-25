@@ -1,5 +1,8 @@
 //= require ./Class
 
+/**
+ * @class $.Date
+ */
 (function() {
     var dayNames = [
         'Sunday'

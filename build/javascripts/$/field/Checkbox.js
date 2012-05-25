@@ -2,6 +2,9 @@
 //= require ./mixins/Labelable
 //= require ./mixins/BoxLabelable
 
+/**
+ * @class $.field.Checkbox
+ */
 $.field.Field.extend('$.field.Checkbox field.checkbox', {
 	baseClasses: 'x-field x-field-checkbox'
     ,includes: [

@@ -1,3 +1,6 @@
+/**
+ * @class $.Dom
+ */
 $.Dom = {
 	is: function(obj) {
 		return obj instanceof HTMLElement;

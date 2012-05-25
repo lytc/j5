@@ -1,6 +1,9 @@
 //= require ./Class
 
-$.Paging = $.Class.extend({
+/**
+ * @class $.Paging
+ */
+$.Class.extend('$.Paging', {
     totalItem: 1
     ,currentPage: 1
     ,itemPerPage: 10

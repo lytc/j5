@@ -1,5 +1,8 @@
 //= require ./List
 
+/**
+ * @class $.Menu
+ */
 $.List.extend('$.Menu menu', {
 	baseClasses: 'x-list x-menu'
 	,defaultChildType: 'menu.item'

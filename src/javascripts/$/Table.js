@@ -1,5 +1,8 @@
 //= require ./List
 
+/**
+ * @class $.Table
+ */
 $.List.extend('$.Table table', {
     tag: 'table'
     ,baseClasses: 'x-list x-table'

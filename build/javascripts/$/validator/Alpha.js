@@ -1,4 +1,8 @@
 //= require ./Regex
+
+/**
+ * @class $.validator.Alpha
+ */
 $.Validator.types['aplpha'] =
 $.validator.Regex.extend('$.validator.Alpha', {
 	pattern: /^[a-zA-Z_]+$/

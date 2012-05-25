@@ -1,5 +1,8 @@
 //= require ../Column
 
+/**
+ * @class $.table.column.RowNumberer
+ */
 $.table.Column.extend('$.table.column.RowNumberer table.column.rownumberer', {
     initElement: function() {
         this.callSuper();

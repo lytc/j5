@@ -1,0 +1,1151 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', '-g', 'i', 'yuidocjs' ]
+info using npm@1.1.4
+info using node@v0.6.12
+verbose config file /Users/digidev/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+verbose cache add [ 'yuidocjs', null ]
+silly cache add: name, spec, args [ undefined, 'yuidocjs', [ 'yuidocjs', null ] ]
+verbose parsed url { pathname: 'yuidocjs', path: 'yuidocjs', href: 'yuidocjs' }
+verbose addNamed [ 'yuidocjs', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'yuidocjs', '', false ]
+verbose raw, before any munging yuidocjs
+verbose url resolving [ 'https://registry.npmjs.org/', './yuidocjs' ]
+verbose url resolved https://registry.npmjs.org/yuidocjs
+http GET https://registry.npmjs.org/yuidocjs
+http 200 https://registry.npmjs.org/yuidocjs
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+silly get cb     etag: '"B1AIQWYWZNDT0WT4HLWJ70GBM"',
+silly get cb     date: 'Tue, 22 May 2012 03:45:05 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '77252' } ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/Users/digidev/.npm/yuidocjs'
+verbose mkdir done: /Users/digidev/.npm/yuidocjs 755
+silly name, range, hasData 2 [ 'yuidocjs', '', true ]
+silly versions [ 'yuidocjs',
+silly versions   [ '0.2.6',
+silly versions     '0.2.7',
+silly versions     '0.2.8',
+silly versions     '0.2.9',
+silly versions     '0.2.10',
+silly versions     '0.2.11',
+silly versions     '0.2.12',
+silly versions     '0.2.13',
+silly versions     '0.2.14',
+silly versions     '0.2.15',
+silly versions     '0.2.16',
+silly versions     '0.2.17',
+silly versions     '0.2.18',
+silly versions     '0.2.19',
+silly versions     '0.2.20',
+silly versions     '0.2.21',
+silly versions     '0.2.22',
+silly versions     '0.2.23',
+silly versions     '0.2.24',
+silly versions     '0.2.25',
+silly versions     '0.2.26',
+silly versions     '0.2.27',
+silly versions     '0.2.28',
+silly versions     '0.2.29',
+silly versions     '0.2.30',
+silly versions     '0.2.31',
+silly versions     '0.2.32',
+silly versions     '0.2.33',
+silly versions     '0.2.34',
+silly versions     '0.2.35',
+silly versions     '0.2.36',
+silly versions     '0.2.37',
+silly versions     '0.2.38',
+silly versions     '0.2.39',
+silly versions     '0.2.40',
+silly versions     '0.2.41',
+silly versions     '0.2.42',
+silly versions     '0.2.43',
+silly versions     '0.2.44',
+silly versions     '0.3.0',
+silly versions     '0.3.1',
+silly versions     '0.3.2',
+silly versions     '0.3.3',
+silly versions     '0.3.4',
+silly versions     '0.3.5',
+silly versions     '0.3.6',
+silly versions     '0.3.7',
+silly versions     '0.3.8',
+silly versions     '0.3.9' ] ]
+verbose bin dist [ '0.6-ares1.7.5-DEV-evundefined-openssl0.9.8r-v83.6.6.24-darwin-x64-11.4.0',
+verbose bin dist   { shasum: 'c9a1ece84e84ce4450a52a4200d6551e483e6dc2',
+verbose bin dist     tarball: 'http://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.9.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.9.tgz',
+verbose addRemoteTarball   'c9a1ece84e84ce4450a52a4200d6551e483e6dc2' ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552'
+verbose mkdir (expected) error ENOENT, no such file or directory '/var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206'
+verbose mkdir done: /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206 755
+verbose fetch to /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/tmp.tgz
+http GET https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.9.tgz
+http 200 https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.9.tgz
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 2042
+info shasum c9a1ece84e84ce4450a52a4200d6551e483e6dc2
+info shasum /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/tmp.tgz
+verbose mkdir (expected) error ENOENT, no such file or directory '/var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm'
+verbose mkdir done: /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar ok
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/.npmignore
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/.travis.yml
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/DEVELOPMENT.md
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/LICENSE
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/Makefile
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/package.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/README.md
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/builder.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/cli.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/docparser.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/docview.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/files.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/help.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/index.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/options.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/project.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/server.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/utils.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/lib/yuidoc.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/scripts
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/scripts/docs.sh
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/scripts/help.sh
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/scripts/prep.sh
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/scripts/test.sh
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/scripts/versions.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/syntax
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/syntax/component.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/syntax/index.mustache
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/themes
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/themes/component.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/themes/index.mustache
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/args
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/args/component.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/args/index.mustache
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/args/partials
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/docs/args/partials/help.mustache
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/yuidoc.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/index.mustache
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/project.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/layouts
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/layouts/main.mustache
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/favicon.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/css/main.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor/prettify
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor/prettify/prettify.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/conf/docs/assets/vendor/prettify/README.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/args
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/args/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/syntax
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/syntax/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/themes
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/themes/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/favicon.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/css/main.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor/prettify
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor/prettify/prettify.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/assets/vendor/prettify/README.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/api.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/data.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/CLI.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/DocBuilder.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/DocParser.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/DocView.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/Files.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/Help.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/Options.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/Server.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/Utils.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/classes/YUIDoc.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/modules
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/modules/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/modules/yuidoc.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_builder.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_cli.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_docparser.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_docview.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_files.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_help.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_index.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_options.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_server.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_utils.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/files/lib_yuidoc.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/favicon.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/img
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/img/spinner.gif
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/js/api-filter.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/js/api-list.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/js/api-search.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/js/apidocs.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/js/tabs.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/js/yui-prettify.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/css/external-small.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/css/logo.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/css/main.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/vendor
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/vendor/prettify
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/output/api/assets/vendor/prettify/README.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/builder.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/options.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/parser.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/AreaSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/AreaSplineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Axis.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/AxisType.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/BarSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/BottomAxisLayout.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/CartesianChart.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/CartesianChartLegend.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/CartesianSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/CategoryAxis.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Chart.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/ChartBase.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/ChartLegend.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/CircleGroup.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/ColumnSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/ComboSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/ComboSplineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/CurveUtil.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/DiamondGroup.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/EllipseGroup.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Fills.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Graph.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Gridlines.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Histogram.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/LeftAxisLayout.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Lines.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/LineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/MarkerSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/NumericAxis.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/PieChart.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/PieChartLegend.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/PieSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Plots.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/RectGroup.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/Renderer.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/RightAxisLayout.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/ShapeGroup.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/SplineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedAreaSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedAreaSplineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedAxis.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedBarSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedColumnSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedComboSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedComboSplineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedLineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedMarkerSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackedSplineSeries.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/StackingUtil.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/TimeAxis.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/charts/TopAxisLayout.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/inherit
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/inherit/examplemodule.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/json/parse.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/json/stringify.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test/anim.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test/test.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/namespace
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/namespace/ns.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test2
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test2/namespace.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test2/slashes.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test2/dump
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test2/dump/dump.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test2/oop
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/input/test2/oop/oop.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/api.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/data.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Anim.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/AreaSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/AreaSplineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Axis.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/AxisType.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/BarSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/BottomAxisLayout.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/CartesianChart.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/CartesianSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/CategoryAxis.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Chart.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/ChartBase.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/ChartLegend.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/ColumnSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/ComboSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/ComboSplineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/CurveUtil.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Easing.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/EasingFoo.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/EllipseGroup.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Fills.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Foo.Bar.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Graph.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Gridlines.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/GroupCircle.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/GroupDiamond.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/GroupRect.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Histogram.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/HorizontalLegendLayout.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/JSON.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/LeftAxisLayout.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Lines.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/LineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Main.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/MarkerSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/myclass.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/mywidget.SubWidget.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/mywidget.SubWidget2.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/mywidget.SuperWidget.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/NumericAxis.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/OtherClass.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/OtherClass2.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/P.storage.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/P.storage.LocalStore.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/P.storage.Store.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/PieChart.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/PieSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Plots.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/Renderer.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/RightAxisLayout.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/ShapeGroup.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/SplineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedAreaSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedAreaSplineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedAxis.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedBarSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedColumnSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedComboSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedComboSplineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedLineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedMarkerSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackedSplineSeries.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/StackingUtil.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/TimeAxis.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/TopAxisLayout.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/VerticalLegendLayout.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/YUI~dump.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/classes/YUI~oop.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_AreaSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_AreaSplineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Axis.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_AxisType.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_BarSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_BottomAxisLayout.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_CartesianChart.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_CartesianChartLegend.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_CartesianSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_CategoryAxis.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Chart.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_ChartBase.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_ChartLegend.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_CircleGroup.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_ColumnSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_ComboSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_ComboSplineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_CurveUtil.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_DiamondGroup.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_EllipseGroup.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Fills.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Graph.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Gridlines.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Histogram.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_LeftAxisLayout.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Lines.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_LineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_MarkerSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_NumericAxis.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_PieChart.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_PieChartLegend.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_PieSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Plots.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_RectGroup.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_Renderer.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_RightAxisLayout.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_ShapeGroup.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_SplineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedAreaSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedAreaSplineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedAxis.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedBarSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedColumnSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedComboSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedComboSplineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedLineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedMarkerSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackedSplineSeries.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_StackingUtil.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_TimeAxis.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_charts_TopAxisLayout.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_inherit_examplemodule.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_json_parse.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_json_stringify.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_namespace_ns.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_test2_dump_dump.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_test2_namespace.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_test2_oop_oop.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_test2_slashes.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_test_anim.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/files/input_test_test.js.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/anim-easing-foo.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/anim-easing.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/anim.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/charts-legend.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/charts.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/dump.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/ExampleModule.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/foobar.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/graphics.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/json-parse.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/json-stringify.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/json.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/myapp_views_index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/mymodule.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/mysubmodule.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/oop.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/modules/P.storage.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/favicon.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/css/external-small.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/css/logo.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/css/main.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/img
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/img/spinner.gif
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/js/api-filter.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/js/api-list.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/js/api-search.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/js/apidocs.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/js/tabs.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/js/yui-prettify.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/vendor
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/vendor/prettify
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/tests/out/assets/vendor/prettify/README.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/theme.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/layouts
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/layouts/main.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/layouts/xhr.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/attrs.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/classes.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/events.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/files.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/index.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/method.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/module.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/options.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/props.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/partials/sidebar.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/favicon.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/index.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/css/external-small.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/css/logo.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/css/main.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/img
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/img/spinner.gif
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/js/api-filter.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/js/api-list.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/js/api-search.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/js/apidocs.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/js/tabs.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/js/yui-prettify.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/vendor
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/vendor/prettify
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/default/assets/vendor/prettify/README.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/theme.json
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/layouts
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/layouts/main.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/attrs.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/classes.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/events.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/files.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/index.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/method.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/module.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/props.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/partials/sidebar.handlebars
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/js/tabs.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/js/yui-prettify.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/css/external-small.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/css/logo.png
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/css/main.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/vendor
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/vendor/prettify
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package/themes/simple/assets/vendor/prettify/README.html
+verbose gunzed /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package
+verbose rm'ed /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package
+verbose renamed [ '/var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/___package.npm/package',
+verbose renamed   '/var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package' ]
+verbose caching /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package/package.json
+verbose loadDefaults yuidocjs@0.3.9
+verbose tarball contents [ 'package', 'tmp.tgz' ]
+verbose from cache /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package/package.json
+verbose pack /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package
+verbose pack /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package /Users/digidev/.npm/yuidocjs/0.3.9/package.tgz
+silly makeList /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package
+silly dir, dirLen [ '/var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package',
+silly dir, dirLen   106 ]
+verbose tarball /Users/digidev/.npm/yuidocjs/0.3.9/package.tgz
+verbose parent /var/folders/g8/6k_tlp0j3d76ry1xj2zwdn6w0000gn/T/npm-1337658333552/1337658333552-0.97898342856206/package
+verbose mkdir (expected) error ENOENT, no such file or directory '/Users/digidev/.npm/yuidocjs/0.3.9/___package.npm'
+verbose mkdir done: /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /Users/digidev/.npm/yuidocjs/0.3.9/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar ok
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/.npmignore
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/.travis.yml
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/DEVELOPMENT.md
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/LICENSE
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/Makefile
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/package.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/README.md
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/builder.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/cli.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/docparser.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/docview.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/files.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/help.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/index.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/options.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/project.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/server.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/utils.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/lib/yuidoc.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/scripts
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/scripts/docs.sh
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/scripts/help.sh
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/scripts/prep.sh
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/scripts/test.sh
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/scripts/versions.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/themes
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/themes/component.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/themes/index.mustache
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/syntax
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/syntax/component.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/syntax/index.mustache
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/args
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/args/component.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/args/index.mustache
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/args/partials
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/docs/args/partials/help.mustache
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/yuidoc.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/index.mustache
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/project.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/layouts
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/layouts/main.mustache
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/favicon.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/css/main.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor/prettify
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor/prettify/prettify.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/conf/docs/assets/vendor/prettify/README.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/args
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/args/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/syntax
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/syntax/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/themes
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/themes/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/favicon.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/css/main.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor/prettify
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor/prettify/prettify.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/assets/vendor/prettify/README.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/api.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/data.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/CLI.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/DocBuilder.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/DocParser.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/DocView.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/Files.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/Help.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/Options.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/Server.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/Utils.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/classes/YUIDoc.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_builder.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_cli.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_docparser.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_docview.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_files.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_help.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_index.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_options.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_server.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_utils.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/files/lib_yuidoc.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/modules
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/modules/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/modules/yuidoc.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/favicon.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/css/external-small.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/css/logo.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/css/main.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/img
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/img/spinner.gif
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/js/api-filter.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/js/api-list.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/js/api-search.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/js/apidocs.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/js/tabs.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/js/yui-prettify.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/vendor
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/vendor/prettify
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/output/api/assets/vendor/prettify/README.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/builder.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/options.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/parser.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/inherit
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/inherit/examplemodule.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/AreaSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/AreaSplineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Axis.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/AxisType.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/BarSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/BottomAxisLayout.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/CartesianChart.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/CartesianChartLegend.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/CartesianSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/CategoryAxis.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Chart.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/ChartBase.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/ChartLegend.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/CircleGroup.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/ColumnSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/ComboSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/ComboSplineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/CurveUtil.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/DiamondGroup.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/EllipseGroup.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Fills.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Graph.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Gridlines.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Histogram.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/LeftAxisLayout.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Lines.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/LineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/MarkerSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/NumericAxis.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/PieChart.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/PieChartLegend.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/PieSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Plots.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/RectGroup.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/Renderer.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/RightAxisLayout.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/ShapeGroup.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/SplineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedAreaSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedAreaSplineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedAxis.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedBarSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedColumnSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedComboSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedComboSplineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedLineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedMarkerSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackedSplineSeries.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/StackingUtil.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/TimeAxis.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/charts/TopAxisLayout.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/json/parse.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/json/stringify.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/namespace
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/namespace/ns.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test/anim.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test/test.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test2
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test2/namespace.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test2/slashes.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test2/dump
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test2/dump/dump.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test2/oop
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/input/test2/oop/oop.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/api.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/data.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Anim.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/AreaSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/AreaSplineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Axis.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/AxisType.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/BarSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/BottomAxisLayout.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/CartesianChart.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/CartesianSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/CategoryAxis.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Chart.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/ChartBase.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/ChartLegend.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/ColumnSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/ComboSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/ComboSplineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/CurveUtil.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Easing.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/EasingFoo.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/EllipseGroup.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Fills.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Foo.Bar.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Graph.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Gridlines.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/GroupCircle.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/GroupDiamond.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/GroupRect.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Histogram.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/HorizontalLegendLayout.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/JSON.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/LeftAxisLayout.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Lines.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/LineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Main.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/MarkerSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/myclass.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/mywidget.SubWidget.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/mywidget.SubWidget2.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/mywidget.SuperWidget.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/NumericAxis.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/OtherClass.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/OtherClass2.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/P.storage.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/P.storage.LocalStore.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/P.storage.Store.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/PieChart.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/PieSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Plots.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/Renderer.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/RightAxisLayout.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/ShapeGroup.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/SplineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedAreaSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedAreaSplineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedAxis.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedBarSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedColumnSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedComboSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedComboSplineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedLineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedMarkerSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackedSplineSeries.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/StackingUtil.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/TimeAxis.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/TopAxisLayout.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/VerticalLegendLayout.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/YUI~dump.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/classes/YUI~oop.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/anim-easing-foo.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/anim-easing.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/anim.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/charts-legend.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/charts.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/dump.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/ExampleModule.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/foobar.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/graphics.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/json-parse.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/json-stringify.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/json.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/myapp_views_index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/mymodule.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/mysubmodule.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/oop.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/modules/P.storage.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_AreaSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_AreaSplineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Axis.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_AxisType.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_BarSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_BottomAxisLayout.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_CartesianChart.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_CartesianChartLegend.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_CartesianSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_CategoryAxis.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Chart.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_ChartBase.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_ChartLegend.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_CircleGroup.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_ColumnSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_ComboSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_ComboSplineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_CurveUtil.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_DiamondGroup.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_EllipseGroup.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Fills.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Graph.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Gridlines.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Histogram.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_LeftAxisLayout.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Lines.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_LineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_MarkerSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_NumericAxis.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_PieChart.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_PieChartLegend.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_PieSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Plots.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_RectGroup.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_Renderer.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_RightAxisLayout.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_ShapeGroup.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_SplineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedAreaSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedAreaSplineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedAxis.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedBarSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedColumnSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedComboSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedComboSplineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedLineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedMarkerSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackedSplineSeries.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_StackingUtil.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_TimeAxis.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_charts_TopAxisLayout.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_inherit_examplemodule.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_json_parse.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_json_stringify.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_namespace_ns.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_test2_dump_dump.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_test2_namespace.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_test2_oop_oop.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_test2_slashes.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_test_anim.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/files/input_test_test.js.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/favicon.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/css/external-small.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/css/logo.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/css/main.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/img
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/img/spinner.gif
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/js/api-filter.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/js/api-list.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/js/api-search.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/js/apidocs.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/js/tabs.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/js/yui-prettify.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/vendor
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/vendor/prettify
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/tests/out/assets/vendor/prettify/README.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/theme.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/layouts
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/layouts/main.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/layouts/xhr.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/attrs.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/classes.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/events.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/files.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/index.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/method.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/module.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/options.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/props.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/partials/sidebar.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/favicon.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/index.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/css/external-small.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/css/logo.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/css/main.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/img
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/img/spinner.gif
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/js/api-filter.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/js/api-list.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/js/api-search.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/js/apidocs.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/js/tabs.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/js/yui-prettify.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/vendor
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/vendor/prettify
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/default/assets/vendor/prettify/README.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/theme.json
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/layouts
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/layouts/main.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/attrs.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/classes.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/events.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/files.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/index.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/method.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/module.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/props.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/partials/sidebar.handlebars
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/css/external-small.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/css/logo.png
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/css/main.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/js/tabs.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/js/yui-prettify.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/vendor
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/vendor/prettify
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/vendor/prettify/CHANGES.html
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/vendor/prettify/COPYING
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/vendor/prettify/prettify-min.css
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/vendor/prettify/prettify-min.js
+silly asyncMap in gTP /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package/themes/simple/assets/vendor/prettify/README.html
+verbose gunzed /Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package
+verbose rm'ed /Users/digidev/.npm/yuidocjs/0.3.9/package
+verbose renamed [ '/Users/digidev/.npm/yuidocjs/0.3.9/___package.npm/package',
+verbose renamed   '/Users/digidev/.npm/yuidocjs/0.3.9/package' ]
+verbose caching /Users/digidev/.npm/yuidocjs/0.3.9/package/package.json
+verbose loadDefaults yuidocjs@0.3.9
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 37408
+info shasum 8e6f44b37722b2e06aa4e70932c9a3694efbf93e
+info shasum /Users/digidev/.npm/yuidocjs/0.3.9/package.tgz
+verbose from cache /Users/digidev/.npm/yuidocjs/0.3.9/package/package.json
+verbose chmod /Users/digidev/.npm/yuidocjs/0.3.9/package.tgz 644
+verbose chown [ '/Users/digidev/.npm/yuidocjs/0.3.9/package.tgz', 501, 80 ]
+silly resolved [ { name: 'yuidocjs',
+silly resolved     version: '0.3.9',
+silly resolved     description: 'YUIDoc, YUI\'s JavaScript Documentation engine.',
+silly resolved     author: { name: 'Dav Glass', email: 'davglass@gmail.com' },
+silly resolved     bugs: { url: 'http://github.com/yui/yuidoc/issues' },
+silly resolved     contributors: 
+silly resolved      [ { name: 'Adam Moore', email: 'amoore@gmail.com' },
+silly resolved        { name: 'Ryan Grove', email: 'ryan@wonko.com' },
+silly resolved        { name: 'Eric Ferraiuolo', email: 'eferraiuolo@gmail.com' },
+silly resolved        { name: 'Felipe Gasper', email: 'felipe@cpanel.net' },
+silly resolved        { name: 'Evan Goer', email: 'evan@goer.org' },
+silly resolved        { name: 'Alberto Gragera', email: 'albgra@gmail.com' },
+silly resolved        { name: 'Pat Cavit', email: 'pcavit@gmail.com' } ],
+silly resolved     engines: { node: '>=0.4.0' },
+silly resolved     keywords: 
+silly resolved      [ 'yui',
+silly resolved        'jsdoc',
+silly resolved        'api',
+silly resolved        'documentation',
+silly resolved        'javadoc',
+silly resolved        'docs',
+silly resolved        'apidocs' ],
+silly resolved     main: './lib/index',
+silly resolved     bin: { yuidoc: './lib/cli.js' },
+silly resolved     dependencies: 
+silly resolved      { yui: '3.5.1',
+silly resolved        rimraf: '~2.0.0',
+silly resolved        'node-markdown': '~0.1.0',
+silly resolved        minimatch: '~0.1.0',
+silly resolved        'graceful-fs': '1.1.1',
+silly resolved        express: '>=2.3.0 <2.6.0' },
+silly resolved     devDependencies: { yuitest: '>=0.7.3', selleck: '~0.1' },
+silly resolved     scripts: { test: 'make test' },
+silly resolved     preferGlobal: 'true',
+silly resolved     licenses: 
+silly resolved      [ { type: 'BSD',
+silly resolved          url: 'https://github.com/yui/yuidoc/blob/master/LICENSE' } ],
+silly resolved     repository: { type: 'git', url: 'git://github.com/yui/yuidoc.git' },
+silly resolved     _id: 'yuidocjs@0.3.9',
+silly resolved     optionalDependencies: {},
+silly resolved     _engineSupported: true,
+silly resolved     _npmVersion: '1.1.4',
+silly resolved     _nodeVersion: 'v0.6.12',
+silly resolved     _defaultsLoaded: true,
+silly resolved     dist: { shasum: '8e6f44b37722b2e06aa4e70932c9a3694efbf93e' },
+silly resolved     _from: 'yuidocjs' } ]
+info into /usr/local/lib yuidocjs@0.3.9
+info installOne yuidocjs@0.3.9
+verbose from cache /Users/digidev/.npm/yuidocjs/0.3.9/package/package.json
+info unbuild /usr/local/lib/node_modules/yuidocjs
+verbose mkdir (expected) error ENOENT, no such file or directory '/usr/local/lib/node_modules/___yuidocjs.npm'
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /usr/local/lib/node_modules/yuidocjs
+ERR! Could not create /usr/local/lib/node_modules/___yuidocjs.npm
+ERR! error installing yuidocjs@0.3.9
+info unbuild /usr/local/lib/node_modules/yuidocjs
+verbose installOne cb yuidocjs@0.3.9
+ERR! Error: EACCES, permission denied '/usr/local/lib/node_modules/___yuidocjs.npm'
+ERR! 
+ERR! Please try running this command again as root/Administrator.
+ERR! 
+ERR! System Darwin 11.4.0
+ERR! command "node" "/usr/local/bin/npm" "-g" "i" "yuidocjs"
+ERR! cwd /Users/digidev/Projects/lytc/j5
+ERR! node -v v0.6.12
+ERR! npm -v 1.1.4
+ERR! path /usr/local/lib/node_modules/___yuidocjs.npm
+ERR! code EACCES
+ERR! message EACCES, permission denied '/usr/local/lib/node_modules/___yuidocjs.npm'
+ERR! errno {}
+verbose exit [ 1, true ]

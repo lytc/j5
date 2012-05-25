@@ -20,6 +20,8 @@
       content: "\f055";
       color: #0088CC;
       line-height: 24px; }
+  .x-tree-item.x-selected > a {
+    background: #F0EDEE; }
   .x-tree-item > a {
     color: #222222;
     text-decoration: none;
@@ -27,9 +29,12 @@
     display: block;
     white-space: nowrap;
     line-height: 24px;
-    padding: 0 10px 0 16px; }
-    .x-tree-item > a:active, .x-tree-item > a:focus {
-      background: #F0EDEE; }
+    padding: 0 10px 0 16px;
+    /*&:active, &:focus {
+      background: #F0EDEE;
+    } */ }
+    .x-tree-item > a:hover {
+      background: #f6f3f4; }
   .x-tree-item > ul.x-tree {
     display: none;
     margin-left: 20px;

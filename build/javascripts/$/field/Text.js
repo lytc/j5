@@ -4,6 +4,9 @@
 //= require ./mixins/SelectOnFocusable
 //= require ./mixins/Placeholderable
 
+/**
+ * @class $.field.Text
+ */
 $.field.Field.extend('$.field.Text field.text', {
 	baseClasses: 'x-field x-field-text'
     ,includes: [

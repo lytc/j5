@@ -1,5 +1,8 @@
 //= require ./List
 
+/**
+ * @class $.ColorPalette
+ */
 $.List.extend('$.ColorPalette colorpalette', {
     baseClasses: 'x-list x-color-palette'
     ,defaultOptions: $.readOnlyObject({

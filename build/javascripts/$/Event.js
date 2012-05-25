@@ -1,3 +1,8 @@
+//= require ./Class
+
+/**
+ * @class $.Event
+ */
 $.Class.extend('$.Event', {
     constructor: function(event) {
         this.event = event;
@@ -64,6 +69,35 @@ $.Class.extend('$.Event', {
         ];
 
         return !$.Array(cannotModifyKeys).has(this.getKey());
+    }
+
+    ,getTargetComponent: function(componentClass, rootComponent) {
+        if (!componentClass && !rootComponent) {
+            if (this.target.dom.$comp) {
+                return this.target.dom.$comp;
+            }
+            return;
+        }
+
+        if ('string' == typeof componentClass) {
+            componentClass = $.alias(componentClass);
+        }
+
+        var target = this.target;
+        if (target.$comp && target.$comp instanceof componentClass) {
+            return target.$comp;
+        }
+
+        var domRoot = rootComponent.el.dom;
+        while (target = target.parentElement) {
+            if (!domRoot.contains(target)) {
+                return;
+            }
+
+            if (target.$comp && target.$comp instanceof componentClass) {
+                return target.$comp;
+            }
+        }
     }
 });
 

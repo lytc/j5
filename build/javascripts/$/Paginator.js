@@ -1,6 +1,9 @@
 //= require ./Paging
 //= require ./Component
 
+/**
+ * @class $.Paginator
+ */
 $.Component.extend('$.Paginator paginator', {
     baseClasses: 'x-paginator'
     ,defaultChildType: 'button'

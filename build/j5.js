@@ -1,7 +1,20 @@
+/**
+ * This is a class
+ *
+ * @class $
+ */
+
 var $ = function() {
 
 };
 
+/**
+ * Returns true if the passed value is iterable, false otherwise
+ *
+ * @method isIterable
+ * @param Object obj A javascript object to detect
+ * @return Boolean
+ */
 $.isIterable = function(obj) {
     var iterators = [Array, NodeList, HTMLCollection];
 
@@ -10,9 +23,22 @@ $.isIterable = function(obj) {
             return true;
         }
     }
+
+    if ($.getType(obj) == 'Arguments') {
+        return true;
+    }
+
     return false;
 };
 
+/**
+ *
+ * @method each
+ * @param Object/Array/NodeList/HTMLCollection/Arguments obj
+ * @param Function callback
+ * @param Object scope
+ * @return Mixed
+ */
 $.each = function(obj, callback, scope) {
     var result;
     if ($.isIterable(obj)) {
@@ -45,7 +71,13 @@ $.each = function(obj, callback, scope) {
     return result;
 };
 
-$.extend = function(dest /*, *sources */) {
+/**
+ * @method extend
+ * @param Object dest
+ * @params Object... sources
+ * @return Object
+ */
+$.extend = function(dest, source /*, *sources */) {
     if (arguments.length == 1) {
         return dest;
     }
@@ -81,9 +113,20 @@ $.extend = function(dest /*, *sources */) {
 };
 
 $.extend($, {
+    /**
+     * @property String version
+     */
     version: '1.0'
+
+    /**
+     * @property Function emptyFn
+     */
     ,emptyFn: function() {}
 
+    /**
+     * @method uniq
+     * @return String
+     */
     ,uniq: (function(){
         var counter, counters = {
             'default': 0
@@ -96,10 +139,19 @@ $.extend($, {
         }
     })()
 
+    /**
+     * @method getType
+     * @param Object obj
+     * @return Boolean
+     */
     ,getType: function(obj) {
         return Object.prototype.toString.call(obj).match(/\[\w+\s(\w+)\]/)[1];
     }
 
+    /**
+     * @method namespace
+     * @return Object
+     */
     ,namespace: function() {
         var parts, tmp;
 
@@ -114,6 +166,11 @@ $.extend($, {
         });
     }
 
+    /**
+     * @method getClass
+     * @param String className
+     * @return Object
+     */
     ,getClass: function(className) {
         var result = true, tmp = window, parts = className.split('.');
         $.each(parts, function(part) {
@@ -130,10 +187,21 @@ $.extend($, {
         }
     }
 
+    /**
+     * @method hasClass
+     * @param String className
+     * @return Boolean
+     */
     ,hasClass: function(className) {
         return undefined !== this.getClass(className);
     }
 
+    /**
+     * @method define
+     * @param String name
+     * @param Object [prototype]
+     * @return Function
+     */
     ,define: function(name, prototype) {
         prototype || (prototype = {});
         var fn, parts = name.split('.')
@@ -150,6 +218,13 @@ $.extend($, {
         return fn;
     }
 
+    /**
+     * @method defaults
+     * @param Object obj
+     * @param String|Object property
+     * @param Mixed [value]
+     * @return Object
+     */
     ,defaults: function(obj, property, value) {
         if ('string' == typeof property) {
             if (undefined === obj[property]) {
@@ -165,12 +240,17 @@ $.extend($, {
         return obj;
     }
 
-    ,readOnlyObject: function(values) {
-        var obj = {};
-        for (var i in values) {
-            if ('prototype' != i && values.hasOwnProperty(i)) {
-                Object.defineProperty(obj, i, {
-                    value: values[i]
+    /**
+     * @method readOnlyObject
+     * @param Object obj
+     * @return Object
+     */
+    ,readOnlyObject: function(obj) {
+        var _obj = {};
+        for (var i in obj) {
+            if (obj.hasOwnProperty(i)) {
+                Object.defineProperty(_obj, i, {
+                    value: obj[i]
                     ,writable: false
                     ,enumerable: true
                 })
@@ -178,7 +258,11 @@ $.extend($, {
         }
         return obj;
     }
-    
+
+    /**
+     * @method alias
+     * @return $.Class
+     */
     ,alias: (function() {
         var alias = {};
 
@@ -197,7 +281,10 @@ $.extend($, {
             return klass;
         };
     })()
-    
+
+    /**
+     * @method ready
+     */
     ,ready: (function() {
         var isReady = false, listeners = [], callback;
         document.addEventListener('DOMContentLoaded', callback = function() {
@@ -214,7 +301,6 @@ $.extend($, {
             }
             listeners.push({callback: callback, scope: scope});
         };
-
     })()
 });
 
@@ -226,11 +312,38 @@ $.extend($, {
         ,isOpera = /opera/i.test(ua);
 
     $.extend($, {
+        /**
+         * @property Boolean isWebkit
+         */
         isWebkit: isWebkit
+
+        /**
+         * @property Boolean isChrome
+         */
         ,isChrome: isChrome
+
+        /**
+         * @property Boolean isFirefox
+         */
         ,isFirefox: isFirefox
+
+        /**
+         * @property isOpera
+         */
         ,isOpera: isOpera
 
+        /**
+         * @property String cssPrefix
+         */
+        ,cssPrefix: isWebkit? 'Webkit' : isFirefox? 'Moz' : 'O'
+
+        /**
+         * @method getCssProperty
+         * @param String name
+         * @param Node [dom]
+         * @param camelize [default=true]
+         * @return String
+         */
         ,getCssProperty: function(name, dom, camelize) {
             if ('boolean' == typeof dom) {
                 camelize = dom;
@@ -250,15 +363,30 @@ $.extend($, {
             return name;
         }
 
+        /**
+         * @method getType
+         * @param Object obj
+         * @return String
+         */
         ,getType: function(obj) {
             var type = Object.prototype.toString.call(obj);
             return type.match(/\[object\s+(\w+)\]/)[1];
         }
 
+        /**
+         * @method isNodeList
+         * @param Object obj
+         * @return Boolean
+         */
         ,isNodeList: function(obj) {
             return 'NodeList' == this.getType(obj);
         }
 
+        /**
+         * @method getCssPrefix
+         * @param Boolean dasherize
+         * @return String
+         */
         ,getCssPrefix: function(dasherize) {
             var prefix = $.cssPrefix;
             if (dasherize) {
@@ -266,10 +394,116 @@ $.extend($, {
             }
             return prefix;
         }
+
+        ,queryDecode: function( params, coerce ) {
+            var obj = {},
+                coerce_types = { 'true': !0, 'false': !1, 'null': null }
+                decode = decodeURIComponent;
+
+            // Iterate over all name=value pairs.
+            $.each( params.replace( /\+/g, ' ' ).split( '&' ), function(v, j){
+                var param = v.split( '=' ),
+                    key = decode( param[0] ),
+                    val,
+                    cur = obj,
+                    i = 0,
+
+                // If key is more complex than 'foo', like 'a[]' or 'a[b][c]', split it
+                // into its component parts.
+                    keys = key.split( '][' ),
+                    keys_last = keys.length - 1;
+
+                // If the first keys part contains [ and the last ends with ], then []
+                // are correctly balanced.
+                if ( /\[/.test( keys[0] ) && /\]$/.test( keys[ keys_last ] ) ) {
+                    // Remove the trailing ] from the last keys part.
+                    keys[ keys_last ] = keys[ keys_last ].replace( /\]$/, '' );
+
+                    // Split first keys part into two parts on the [ and add them back onto
+                    // the beginning of the keys array.
+                    keys = keys.shift().split('[').concat( keys );
+
+                    keys_last = keys.length - 1;
+                } else {
+                    // Basic 'foo' style key.
+                    keys_last = 0;
+                }
+
+                // Are we dealing with a name=value pair, or just a name?
+                if ( param.length === 2 ) {
+                    val = decode( param[1] );
+
+                    // Coerce values.
+                    if ( coerce ) {
+                        val = val && !isNaN(val)            ? +val              // number
+                            : val === 'undefined'             ? undefined         // undefined
+                            : coerce_types[val] !== undefined ? coerce_types[val] // true, false, null
+                            : val;                                                // string
+                    }
+
+                    if ( keys_last ) {
+                        // Complex key, build deep object structure based on a few rules:
+                        // * The 'cur' pointer starts at the object top-level.
+                        // * [] = array push (n is set to array length), [n] = array if n is
+                        //   numeric, otherwise object.
+                        // * If at the last keys part, set the value.
+                        // * For each keys part, if the current level is undefined create an
+                        //   object or array based on the type of the next keys part.
+                        // * Move the 'cur' pointer to the next level.
+                        // * Rinse & repeat.
+                        for ( ; i <= keys_last; i++ ) {
+                            key = keys[i] === '' ? cur.length : keys[i];
+                            cur = cur[key] = i < keys_last
+                                ? cur[key] || ( keys[i+1] && isNaN( keys[i+1] ) ? {} : [] )
+                                : val;
+                        }
+
+                    } else {
+                        // Simple key, even simpler rules, since only scalars and shallow
+                        // arrays are allowed.
+
+                        if ( obj[key] instanceof Array ) {
+                            // val is already an array, so push on the next value.
+                            obj[key].push( val );
+
+                        } else if ( obj[key] !== undefined ) {
+                            // val isn't an array, but since a second value has been specified,
+                            // convert val into an array.
+                            obj[key] = [ obj[key], val ];
+
+                        } else {
+                            // val is a scalar.
+                            obj[key] = val;
+                        }
+                    }
+
+                } else if ( key ) {
+                    // No value was defined, so set something meaningful.
+                    obj[key] = coerce
+                        ? undefined
+                        : '';
+                }
+            });
+
+            return obj;
+        }
+
+        ,urlQueryDecode: function() {
+            var query = location.search.replace(/^\?/, '');
+            return $.queryDecode(query);
+        }
+
+        ,getUrlQueryParam: function(name) {
+            return $.urlQueryDecode()[name];
+        }
     });
 
-    $.cssPrefix = isWebkit? 'Webkit' : isFirefox? 'Moz' : 'O';
+
 })();
+/**
+ * @class $.String
+ */
+
 $.String = {
 	escape: function(str) {
 		if ('object' == typeof str) {
@@ -359,6 +593,10 @@ $.each($.String, function(fn, name) {
         }
     }
 });
+/**
+ * @class $.Array
+ */
+
 (function() {
 	var extend = {
 		splice: function(array, index, count) {
@@ -432,6 +670,10 @@ $.each($.String, function(fn, name) {
 	$.extend($.Array, extend);
 	
 })();
+/**
+ * @class $.Function
+ */
+
 $.Function = {
     defer: function(fn, miniseconds) {
         var id = setTimeout(function() {
@@ -468,6 +710,9 @@ $.Function = {
 $.Class = function() {
 }
 
+/**
+ * @class $.Class
+ */
 $.extend($.Class, {
     staticMethods: function() {
         var methods = [];
@@ -648,6 +893,11 @@ $.extend($.Class.prototype, {
     }
 });
 
+
+/**
+ * @class $.Observable
+ */
+
 $.Class.extend('$.Observable', {
     constructor: function(options) {
         this.initOptions(options);
@@ -736,7 +986,16 @@ $.Class.extend('$.Observable', {
     }
 });
 
+
+/**
+ * @class $.Ajax
+ * @superclass $.Observable
+ */
+
 $.Observable.extend('$.Ajax', {
+    /**
+     * @property Object defaultOptions
+     */
     defaultOptions: $.readOnlyObject({
         url: ''
         ,method: 'GET'
@@ -745,13 +1004,36 @@ $.Observable.extend('$.Ajax', {
         ,headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
 
+    /**
+     * @property Function start
+     */
     ,start: $.emptyFn
+
+    /**
+     * @property Function complete
+     */
     ,complete: $.emptyFn
+
+    /**
+     * @property Function success
+     */
     ,success: $.emptyFn
+
+    /**
+     * @property Function exception
+     */
     ,exception: $.emptyFn
 
+    /**
+     * @private
+     * @property String simpleSetters
+     */
     ,simpleSetters: 'params, start, complete, success, exception'
 
+    /**
+     * @method getXhr
+     * @return XMLHttpRequest
+     */
     ,getXhr: function() {
 		if (!this._xhr) {
 			this._xhr = new XMLHttpRequest();
@@ -775,6 +1057,12 @@ $.Observable.extend('$.Ajax', {
 		return this._xhr;
 	}
 
+    /**
+     * @method setHeaders
+     * @param String|Object name
+     * @param String [value]
+     * @return $.Ajax
+     */
 	,setHeaders: function(name, value) {
 		this.headers || (this.headers = {});
 		if (undefined === value) {
@@ -787,10 +1075,20 @@ $.Observable.extend('$.Ajax', {
 		return this;
 	}
 
+    /**
+     * @method abort
+     * @return $.Ajax
+     */
 	,abort: function() {
 		this.getXhr().abort();
+        return this;
 	}
 
+    /**
+     * @method send
+     * @param Object [options]
+     * @return $.Ajax
+     */
 	,send: function(options) {
         if (options) {
             this.applyOptions(options);
@@ -845,6 +1143,10 @@ $.Observable.extend('$.Ajax', {
         return this;
 	}
 });
+/**
+ * @class $.Elements
+ */
+
 $.Elements = function(doms) {
 	this.doms = doms;
 	
@@ -930,21 +1232,90 @@ $.Elements = function(doms) {
 	});
 };
 
+
+/**
+ * @class $.Animation
+ * @superclass $.Observable
+ */
+
 $.Observable.extend('$.Animation', {
+    /**
+     * @property Int delay
+     * @default 0
+     */
     delay: 0
+
+    /**
+     * @property String direction
+     * @default normal
+     */
     ,direction: 'normal'// [ normal | reverse | alternate | alternate-reverse ] [, [ normal | reverse | alternate | alternate-reverse ] ]*
+
+    /**
+     * @property Int duration
+     * @default 1
+     */
     ,duration: 1
+
+    /**
+     * @property String fillMode
+     * @default 'forwards'
+     */
     ,fillMode: 'forwards' // [ none | forwards | backwards | both ] [, [ none | forwards | backwards | both ] ]*
+
+    /**
+     * @property Int iterationCount
+     * @default 1
+     */
     ,iterationCount: 1 // [ infinite | <number> ] [, [ infinite | <number> ] ]*
+
+    /**
+     * @property String playState
+     * @default running
+     */
     ,playState: 'running' // [ running | paused ] [, [ running | paused ] ]*
+
+    /**
+     * @property String timingFunction
+     * @default ease
+     */
     ,timingFunction: 'ease' // [ ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(<number>[, [ start | end ] ]?) | cubic-bezier(<number>, <number>, <number>, <number>) ] [, [ ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(<number>[, [ start | end ] ]?) | cubic-bezier(<number>, <number>, <number>, <number>)] ]*
+
+    /**
+     * @property Function onIteration
+     * @default $.emptyFn
+     */
     ,onIteration: $.emptyFn
+
+    /**
+     * @property Function onEnd
+     * @default $.emptyFn
+     */
     ,onEnd: $.emptyFn
+
+    /**
+     * @property Object keyframe
+     * @default null
+     */
     ,keyframe: null
+
+    /**
+     * @property Boolean concurrent
+     * @default true
+     */
     ,concurrent: true
 
+    /**
+     * @private
+     * @property String simpleSetter
+     */
     ,simpleSetters: 'delay, direction, duration, fillMode, iterationCount, playState, timingFunction, keyframe, concurrent'
 
+    /**
+     * @method constructor
+     * @param String|Element|$.Element el
+     * @param Object [options]
+     */
     ,constructor: function(el, options) {
         this.el = $.Element.get(el);
 
@@ -958,6 +1329,11 @@ $.Observable.extend('$.Animation', {
         this.callSuper(options);
     }
 
+    /**
+     * @method play
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,play: function(options) {
         var property = '{name} {duration} {timingFunction} {delay} {iterationCount} {direction} {fillMode}'
             ,name
@@ -1020,6 +1396,11 @@ $.Observable.extend('$.Animation', {
         return this;
     }
 
+    /**
+     * @private
+     * @method playQueue
+     * @return $.Animation
+     */
     ,playQueue: function() {
         if (!this.queue || !this.queue.length) {
             return this;
@@ -1032,11 +1413,21 @@ $.Observable.extend('$.Animation', {
         return this;
     }
 
+    /**
+     * @method fade
+     * @param Object [options]
+     * @param Number [opacity]
+     * @return $.Animation
+     */
     ,fade: function(options, opacity) {
         var currentOpacity = parseFloat(this.el.getStyle('opacity'));
         return this[currentOpacity == 1? 'fadeOut' : 'fadeIn'](options, opacity);
     }
 
+    /**
+     * @method fadeInt
+     * @param Object [options]
+     */
     ,fadeIn: function(options) {
         options || (options = {});
 
@@ -1052,6 +1443,11 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method fadeOut
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,fadeOut: function(options) {
         options || (options = {});
 
@@ -1067,7 +1463,14 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
-    ,move: function(x, y, options) {
+    /**
+     * @method moveTo
+     * @param Number x
+     * @param Number [y]
+     * @param Object [options]
+     * @return $.Animation
+     */
+    ,moveTo: function(x, y, options) {
         if ('number' !== typeof y) {
             options = y;
             y = x;
@@ -1090,7 +1493,13 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
-    ,moveX: function(x, options) {
+    /**
+     * @method moveToX
+     * @param Number x
+     * @param Object [options]
+     * @return $.Animation
+     */
+    ,moveToX: function(x, options) {
         options || (options = {});
 
         options.keyframe = {
@@ -1104,7 +1513,13 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
-    ,moveY: function(y, options) {
+    /**
+     * @method moveToY
+     * @param Number y
+     * @param Object [options]
+     * @return $.Animation
+     */
+    ,moveToY: function(y, options) {
         options || (options = {});
 
         options.keyframe = {
@@ -1118,6 +1533,11 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method slideUp
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,slideUp: function(options) {
         if (this._originalBeforeFx) {
             return this;
@@ -1139,6 +1559,11 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method slideDown
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,slideDown: function(options) {
         if (!this._originalBeforeFx) {
             return this;
@@ -1159,10 +1584,21 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method slide
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,slide: function(options) {
         return this[this._originalBeforeFx? 'slideDown' : 'slideUp'](options);
     }
 
+    /**
+     * @method rotate
+     * @param Object [options]
+     * @param String [property]
+     * @return $.Animation
+     */
     ,rotate: function(options, property) {
         options || (options = {});
         property || (property = 'rotateY(180deg)');
@@ -1178,6 +1614,10 @@ $.Observable.extend('$.Animation', {
 
 
 
+
+/**
+ * @class $.Element
+ */
 
 $.Observable.extend('$.Element element', {
     constructor: function(options) {
@@ -2051,6 +2491,31 @@ $.extend($.Element, {
 
 
 
+/**
+ * Base class for all Ext components. All subclasses of Component may participate in the automated Ext component
+ * lifecycle of creation, rendering and destruction which is provided by the {@link Ext.container.Container Container}
+ * class. Components may be added to a Container through the {@link Ext.container.Container#cfg-items items} config option
+ * at the time the Container is created, or they may be added dynamically via the
+ * {@link Ext.container.Container#method-add add} method.
+ *
+ * The Component base class has built-in support for basic hide/show and enable/disable and size control behavior.
+ *
+ * All Components are registered with the {@link Ext.ComponentManager} on construction so that they can be referenced at
+ * any time via {@link Ext#getCmp Ext.getCmp}, passing the {@link #id}.
+ *
+ * All user-developed visual widgets that are required to participate in automated lifecycle and size management should
+ * subclass Component.
+ *
+ * See the Creating new UI controls chapter in [Component Guide][1] for details on how and to either extend
+ * or augment Ext JS base classes to create custom Components.
+ *
+ * Every component has a specific xtype, which is its Ext-specific type name, along with methods for checking the xtype
+ * like {@link #getXType} and {@link #isXType}. See the [Component Guide][1] for more information on xtypes and the
+ * Component hierarchy.
+ *
+ * @class $.Component
+ */
+
 $.Observable.extend('$.Component component', {
 	tag: 'div'
 	,baseClasses: 'x-comp'
@@ -2061,8 +2526,13 @@ $.Observable.extend('$.Component component', {
     ,constructor: function(options) {
         options || (options = {});
         this.items = [];
-
-        this.tag = options.tag || this.tag;
+        if (options.el instanceof $.Element) {
+            this.initElement(options.el);
+            delete options.el;
+        } else {
+            this.tag = options.tag || this.tag;
+            this.initElement();
+        }
 
         // init plugins
         this.plugins || (this.plugins = []);
@@ -2074,12 +2544,15 @@ $.Observable.extend('$.Component component', {
             this.addPlugin(plugin);
         }, this);
 
-        this.initElement();
         this.callSuper([options]);
     }
 
-    ,initElement: function() {
-        this.el = new $.Element('<' + this.tag + '>');
+    ,initElement: function(el) {
+        if (el instanceof $.Element) {
+            this.el = el;
+        } else {
+            this.el = new $.Element('<' + this.tag + '>');
+        }
         this.el.dom.$comp = this;
         this.setClasses('');
         this.trigger('render');
@@ -2132,7 +2605,11 @@ $.Observable.extend('$.Component component', {
 	}
 	
 	,setEl: function(options) {
-		this.el.applyOptions(options);
+        if (options instanceof $.Element) {
+            this.el = options;
+        } else {
+            this.el.applyOptions(options);
+        }
 		return this;
 	}
 	
@@ -2149,6 +2626,11 @@ $.Observable.extend('$.Component component', {
 		this.el.setAttr('class', classes);
 		return this;
 	}
+
+    ,set$data: function(data) {
+        this.$data = data;
+        return this;
+    }
 
     ,setHidden: function(bool) {
         return this.switchClasses(bool, 'x-hidden');
@@ -2306,9 +2788,24 @@ $.Component.get = function(query) {
 	}
 };
 
+
+/**
+ * @class $.Alert
+ * @superclass $.Component
+ */
+
 $.Component.extend('$.Alert alert', {
+    /**
+     * @private
+     * @property String baseClasses
+     */
     baseClasses: 'x-alert'
 
+    /**
+     * @private
+     * @method initElement
+     * @return $.Alert
+     */
     ,initElement: function() {
         this.callSuper();
 
@@ -2326,18 +2823,35 @@ $.Component.extend('$.Alert alert', {
         this.contentEl = this.el.append({
             classes: 'x-content'
         });
+
+        return this;
     }
 
+    /**
+     * @method setHtml
+     * @param String html
+     * @return $.Alert
+     */
     ,setHtml: function(html) {
         this.contentEl.setHtml(html);
         return this;
     }
 
+    /**
+     * @method setType
+     * @param String type
+     * @return $.Alert
+     */
     ,setType: function(type) {
         this.addClasses('x-' + type);
         return this;
     }
 });
+
+
+/**
+ * @class $.Navigator
+ */
 
 $.Navigator = (function(){
 	var navigator = $.Observable.extend({
@@ -2367,13 +2881,17 @@ $.Navigator = (function(){
 		}
 		
 		,getParam: function(name) {
-			return $.getQueryParams[name];
+			return $.getUrlQueryParam(name);
 		}
 	});
 	return new navigator;
 })();
 
 
+
+/**
+ * @class $.App
+ */
 
 $.Observable.extend('$.App', {
 	path: '/assets/app'
@@ -2391,7 +2909,7 @@ $.Observable.extend('$.App', {
 		}, this);
 		
 		$.Navigator.on('change', function(path) {
-			this.dispatch(path);	
+			this.dispatch(path);
 		}, this);
 		
 		$.ready(function() {
@@ -2404,25 +2922,28 @@ $.Observable.extend('$.App', {
 	
 	,dispatch: function(path) {
 		var matches, controller, action, id;
-		if (matches = path.match(/^\/([\w\-]+)$/)) {
+		if (matches = path.match(/^\/([\w\-]+)\/?$/)) {  // controller or controller/
 			controller = matches[1];
 			action = this.defaultAction;
-		}else if(matches = path.match(/^\/([\w\-]+)\/(\d+)$/)) {
+		}else if(matches = path.match(/^\/([\w\-]+)\/(\d+)\/?$/)) { // controller/id or controller/id/
 			controller = matches[1];
 			action = 'view';
 			id = matches[2];
-		} else if (matches = path.match(/^\/([\w\-]+)\/(\d+)\/([\w\-]+)\/?\??(.*)$/)) {
+		} else if (matches = path.match(/^\/([\w\-]+)\/(\d+)\/([\w\-]+)\/?\??(.*)$/)) { // controller/id/customaction or controller/id/customaction?params
 			controller = matches[1];
 			action = matches[3];
 			id = matches[2];
-		} else if (matches = path.match(/^\/([\w\-]+)\/([\w\-]+)\/?\??(.*)$/)) {
+		} else if (matches = path.match(/^\/([\w\-]+)\/([\w\-]+)\/?\??(.*)$/)) { // controller/action or controller/action?params
 			controller = matches[1];
 			action = matches[2];
-		} else {
+		} else if (matches = path.match(/^\/([\w\-]+)\/?\?(.*)$/)) {
+            controller = matches[1];
+            action = this.defaultAction;
+        } else {
 			controller = this.defaultController;
 			action = this.defaultAction;
 		}
-		
+
 		var controllerClassName = $.String.format(this.namespace + '.controllers.{0}', $.String.camelize(controller));
 		var controllerClass = $.getClass(controllerClassName);
 		
@@ -2433,7 +2954,7 @@ $.Observable.extend('$.App', {
 		var controllerInstance = new controllerClass({
 			id: id
 		});
-		
+
 		var actionMethodName = $.String.camelize(action, true) + this.actionPrefix;
 		if (!controllerInstance[actionMethodName]) {
 			throw new Error($.String.format('Call undefined action {0} in controller {1}', action, controller));
@@ -2443,6 +2964,11 @@ $.Observable.extend('$.App', {
 		controllerInstance.after();
 	}
 });
+
+/**
+ * @class $.Button
+ */
+
 $.Component.extend('$.Button button', {
 	tag: 'a'
     ,baseClasses: 'x-button'
@@ -2584,6 +3110,11 @@ $.Component.extend('$.Button button', {
         return this;
     }
 });
+
+
+/**
+ * @class $.Calendar
+ */
 
 $.Component.extend('$.Calendar calendar', {
     baseClasses: 'x-calendar'
@@ -3025,6 +3556,11 @@ $.Component.extend('$.Calendar calendar', {
     }
 });
 
+
+/**
+ * @class $.Collection
+ */
+
 $.Observable.extend('$.Collection', {
 	url: ''
 	,totalProperty: 'total'
@@ -3065,6 +3601,9 @@ $.Observable.extend('$.Collection', {
 
 	,load: function(options) {
         options || (options = {});
+        if ('function' == typeof options) {
+            options = {callback: options}
+        }
 		options.url = options.url || this.url || this.model.prototype.url;
 
         options.success = function(responseText) {
@@ -3072,6 +3611,9 @@ $.Observable.extend('$.Collection', {
             me.total = response[me.totalProperty];
             me.setData(response[me.root]);
             me.trigger('load', response[me.root], me);
+            if (options.callback) {
+                options.callback.call(me, response[me.root], me);
+            }
         };
 
         options.complete = function(xhr, ajax) {
@@ -3197,29 +3739,29 @@ $.Observable.extend('$.Collection', {
     }
 });
 
+
+/**
+ * @class $.List
+ */
+
 $.Component.extend('$.List list', {
     tag: 'ul'
     ,baseClasses: 'x-list'
     ,defaultChildType: 'list.item'
 
     ,multiSelect: false
-    /*,defaultOptions: $.readOnlyObject({
-        multiSelect: false
-    })*/
 
-    ,initElement: function() {
-        this.callSuper();
+    ,constructor: function() {
+        this.callSuper(arguments);
 
         var me = this;
-        this.on('add', function(item) {
-            item.on({
-                'select deselect': function() {
-                    me.trigger('selectionchange');
+        this.on('click', function(e) {
+            var item = e.getTargetComponent(me.defaultChildType, this);
+            if (item) {
+                if (item.isSelected()) {
+                    me.select(item);
                 }
-                ,select: function() {
-                    me.trigger('select', this);
-                }
-            });
+            }
         });
     }
 
@@ -3229,41 +3771,6 @@ $.Component.extend('$.List list', {
     }
 
     ,setMultiSelect: function(bool) {
-        /*
-        if (!this._singleSelectCallback) {
-            var me = this;
-            this._singleSelectCallback = function() {
-                var me2 = this;
-                $.each(me.getSelection(), function(item2) {
-                    if (me2 != item2) {
-                        item2.deselect();
-                    }
-                });
-            }
-        }
-
-        if (this._isInitItem) {
-            $.each(this.children(), function(item, index) {
-                if (bool) {
-                    item.un('select', this._singleSelectCallback);
-                } else {
-                    item.on('select', this._singleSelectCallback);
-                    var selection = this.getSelection();
-
-                    // just keep first selected
-                    selection.shift(0);
-                    $.each(selection, function(item) {
-                        item.deselect();
-                    });
-
-                }
-            }, this);
-        } else {
-            this.on('inititem', function() {
-                this.setMultiSelect(bool);
-            });
-        }
-        */
         this.multiSelect = bool;
 
         return this;
@@ -3289,22 +3796,37 @@ $.Component.extend('$.List list', {
     }
 
     ,select: function(items) {
-        if (!this.multiSelect) {
-            this.clearSelection();
-        }
-
         if (undefined === items) {
             items = this.children();
         }
 
         (items instanceof Array) || (items = [items]);
 
-        $.each(items, function(item) {
+        if (!this.multiSelect) {
+            items = [items[0]];
+        }
+
+        $.each(items, function(item, index) {
             if ('number' == typeof item) {
-                item = this.child(item);
+                items[index] = this.child(item);
             }
+        }, this);
+
+        items = $.Array(items);
+        if (!this.multiSelect) {
+            $.each(this.getSelection(), function(item) {
+                if (!items.has(item)) {
+                    item.deselect();
+                }
+            });
+        }
+
+        $.each(items, function(item) {
             item.select();
         }, this);
+
+        this.trigger('selectionchange', this);
+        this.trigger('select', items);
 
         return this;
     }
@@ -3378,6 +3900,11 @@ $.Component.extend('$.List list', {
     }
 });
 
+
+/**
+ * @class $.ColorPalette
+ */
+
 $.List.extend('$.ColorPalette colorpalette', {
     baseClasses: 'x-list x-color-palette'
     ,defaultOptions: $.readOnlyObject({
@@ -3436,14 +3963,24 @@ $.List.extend('$.ColorPalette colorpalette', {
     }
 });
 
+
+/**
+ * @class $.Controller
+ */
+
 $.Observable.extend('$.Controller', {
 	before: $.emptyFn
 	,after: $.emptyFn
 	
 	,getParam: function(name) {
-		return Js.getQueryParams()[name];
+		return $.getUrlQueryParam(name);
 	}
 });
+
+
+/**
+ * @class $.Date
+ */
 
 (function() {
     var dayNames = [
@@ -4189,6 +4726,10 @@ $.Observable.extend('$.Controller', {
 
 
 })();
+/**
+ * @class $.Dom
+ */
+
 $.Dom = {
 	is: function(obj) {
 		return obj instanceof HTMLElement;
@@ -4298,6 +4839,11 @@ $.Dom = {
 }
 ;
 
+
+/**
+ * @class $.Drag
+ */
+
 $.Observable.extend('$.Drag', {
     data: null
 
@@ -4367,6 +4913,12 @@ $.Observable.extend('$.Drag', {
         return this;
     }
 });
+
+
+/**
+ * @class $.Event
+ */
+
 $.Class.extend('$.Event', {
     constructor: function(event) {
         this.event = event;
@@ -4433,6 +4985,35 @@ $.Class.extend('$.Event', {
         ];
 
         return !$.Array(cannotModifyKeys).has(this.getKey());
+    }
+
+    ,getTargetComponent: function(componentClass, rootComponent) {
+        if (!componentClass && !rootComponent) {
+            if (this.target.dom.$comp) {
+                return this.target.dom.$comp;
+            }
+            return;
+        }
+
+        if ('string' == typeof componentClass) {
+            componentClass = $.alias(componentClass);
+        }
+
+        var target = this.target;
+        if (target.$comp && target.$comp instanceof componentClass) {
+            return target.$comp;
+        }
+
+        var domRoot = rootComponent.el.dom;
+        while (target = target.parentElement) {
+            if (!domRoot.contains(target)) {
+                return;
+            }
+
+            if (target.$comp && target.$comp instanceof componentClass) {
+                return target.$comp;
+            }
+        }
     }
 });
 
@@ -4568,6 +5149,11 @@ $.extend($.Event, {
     ,KEY_Z: 90
 });
 
+
+/**
+ * @class $.Fieldset
+ */
+
 $.Component.extend('$.Fieldset fieldset', {
 	baseClasses: 'x-fieldset'
 	,tag: 'fieldset'
@@ -4582,6 +5168,11 @@ $.Component.extend('$.Fieldset fieldset', {
 		return this;
 	}
 });
+
+
+/**
+ * @class $.Form
+ */
 
 $.Component.extend('$.Form form', {
 	tag: 'form'
@@ -4874,6 +5465,13 @@ $.Component.extend('$.Form form', {
 		return this.callSuper(arguments);
 	}
 });
+
+
+/**
+ *
+ * @class $.KeyListener
+ */
+
 $.KeyListener = $.Class.extend({
     alias: $.readOnlyObject({
         esc:        $.Event.KEY_ESCAPE
@@ -5023,6 +5621,12 @@ $.KeyListener = $.Class.extend({
         return this.on(this.alias.down, callback, scope);
     }
 });
+
+
+/**
+ * @class $.Loader
+ */
+
 $.Observable.extend('$.Loader', {
 	load: function(className) {
 		var c = $.getClass(className);
@@ -5060,6 +5664,11 @@ $.Loader.addPath = function(prefix, path) {
 	$.Loader.paths[prefix] = path;
 }
 ;
+
+
+/**
+ * @class $.Loading
+ */
 
 $.Component.extend('$.Loading', {
     baseClasses: 'x-loading'
@@ -5121,6 +5730,11 @@ $.Component.extend('$.Loading', {
     }
 });
 
+
+/**
+ * @class $.Menu
+ */
+
 $.List.extend('$.Menu menu', {
 	baseClasses: 'x-list x-menu'
 	,defaultChildType: 'menu.item'
@@ -5181,9 +5795,19 @@ $.List.extend('$.Menu menu', {
     }
 });
 
+
+/**
+ * @class $.MenuBar
+ */
+
 $.Component.extend('$.MenuBar', {
 	baseClasses: 'x-menubar menubar'
 });
+
+
+/**
+ * @class $.Modal
+ */
 
 $.Component.extend('$.Modal modal', {
     baseClasses: 'x-modal'
@@ -5232,6 +5856,11 @@ $.Component.extend('$.Modal modal', {
 
     }
 });
+
+
+/**
+ * @class $.Model
+ */
 
 $.Observable.extend('$.Model', {
 	url: ''
@@ -5287,18 +5916,27 @@ $.Observable.extend('$.Model', {
 		return this._ajax;
 	}
 	
-	,load: function(url) {
-		url || (url = this.url + '/' + this.id());
-		var ajax = this.getAjax();
-		var me = this;
-		ajax.send({
-			url: url
-			,success: function(responseText) {
-				var data = JSON.parse(responseText);
-				me.set(data);
-				me.trigger('load', data, me);
-			}
-		});
+	,load: function(options) {
+        options || (options = {});
+
+        if ('function' == typeof options) {
+            options = {callback: options}
+        }
+
+        options.url || (options.url = this.url + '/' + this.id());
+		var ajax = this.getAjax()
+            ,me = this;
+
+        options.success =  function(responseText) {
+            var data = JSON.parse(responseText);
+            me.set(data);
+            me.trigger('load', data, me);
+
+            if (options.callback) {
+                options.callback.call(me, data, me);
+            }
+        }
+        ajax.send(options);
 		return this;
 	}
 	
@@ -5344,6 +5982,11 @@ $.Observable.extend('$.Model', {
 	}
 });
 
+
+/**
+ * @class $.NavBar
+ */
+
 $.Component.extend('$.NavBar navbar', {
 	baseClasses: 'x-navbar'
 
@@ -5368,6 +6011,11 @@ $.Component.extend('$.NavBar navbar', {
         return this;
     }
 });
+
+
+/**
+ * @class $.Notify
+ */
 
 $.Alert.extend('$.Notify notify', {
     baseClasses: 'x-notify x-alert'
@@ -5446,7 +6094,12 @@ $.Alert.extend('$.Notify notify', {
     }
 });
 
-$.Paging = $.Class.extend({
+
+/**
+ * @class $.Paging
+ */
+
+$.Class.extend('$.Paging', {
     totalItem: 1
     ,currentPage: 1
     ,itemPerPage: 10
@@ -5572,6 +6225,10 @@ $.Paging = $.Class.extend({
 
 
 
+/**
+ * @class $.Paginator
+ */
+
 $.Component.extend('$.Paginator paginator', {
     baseClasses: 'x-paginator'
     ,defaultChildType: 'button'
@@ -5687,6 +6344,11 @@ $.Component.extend('$.Paginator paginator', {
         return this;
     }
 });
+
+
+/**
+ * @class $.ProgressBar
+ */
 
 $.Component.extend('$.ProgressBar progressbar', {
     baseClasses: 'x-progressbar'
@@ -5813,6 +6475,10 @@ $.Component.extend('$.ProgressBar progressbar', {
         return this;
     }
 });
+/**
+ * @class $.ReadOnlyObject
+ */
+
 $.ReadOnlyObject = function(values) {
     var obj = {};
     for (var i in values) {
@@ -5826,6 +6492,11 @@ $.ReadOnlyObject = function(values) {
     return obj;
 }
 ;
+
+
+/**
+ * @class $.Router
+ */
 
 $.Observable.extend('$.Router', {
 	constructor: function(routes, options) {
@@ -5864,6 +6535,11 @@ $.Observable.extend('$.Router', {
 		return this;
 	}
 });
+
+
+/**
+ * @class $.Section
+ */
 
 $.Component.extend('$.Section section', {
     tag: 'section'
@@ -5948,6 +6624,11 @@ $.Component.extend('$.Section section', {
         return this.hasClasses('x-collapsed');
     }
 });
+
+
+/**
+ * @class $.Slider
+ */
 
 $.Component.extend('$.Slider slider', {
     baseClasses: 'x-slider'
@@ -6130,6 +6811,11 @@ $.Component.extend('$.Slider slider', {
     }
 });
 
+
+/**
+ * @class $.Tab
+ */
+
 $.Component.extend('$.Tab tab', {
     tag: 'article'
     ,baseClasses: 'x-tab'
@@ -6165,6 +6851,11 @@ $.Component.extend('$.Tab tab', {
         return this.query('> :not(.x-collapsed)');
     }
 });
+
+
+/**
+ * @class $.Table
+ */
 
 $.List.extend('$.Table table', {
     tag: 'table'
@@ -6224,6 +6915,11 @@ $.List.extend('$.Table table', {
     }
 });
 
+
+/**
+ * @class $.Task
+ */
+
 $.Observable.extend('$.Task', {
 	interval: 500
 
@@ -6260,14 +6956,17 @@ $.extend($.Task, {
 	}
 });
 
+
+/**
+ * @class $.Template
+ */
+
 (function() {
 	var cache = {};
 	
 	$.Observable.extend('$.Template', {
-		autoEscape: true
-		,exprRegex: /<%= (((?!<%=).)*) %>/g
-	  ,ifRegex: /<% if (.*): %>([\s\S]*)<% endif %>/g
-	  ,forRegex: /<% for (.*): %>([\s\S]*)<% endfor %>/g
+	    evaluateRegex: /<%([\s\S]+?)%>/g
+        ,exprRegex: /<%=([\s\S]+?)%>/g
 
 		,constructor: function(options) {
 			if (arguments.length > 1) {
@@ -6297,42 +6996,51 @@ $.extend($.Task, {
 		}
 
 		,compile: function() {
-			if (this.compiledFn) {
-				return this;
-			}
+            if (this.compiledFn) {
+                return this;
+            }
 
-			var me = this;
-			function compile(html) {
-				html = html.replace(me.forRegex, function(m, m1, m2) {
-					return "' + (function(){\
-			      var result = '';\
-			      for " + m1 + " {\
-			        result += ('" + compile(m2) + "');\
-			      }\
-			      return result;\
-			    }).bind(this)() + '";
-				}).replace(me.ifRegex, function(m, m1, m2) {
-					return "' + (function(){\
-				    if " + m1 + " {\
-				      return '" + compile(m2) + "'\
-				    }\
-						return ''\
-				  }).bind(this)() + '";
-				}).replace(me.exprRegex, function(m, m1) {
-					if (me.autoEscape) {
-						return "' + escape(" + m1 + ") + '";
-					}
-					return "' + (" + m1 + ") + '";
-				}).replace(/\n/g, '');
+            var escapes = {
+                '\\':   '\\',
+                "'":    "'",
+                r:      '\r',
+                n:      '\n',
+                t:      '\t',
+                u2028:  '\u2028',
+                u2029:  '\u2029'
+            };
 
-				return html;
-			}
+            for (var key in escapes) escapes[escapes[key]] = key;
+            var escaper = /\\|'|\r|\n|\t|\u2028|\u2029/g;
+            var unescaper = /\\(\\|'|r|n|t|u2028|u2029)/g;
 
-			var _html = compile(this.html);
-			_html = "function escape(v) {return $.String.escape(v)}; return '" + _html + "'";
+            var unescape = function(code) {
+                return code.replace(unescaper, function(match, escape) {
+                    return escapes[escape];
+                });
+            };
 
-			this.compiledFn = new Function(_html);
-			return this;
+            var source = '';
+
+            // add helpers
+            $.each($.Template.helpers, function(fn, name) {
+                source += 'var ' + name + '=' + fn.toString() + ';';
+            });
+
+            source += "var _t=''; _t+='" + this.html
+                .replace(escaper, function(match) {
+                    return '\\' + escapes[match];
+                })
+                .replace(this.exprRegex, function(match, code) {
+                    return "'+\n(" + unescape(code) + ")+\n'";
+                })
+                .replace(this.evaluateRegex, function(match, code) {
+                    return "';\n" + unescape(code) + "\n;_t+='";
+                })
+                + "';\nreturn _t;\n";
+
+            this.compiledFn = new Function(source);
+            return this;
 		}
 
 		,render: function(data) {
@@ -6340,27 +7048,37 @@ $.extend($.Task, {
 			return this.compiledFn.bind(data)();
 		}
 	});
-	
-	$.Template.get = function(options) {
-		var key;
-		if (arguments.length > 1) {
-			key = arguments.join('');
-		} else {
-			if ('string' == typeof options) {
-				key = options;
-			} else if (options && options.url) {
-				key = options.url;
-			}
-		}
-		
-		if (key && cache[key]) {
-			return cache[key];
-		}
-		var tpl = new $.Template();
-		tpl.constructor.apply(tpl, arguments);
-		return tpl;
-	}
+
+    $.extend($.Template, {
+        get: function(options) {
+            var key;
+            if (arguments.length > 1) {
+                key = arguments.join('');
+            } else {
+                if ('string' == typeof options) {
+                    key = options;
+                } else if (options && options.url) {
+                    key = options.url;
+                }
+            }
+
+            if (key && cache[key]) {
+                return cache[key];
+            }
+            var tpl = new $.Template(options);
+            return tpl;
+        }
+
+        ,helpers: {
+
+        }
+    });
 })();
+
+
+/**
+ * @class $.Tip
+ */
 
 $.Component.extend('$.Tip tip', {
 	baseClasses: 'x-tip'
@@ -6377,14 +7095,24 @@ $.Component.extend('$.Tip tip', {
 	}
 });
 
+
+/**
+ * @class $.Tree
+ */
+
 $.List.extend('$.Tree tree', {
     baseClasses: 'x-list x-tree'
     ,defaultChildType: 'tree.item'
 
-    ,defaultOptions: $.readOnlyObject({
-        multiSelect: true
-    })
+    ,getSelection: function(bool) {
+        var query = bool !== false? '.x-tree-item.x-selected' : ':not(.x-tree-item.x-selected)';
+        return this.queryAll(query);
+    }
 });
+/**
+ * @class $.Util
+ */
+
 $.Util = {
 	buildUrl: function(obj, url) {
 		var query = [];
@@ -6392,9 +7120,11 @@ $.Util = {
 			query.push(encodeURIComponent(i) + '=' + encodeURIComponent(obj[i]));
 		}
 		query = query.join('&');
-		
-		if (undefined !== url) {
-			if (url === '') {
+
+
+        if (undefined !== url) {
+            url += '';
+            if (url === '') {
 				query = '?' + query;
 			}else if (-1 == url.indexOf('?')) {
 				url += '?'
@@ -6407,6 +7137,10 @@ $.Util = {
 		return query;
 	}
 };
+/**
+ * @class $.Validator
+ */
+
 $.Observable.extend('$.Validator', {
 	getValue: $.emptyFn
 	,validate: $.emptyFn
@@ -6474,6 +7208,11 @@ $.Observable.extend('$.Validator', {
 });
 
 $.Validator.types = {};
+
+/**
+ * @class $.button.Group
+ */
+
 $.Component.extend('$.button.Group button.group', {
     baseClasses: 'x-button-group'
     ,defaultChildType: 'button'
@@ -6517,6 +7256,11 @@ $.Component.extend('$.button.Group button.group', {
         return this;
     }
 });
+
+
+/**
+ * @class $.drag.Anywhere
+ */
 
 $.Drag.extend('$.drag.Anywhere', {
     constructor: function() {
@@ -6601,6 +7345,11 @@ $.Drag.extend('$.drag.Anywhere', {
     }
         
 });
+
+
+/**
+ * @class $.field.Field
+ */
 
 $.Component.extend('$.field.Field', {
 	baseClasses: 'x-field'
@@ -6712,6 +7461,10 @@ $.Component.extend('$.field.Field', {
         return this;
     }
 });
+/**
+ * @class $.field.mixins.Labelable
+ */
+
 $.define('$.field.mixins.Labelable', {
     setLabel: function(options) {
         if ('string' == typeof options) {
@@ -6740,6 +7493,10 @@ $.define('$.field.mixins.Labelable', {
         return this;
     }
 });
+/**
+ * @class $.field.mixins.BoxLabelable
+ */
+
 $.define('$.field.mixins.BoxLabelable', {
     setBoxLabel: function(options) {
         if ('string' == typeof options) {
@@ -6762,6 +7519,10 @@ $.define('$.field.mixins.BoxLabelable', {
 
 
 
+
+/**
+ * @class $.field.Checkbox
+ */
 
 $.field.Field.extend('$.field.Checkbox field.checkbox', {
 	baseClasses: 'x-field x-field-checkbox'
@@ -6813,6 +7574,10 @@ $.field.Field.extend('$.field.Checkbox field.checkbox', {
         return this;
     }
 });
+/**
+ * @class $.field.plugins.ValidateIndicator
+ */
+
 $.define('$.field.plugins.ValidateIndicator', {
 	constructor: function(field) {
         if (field.isRenderd) {
@@ -6845,6 +7610,10 @@ $.define('$.field.plugins.ValidateIndicator', {
         }.bind(this);
 	}
 });
+/**
+ * @class $.field.mixins.SelectOnFocusable
+ */
+
 $.define('$.field.mixins.SelectOnFocusable', {
     setSelectOnFocus: function(bool) {
         if (bool && !this._selectOnFocusCallback) {
@@ -6858,6 +7627,10 @@ $.define('$.field.mixins.SelectOnFocusable', {
         return this;
     }
 });
+/**
+ * @class $.field.mixins.Placeholderable
+ */
+
 $.define('$.field.mixins.Placeholderable', {
 	setPlaceholder: function(value) {
         this.inputEl.setAttr('placeholder', value);
@@ -6872,6 +7645,10 @@ $.define('$.field.mixins.Placeholderable', {
 
 
 
+
+/**
+ * @class $.field.Text
+ */
 
 $.field.Field.extend('$.field.Text field.text', {
 	baseClasses: 'x-field x-field-text'
@@ -6899,6 +7676,11 @@ $.field.Field.extend('$.field.Text field.text', {
 	}
 });
 
+
+/**
+ * @class $.field.Trigger
+ */
+
 $.field.Text.extend('$.field.Trigger trigger', {
     baseClasses: 'x-field x-field-text x-field-trigger'
 
@@ -6921,6 +7703,11 @@ $.field.Text.extend('$.field.Trigger trigger', {
         return this;
     }
 });
+
+
+/**
+ * @class $.field.DateTime
+ */
 
 $.field.Trigger.extend('$.field.DateTime field.datetime', {
     baseClasses: 'x-field x-field-text x-field-trigger x-field-datetime'
@@ -6986,6 +7773,10 @@ $.field.Trigger.extend('$.field.DateTime field.datetime', {
 });
 
 
+
+/**
+ * @class $.field.Group
+ */
 
 $.field.Field.extend('$.field.Group field.group', {
     baseClasses: 'x-field x-field-group'
@@ -7059,6 +7850,11 @@ $.field.Field.extend('$.field.Group field.group', {
     }
 });
 
+
+/**
+ * @class $.field.Hidden
+ */
+
 $.field.Field.extend('$.field.Hidden field.hidden', {
 	baseClasses: 'x-field x-field-hidden'
 	,initElement: function() {
@@ -7069,6 +7865,11 @@ $.field.Field.extend('$.field.Hidden field.hidden', {
         this.trigger('render:input');
     }
 });
+
+
+/**
+ * @class $.field.Radio
+ */
 
 $.field.Checkbox.extend('$.field.Radio field.radio', {
 	baseClasses: 'x-field x-field-radio'
@@ -7081,6 +7882,10 @@ $.field.Checkbox.extend('$.field.Radio field.radio', {
 });
 
 
+
+/**
+ * @class $.field.Range
+ */
 
 $.field.Field.extend('$.field.Range field.range', {
     baseClasses: 'x-field x-field-range'
@@ -7104,6 +7909,11 @@ $.field.Field.extend('$.field.Range field.range', {
         return this;
     }
 });
+
+
+/**
+ * @class $.field.Select
+ */
 
 $.field.Trigger.extend('$.field.Select field.select', {
     baseClasses: 'x-field x-field-text x-field-trigger x-field-select'
@@ -7269,6 +8079,10 @@ $.field.Trigger.extend('$.field.Select field.select', {
 
 
 
+/**
+ * @class $.field.TextArea
+ */
+
 $.field.Field.extend('$.field.TextArea field.textarea', {
 	baseClasses: 'x-field x-field-textarea'
     ,includes: [
@@ -7303,6 +8117,11 @@ $.field.Field.extend('$.field.TextArea field.textarea', {
     }
 });
 
+
+/**
+ * @class $.field.group.Checkbox
+ */
+
 $.field.Group.extend('$.field.group.Checkbox field.group.checkbox', {
     defaultOptions: $.readOnlyObject({
         defaults: {
@@ -7332,6 +8151,11 @@ $.field.Group.extend('$.field.group.Checkbox field.group.checkbox', {
     }
 });
 
+
+/**
+ * @class $.field.group.Radio
+ */
+
 $.field.Group.extend('$.field.group.Radio field.group.radio', {
     defaultOptions: $.readOnlyObject({
         defaults: {
@@ -7354,6 +8178,11 @@ $.field.Group.extend('$.field.group.Radio field.group.radio', {
     }
 });
 
+
+/**
+ * @class $.list.Item
+ */
+
 $.Component.extend('$.list.Item list.item', {
     tag: 'li'
     ,baseClasses: 'x-item'
@@ -7362,18 +8191,21 @@ $.Component.extend('$.list.Item list.item', {
         this.callSuper(arguments);
 
         this.getElementHandlerSelect().on('click', function(e) {
-            e.cancelBubble();
-            this.toggleSelect();
+            if (this.clickToToggle) {
+                this.toggleSelect();
+            } else {
+                this.select();
+            }
         }, this);
     }
 
-    ,getElementHandlerSelect: function() {
+    ,setClickToToggle: function(bool) {
+        this.clickToToggle = bool;
         return this;
     }
 
-    ,setRadioSelect: function(bool) {
-        this.isRadioSelect = bool;
-        return this;
+    ,getElementHandlerSelect: function() {
+        return this.el;
     }
 
     ,isSelected: function() {
@@ -7381,38 +8213,39 @@ $.Component.extend('$.list.Item list.item', {
     }
 
     ,setSelected: function(bool) {
+        var isSelected = this.isSelected();
+        if (bool && isSelected || !bool && !isSelected) {
+            return this;
+        }
+
         this.switchClasses(bool, 'x-selected');
 
-        this.trigger('selectionchange', bool);
-        this.trigger(bool? 'select' : 'deselect');
+        this.trigger('selectionchange', bool, this);
+        this.trigger(bool? 'select' : 'deselect', this);
 
         return this;
     }
 
     ,select: function() {
-        if (this.isRadioSelect) {
-            this.radioClasses('x-selected');
-        }
         return this.setSelected(true);
     }
 
     ,deselect: function() {
         return this.setSelected(false);
-
     }
 
     ,toggleSelect: function() {
         return this[this.isSelected()? 'deselect' : 'select']();
     }
-
-    ,radioSelect: function() {
-        this.radioClasses('x-selected');
-        this.select();
-    }
 });
 
+
+/**
+ * @class $.menu.Item
+ */
+
 $.list.Item.extend('$.menu.Item menu.item', {
-	baseClasses: 'x-item x-menu-item'
+    baseClasses: 'x-item x-menu-item'
     ,defaultChildType: 'menu'
 
     ,constructor: function() {
@@ -7427,9 +8260,9 @@ $.list.Item.extend('$.menu.Item menu.item', {
         }, this);
     }
 
-	,initElement: function() {
-		this.callSuper();
-		this.anchorEl = this.el.append({
+    ,initElement: function() {
+        this.callSuper();
+        this.anchorEl = this.el.append({
             dom: '<a>'
             ,attr: {
                 //href: '#'
@@ -7451,7 +8284,7 @@ $.list.Item.extend('$.menu.Item menu.item', {
         this.el.setKeyListener({
             right: this.focusMenu.bind(this)
         });
-	}
+    }
 
     ,setIcon: function(icon) {
         this.iconEl.removeClasses(/^icon(.*)$/)
@@ -7459,41 +8292,41 @@ $.list.Item.extend('$.menu.Item menu.item', {
         return this;
     }
 
-	,setHtml: function(html) {
+    ,setHtml: function(html) {
         this.textEl.setHtml(html);
-		return this;
-	}
-	
-	,setHref: function(href) {
-		this.anchorEl.setAttr('href', href);
-		return this;
-	}
-	
-	,setPushstate: function(url) {
-		this.setHref(url);
+        return this;
+    }
 
-		if (!this._pushstateCallback) {
-			this._pushstateCallback = function(e) {
+    ,setHref: function(href) {
+        this.anchorEl.setAttr('href', href);
+        return this;
+    }
+
+    ,setPushState: function(url) {
+        this.setHref(url);
+
+        if (!this._pushStateCallback) {
+            this._pushStateCallback = function(e) {
                 e.cancelBubble();
                 e.stop();
-				$.Navigator.navigate(this.anchorEl.getAttr('href'));
-			}.bind(this);
+                $.Navigator.navigate(this.anchorEl.getAttr('href'));
+            }.bind(this);
 
-            this.on('click', this._pushstateCallback);
-		}
-		return this;
-	}
-	
-	,setChildren: function(children) {
+            this.on('click', this._pushStateCallback);
+        }
+        return this;
+    }
+
+    ,setChildren: function(children) {
         var childClass = $.alias(this.defaultChildType);
 
-		if (!(children instanceof childClass)) {
+        if (!(children instanceof childClass)) {
             children = new childClass({children: children});
-		}
-		this.child = this.add(children);
+        }
+        this.child = this.add(children);
         this.setData('hasChild', true);
-		return this;
-	}
+        return this;
+    }
 
     ,focusMenu: function() {
         var menu = this.query('> .x-menu');
@@ -7502,6 +8335,11 @@ $.list.Item.extend('$.menu.Item menu.item', {
         }
     }
 });
+
+
+/**
+ * @class $.table.Body
+ */
 
 $.List.extend('$.table.Body table.body', {
     tag: 'tbody'
@@ -7546,6 +8384,11 @@ $.List.extend('$.table.Body table.body', {
     }
 });
 
+
+/**
+ * @class $.table.Cell
+ */
+
 $.Component.extend('$.table.Cell table.cell', {
     tag: 'td'
     ,baseClasses: 'x-cell'
@@ -7554,6 +8397,11 @@ $.Component.extend('$.table.Cell table.cell', {
         return this.setStyles('textAlign', align);
     }
 });
+
+
+/**
+ * @class $.table.Column
+ */
 
 $.table.Cell.extend('$.table.Column table.column', {
     defaultCellType: 'table.row.cell'
@@ -7624,6 +8472,11 @@ $.table.Cell.extend('$.table.Column table.column', {
     }
 });
 
+
+/**
+ * @class $.table.Header
+ */
+
 $.Component.extend('$.table.Header table.header', {
     tag: 'thead'
     ,baseClasses: 'x-header'
@@ -7634,6 +8487,12 @@ $.Component.extend('$.table.Header table.header', {
         this.callSuper([options]);
     }
 });
+
+
+/**
+ * @class $.table.Row
+ */
+
 $.list.Item.extend('$.table.Row table.row', {
     tag: 'tr'
     ,baseClasses: 'x-item x-row'
@@ -7679,9 +8538,19 @@ $.list.Item.extend('$.table.Row table.row', {
     }
 });
 
+
+/**
+ * @class $.table.column.Header
+ */
+
 $.table.Column.extend('$.table.column.Header table.column.header', {
 
 });
+
+
+/**
+ * @class $.table.column.RowNumberer
+ */
 
 $.table.Column.extend('$.table.column.RowNumberer table.column.rownumberer', {
     initElement: function() {
@@ -7698,6 +8567,10 @@ $.table.Column.extend('$.table.column.RowNumberer table.column.rownumberer', {
 });
 
 
+
+/**
+ * @class $.table.row.Cell
+ */
 
 $.table.Cell.extend('$.table.row.Cell table.row.cell', {
     constructor: function(row, options) {
@@ -7727,27 +8600,100 @@ $.table.Cell.extend('$.table.row.Cell table.row.cell', {
     }
 });
 
-$.menu.Item.extend('$.tree.Item tree.item', {
+
+/**
+ * @class $.tree.Item
+ */
+
+$.list.Item.extend('$.tree.Item tree.item', {
     baseClasses: 'x-item x-tree-item'
     ,defaultChildType: 'tree'
 
     ,initElement: function() {
         this.callSuper();
 
-        this.bowEl = this.el.insert(0, {
+        this.bowEl = this.el.append({
             dom: '<span>'
             ,classes: 'x-bow'
             ,listeners: {
                 click: function(e) {
+                    e.cancelBubble();
                     this.toggleCollapse();
 
                 }.bind(this)
             }
         });
+
+        this.anchorEl = this.el.append({
+            dom: '<a>'
+            ,attr: {
+                //href: '#'
+                tabIndex: 0
+            }
+        });
+
+        this.iconEl = this.anchorEl.append({
+            dom: '<span>'
+            ,classes: 'x-icon'
+            ,html: '&nbsp;'
+        });
+
+        this.textEl = this.anchorEl.append({
+            dom: '<span>'
+            ,classes: 'x-text'
+        });
     }
 
     ,getElementHandlerSelect: function() {
         return this.anchorEl;
+    }
+
+    ,setIcon: function(icon) {
+        this.iconEl.removeClasses(/^icon(.*)$/)
+            .addClasses('icon-' + icon);
+        return this;
+    }
+
+    ,setHtml: function(html) {
+        this.textEl.setHtml(html);
+        return this;
+    }
+
+    ,setHref: function(href) {
+        this.anchorEl.setAttr('href', href);
+        return this;
+    }
+
+    ,setPushState: function(url) {
+        this.setHref(url);
+
+        if (!this._pushStateCallback) {
+            this._pushStateCallback = function(e) {
+                e.stop();
+                $.Navigator.navigate(this.anchorEl.getAttr('href'));
+            }.bind(this);
+
+            this.on('click', this._pushStateCallback);
+        }
+        return this;
+    }
+
+    ,setChildren: function(children) {
+        if (children instanceof $.Collection) {
+            var me = this;
+            children.load(function() {
+                me.setChildren(this.toJson());
+            });
+        } else {
+            var childClass = $.alias(this.defaultChildType);
+
+            if (!(children instanceof childClass)) {
+                children = new childClass({children: children});
+            }
+            this.tree = this.add(children);
+            this.setData('hasChild', true);
+            return this;
+        }
     }
 
     ,isExpanded: function() {
@@ -7772,7 +8718,16 @@ $.menu.Item.extend('$.tree.Item tree.item', {
         this.trigger('collapse');
         this.trigger('toggleexpand', false);
     }
+
+    ,setExpanded: function(bool) {
+        return this[bool? 'expand' : 'collapse']();
+    }
 });
+
+
+/**
+ * @class $.validator.Regex
+ */
 
 $.Validator.types['regex'] =
 
@@ -7791,11 +8746,22 @@ $.Validator.extend('$.validator.Regex', {
 		return isValid;
 	}
 });
+
+
+/**
+ * @class $.validator.Alpha
+ */
+
 $.Validator.types['aplpha'] =
 $.validator.Regex.extend('$.validator.Alpha', {
 	pattern: /^[a-zA-Z_]+$/
 	,message: 'This field should only contain letters and _'
 });
+
+
+/**
+ * @class $.validator.AlphaNum
+ */
 
 $.Validator.types['aplphanum'] =
 
@@ -7803,6 +8769,11 @@ $.validator.Regex.extend('$.validator.AlphaNum', {
 	message: 'This field should only contain letters, numbers and _'
 	,pattern: /^[a-zA-Z0-9_]+$/
 });
+
+
+/**
+ * @class $.validator.Date
+ */
 
 $.Validator.types['date'] =
 
@@ -7864,12 +8835,23 @@ $.Validator.types['date'] =
             return isValid;
         }
     });
+
+
+/**
+ * @class $.validator.Email
+ */
+
 $.Validator.types['email'] =
 
 $.validator.Regex.extend('$.validator.Email', {
 	message: 'This field should be an e-mail address'
 	,pattern: /^(\w+)([\-+.][\w]+)*@(\w[\-\w]*\.){1,5}([A-Za-z]){2,6}$/
 });
+
+
+/**
+ * @class $.validator.Length
+ */
 
 $.Validator.types['length'] =
 
@@ -7901,6 +8883,11 @@ $.Validator.extend('$.validator.Length', {
 		return isValid;
 	}
 });
+
+
+/**
+ * @class $.validator.Number
+ */
 
 $.Validator.types['number'] =
 
@@ -7941,6 +8928,11 @@ $.Validator.extend('$.validator.Number', {
 	}
 });
 
+
+/**
+ * @class $.validator.Require
+ */
+
 $.Validator.types['require'] =
 
 $.Validator.extend('$.validator.Require', {
@@ -7952,6 +8944,11 @@ $.Validator.extend('$.validator.Require', {
 		return isValid;
 	}
 });
+
+
+/**
+ * @class $.validator.Url
+ */
 
 $.Validator.types['url'] =
 

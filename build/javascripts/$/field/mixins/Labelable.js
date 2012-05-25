@@ -1,3 +1,6 @@
+/**
+ * @class $.field.mixins.Labelable
+ */
 $.define('$.field.mixins.Labelable', {
     setLabel: function(options) {
         if ('string' == typeof options) {

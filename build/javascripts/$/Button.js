@@ -1,4 +1,7 @@
 //= require ./Component
+/**
+ * @class $.Button
+ */
 $.Component.extend('$.Button button', {
 	tag: 'a'
     ,baseClasses: 'x-button'

@@ -1,5 +1,8 @@
 //= require ./Observable
 
+/**
+ * @class $.Navigator
+ */
 $.Navigator = (function(){
 	var navigator = $.Observable.extend({
 		constructor: function() {
@@ -28,7 +31,7 @@ $.Navigator = (function(){
 		}
 		
 		,getParam: function(name) {
-			return $.getQueryParams[name];
+			return $.getUrlQueryParam(name);
 		}
 	});
 	return new navigator;

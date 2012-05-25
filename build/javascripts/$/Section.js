@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Section
+ */
 $.Component.extend('$.Section section', {
     tag: 'section'
     ,baseClasses: 'x-section'

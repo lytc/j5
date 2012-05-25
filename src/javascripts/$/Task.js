@@ -1,5 +1,8 @@
 //= require ./Observable
 
+/**
+ * @class $.Task
+ */
 $.Observable.extend('$.Task', {
 	interval: 500
 

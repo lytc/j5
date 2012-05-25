@@ -1,3 +1,6 @@
+/**
+ * @class $.String
+ */
 $.String = {
 	escape: function(str) {
 		if ('object' == typeof str) {

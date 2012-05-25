@@ -1,3 +1,8 @@
+//= require ./Observable
+
+/**
+ * @class $.Loader
+ */
 $.Observable.extend('$.Loader', {
 	load: function(className) {
 		var c = $.getClass(className);

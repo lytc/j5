@@ -1,6 +1,30 @@
 //= require ./Observable
 //= require ./Element
 
+/**
+ * Base class for all Ext components. All subclasses of Component may participate in the automated Ext component
+ * lifecycle of creation, rendering and destruction which is provided by the {@link Ext.container.Container Container}
+ * class. Components may be added to a Container through the {@link Ext.container.Container#cfg-items items} config option
+ * at the time the Container is created, or they may be added dynamically via the
+ * {@link Ext.container.Container#method-add add} method.
+ *
+ * The Component base class has built-in support for basic hide/show and enable/disable and size control behavior.
+ *
+ * All Components are registered with the {@link Ext.ComponentManager} on construction so that they can be referenced at
+ * any time via {@link Ext#getCmp Ext.getCmp}, passing the {@link #id}.
+ *
+ * All user-developed visual widgets that are required to participate in automated lifecycle and size management should
+ * subclass Component.
+ *
+ * See the Creating new UI controls chapter in [Component Guide][1] for details on how and to either extend
+ * or augment Ext JS base classes to create custom Components.
+ *
+ * Every component has a specific xtype, which is its Ext-specific type name, along with methods for checking the xtype
+ * like {@link #getXType} and {@link #isXType}. See the [Component Guide][1] for more information on xtypes and the
+ * Component hierarchy.
+ *
+ * @class $.Component
+ */
 $.Observable.extend('$.Component component', {
 	tag: 'div'
 	,baseClasses: 'x-comp'
@@ -11,8 +35,13 @@ $.Observable.extend('$.Component component', {
     ,constructor: function(options) {
         options || (options = {});
         this.items = [];
-
-        this.tag = options.tag || this.tag;
+        if (options.el instanceof $.Element) {
+            this.initElement(options.el);
+            delete options.el;
+        } else {
+            this.tag = options.tag || this.tag;
+            this.initElement();
+        }
 
         // init plugins
         this.plugins || (this.plugins = []);
@@ -24,12 +53,15 @@ $.Observable.extend('$.Component component', {
             this.addPlugin(plugin);
         }, this);
 
-        this.initElement();
         this.callSuper([options]);
     }
 
-    ,initElement: function() {
-        this.el = new $.Element('<' + this.tag + '>');
+    ,initElement: function(el) {
+        if (el instanceof $.Element) {
+            this.el = el;
+        } else {
+            this.el = new $.Element('<' + this.tag + '>');
+        }
         this.el.dom.$comp = this;
         this.setClasses('');
         this.trigger('render');
@@ -82,7 +114,11 @@ $.Observable.extend('$.Component component', {
 	}
 	
 	,setEl: function(options) {
-		this.el.applyOptions(options);
+        if (options instanceof $.Element) {
+            this.el = options;
+        } else {
+            this.el.applyOptions(options);
+        }
 		return this;
 	}
 	
@@ -99,6 +135,11 @@ $.Observable.extend('$.Component component', {
 		this.el.setAttr('class', classes);
 		return this;
 	}
+
+    ,set$data: function(data) {
+        this.$data = data;
+        return this;
+    }
 
     ,setHidden: function(bool) {
         return this.switchClasses(bool, 'x-hidden');

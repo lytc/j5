@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Slider
+ */
 $.Component.extend('$.Slider slider', {
     baseClasses: 'x-slider'
 

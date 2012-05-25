@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Calendar
+ */
 $.Component.extend('$.Calendar calendar', {
     baseClasses: 'x-calendar'
 

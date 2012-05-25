@@ -1,5 +1,8 @@
 //= require ./Regex
 
+/**
+ * @class $.validator.Url
+ */
 $.Validator.types['url'] =
 
 $.validator.Regex.extend('$.validator.Url', {

@@ -1,28 +1,26 @@
 //= require ./Component
 
+/**
+ * @class $.List
+ */
 $.Component.extend('$.List list', {
     tag: 'ul'
     ,baseClasses: 'x-list'
     ,defaultChildType: 'list.item'
 
     ,multiSelect: false
-    /*,defaultOptions: $.readOnlyObject({
-        multiSelect: false
-    })*/
 
-    ,initElement: function() {
-        this.callSuper();
+    ,constructor: function() {
+        this.callSuper(arguments);
 
         var me = this;
-        this.on('add', function(item) {
-            item.on({
-                'select deselect': function() {
-                    me.trigger('selectionchange');
+        this.on('click', function(e) {
+            var item = e.getTargetComponent(me.defaultChildType, this);
+            if (item) {
+                if (item.isSelected()) {
+                    me.select(item);
                 }
-                ,select: function() {
-                    me.trigger('select', this);
-                }
-            });
+            }
         });
     }
 
@@ -32,41 +30,6 @@ $.Component.extend('$.List list', {
     }
 
     ,setMultiSelect: function(bool) {
-        /*
-        if (!this._singleSelectCallback) {
-            var me = this;
-            this._singleSelectCallback = function() {
-                var me2 = this;
-                $.each(me.getSelection(), function(item2) {
-                    if (me2 != item2) {
-                        item2.deselect();
-                    }
-                });
-            }
-        }
-
-        if (this._isInitItem) {
-            $.each(this.children(), function(item, index) {
-                if (bool) {
-                    item.un('select', this._singleSelectCallback);
-                } else {
-                    item.on('select', this._singleSelectCallback);
-                    var selection = this.getSelection();
-
-                    // just keep first selected
-                    selection.shift(0);
-                    $.each(selection, function(item) {
-                        item.deselect();
-                    });
-
-                }
-            }, this);
-        } else {
-            this.on('inititem', function() {
-                this.setMultiSelect(bool);
-            });
-        }
-        */
         this.multiSelect = bool;
 
         return this;
@@ -92,22 +55,37 @@ $.Component.extend('$.List list', {
     }
 
     ,select: function(items) {
-        if (!this.multiSelect) {
-            this.clearSelection();
-        }
-
         if (undefined === items) {
             items = this.children();
         }
 
         (items instanceof Array) || (items = [items]);
 
-        $.each(items, function(item) {
+        if (!this.multiSelect) {
+            items = [items[0]];
+        }
+
+        $.each(items, function(item, index) {
             if ('number' == typeof item) {
-                item = this.child(item);
+                items[index] = this.child(item);
             }
+        }, this);
+
+        items = $.Array(items);
+        if (!this.multiSelect) {
+            $.each(this.getSelection(), function(item) {
+                if (!items.has(item)) {
+                    item.deselect();
+                }
+            });
+        }
+
+        $.each(items, function(item) {
             item.select();
         }, this);
+
+        this.trigger('selectionchange', this);
+        this.trigger('select', items);
 
         return this;
     }

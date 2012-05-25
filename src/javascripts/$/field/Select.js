@@ -1,5 +1,8 @@
 //= require ./Trigger
 
+/**
+ * @class $.field.Select
+ */
 $.field.Trigger.extend('$.field.Select field.select', {
     baseClasses: 'x-field x-field-text x-field-trigger x-field-select'
     ,filterRegex: '(.*){0}(.*)$'

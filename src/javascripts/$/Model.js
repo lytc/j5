@@ -1,5 +1,8 @@
 //= require ./Ajax
 
+/**
+ * @class $.Model
+ */
 $.Observable.extend('$.Model', {
 	url: ''
 	,idProperty: 'id'
@@ -54,18 +57,27 @@ $.Observable.extend('$.Model', {
 		return this._ajax;
 	}
 	
-	,load: function(url) {
-		url || (url = this.url + '/' + this.id());
-		var ajax = this.getAjax();
-		var me = this;
-		ajax.send({
-			url: url
-			,success: function(responseText) {
-				var data = JSON.parse(responseText);
-				me.set(data);
-				me.trigger('load', data, me);
-			}
-		});
+	,load: function(options) {
+        options || (options = {});
+
+        if ('function' == typeof options) {
+            options = {callback: options}
+        }
+
+        options.url || (options.url = this.url + '/' + this.id());
+		var ajax = this.getAjax()
+            ,me = this;
+
+        options.success =  function(responseText) {
+            var data = JSON.parse(responseText);
+            me.set(data);
+            me.trigger('load', data, me);
+
+            if (options.callback) {
+                options.callback.call(me, data, me);
+            }
+        }
+        ajax.send(options);
 		return this;
 	}
 	

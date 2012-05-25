@@ -1,5 +1,8 @@
 //= require ../Component
 
+/**
+ * @class $.list.Item
+ */
 $.Component.extend('$.list.Item list.item', {
     tag: 'li'
     ,baseClasses: 'x-item'
@@ -8,18 +11,21 @@ $.Component.extend('$.list.Item list.item', {
         this.callSuper(arguments);
 
         this.getElementHandlerSelect().on('click', function(e) {
-            e.cancelBubble();
-            this.toggleSelect();
+            if (this.clickToToggle) {
+                this.toggleSelect();
+            } else {
+                this.select();
+            }
         }, this);
     }
 
-    ,getElementHandlerSelect: function() {
+    ,setClickToToggle: function(bool) {
+        this.clickToToggle = bool;
         return this;
     }
 
-    ,setRadioSelect: function(bool) {
-        this.isRadioSelect = bool;
-        return this;
+    ,getElementHandlerSelect: function() {
+        return this.el;
     }
 
     ,isSelected: function() {
@@ -27,32 +33,28 @@ $.Component.extend('$.list.Item list.item', {
     }
 
     ,setSelected: function(bool) {
+        var isSelected = this.isSelected();
+        if (bool && isSelected || !bool && !isSelected) {
+            return this;
+        }
+
         this.switchClasses(bool, 'x-selected');
 
-        this.trigger('selectionchange', bool);
-        this.trigger(bool? 'select' : 'deselect');
+        this.trigger('selectionchange', bool, this);
+        this.trigger(bool? 'select' : 'deselect', this);
 
         return this;
     }
 
     ,select: function() {
-        if (this.isRadioSelect) {
-            this.radioClasses('x-selected');
-        }
         return this.setSelected(true);
     }
 
     ,deselect: function() {
         return this.setSelected(false);
-
     }
 
     ,toggleSelect: function() {
         return this[this.isSelected()? 'deselect' : 'select']();
-    }
-
-    ,radioSelect: function() {
-        this.radioClasses('x-selected');
-        this.select();
     }
 });

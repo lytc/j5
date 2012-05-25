@@ -1,8 +1,14 @@
 require 'rubygems'
-require './helper.rb'
+require 'json'
+require './build'
+require './build_doc'
 
 desc "rebuild the j5.min.js files for distribution"
 
 task :build do
-  J5Helper::build()
+  Build::build()
+end
+
+task :doc do
+  BuildDoc::build('build', 'docs/data')
 end

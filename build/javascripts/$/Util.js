@@ -1,3 +1,6 @@
+/**
+ * @class $.Util
+ */
 $.Util = {
 	buildUrl: function(obj, url) {
 		var query = [];
@@ -5,9 +8,11 @@ $.Util = {
 			query.push(encodeURIComponent(i) + '=' + encodeURIComponent(obj[i]));
 		}
 		query = query.join('&');
-		
-		if (undefined !== url) {
-			if (url === '') {
+
+
+        if (undefined !== url) {
+            url += '';
+            if (url === '') {
 				query = '?' + query;
 			}else if (-1 == url.indexOf('?')) {
 				url += '?'

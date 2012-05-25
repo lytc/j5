@@ -1,5 +1,8 @@
 //= require ../List
 
+/**
+ * @class $.table.Body
+ */
 $.List.extend('$.table.Body table.body', {
     tag: 'tbody'
     ,baseClasses: 'x-body'

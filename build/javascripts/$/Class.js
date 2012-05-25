@@ -1,6 +1,9 @@
 $.Class = function() {
 }
 
+/**
+ * @class $.Class
+ */
 $.extend($.Class, {
     staticMethods: function() {
         var methods = [];

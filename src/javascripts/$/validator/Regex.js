@@ -1,5 +1,8 @@
 //= require ../Validator
 
+/**
+ * @class $.validator.Regex
+ */
 $.Validator.types['regex'] =
 
 $.Validator.extend('$.validator.Regex', {

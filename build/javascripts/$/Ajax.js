@@ -1,6 +1,13 @@
 //= require ./Observable
 
+/**
+ * @class $.Ajax
+ * @superclass $.Observable
+ */
 $.Observable.extend('$.Ajax', {
+    /**
+     * @property Object defaultOptions
+     */
     defaultOptions: $.readOnlyObject({
         url: ''
         ,method: 'GET'
@@ -9,13 +16,36 @@ $.Observable.extend('$.Ajax', {
         ,headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
 
+    /**
+     * @property Function start
+     */
     ,start: $.emptyFn
+
+    /**
+     * @property Function complete
+     */
     ,complete: $.emptyFn
+
+    /**
+     * @property Function success
+     */
     ,success: $.emptyFn
+
+    /**
+     * @property Function exception
+     */
     ,exception: $.emptyFn
 
+    /**
+     * @private
+     * @property String simpleSetters
+     */
     ,simpleSetters: 'params, start, complete, success, exception'
 
+    /**
+     * @method getXhr
+     * @return XMLHttpRequest
+     */
     ,getXhr: function() {
 		if (!this._xhr) {
 			this._xhr = new XMLHttpRequest();
@@ -39,6 +69,12 @@ $.Observable.extend('$.Ajax', {
 		return this._xhr;
 	}
 
+    /**
+     * @method setHeaders
+     * @param String|Object name
+     * @param String [value]
+     * @return $.Ajax
+     */
 	,setHeaders: function(name, value) {
 		this.headers || (this.headers = {});
 		if (undefined === value) {
@@ -51,10 +87,20 @@ $.Observable.extend('$.Ajax', {
 		return this;
 	}
 
+    /**
+     * @method abort
+     * @return $.Ajax
+     */
 	,abort: function() {
 		this.getXhr().abort();
+        return this;
 	}
 
+    /**
+     * @method send
+     * @param Object [options]
+     * @return $.Ajax
+     */
 	,send: function(options) {
         if (options) {
             this.applyOptions(options);

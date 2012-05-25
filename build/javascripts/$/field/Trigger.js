@@ -1,5 +1,8 @@
 //= require ./Text
 
+/**
+ * @class $.field.Trigger
+ */
 $.field.Text.extend('$.field.Trigger trigger', {
     baseClasses: 'x-field x-field-text x-field-trigger'
 

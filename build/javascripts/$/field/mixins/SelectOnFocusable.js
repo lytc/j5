@@ -1,3 +1,6 @@
+/**
+ * @class $.field.mixins.SelectOnFocusable
+ */
 $.define('$.field.mixins.SelectOnFocusable', {
     setSelectOnFocus: function(bool) {
         if (bool && !this._selectOnFocusCallback) {

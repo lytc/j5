@@ -1,9 +1,10 @@
 App.controllers.Trees = App.Controller.extend({
     indexAction: function() {
-        var tree = new $.Tree({
+        tree = new $.Tree({
             children: [
                 {
                     html: 'Item #1'
+                    ,$data: {a: 1, b: 2}
                     ,children: [
                         {
                             html: 'Item #11'
@@ -50,6 +51,12 @@ App.controllers.Trees = App.Controller.extend({
                     html: 'Item #5'
                 }
             ]
+
+            ,listeners: {
+                select: function(items) {
+                    console.log(items);
+                }
+            }
         });
 
         var comp = new $.Component({

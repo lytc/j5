@@ -1,5 +1,8 @@
 //= require ./Trigger
 
+/**
+ * @class $.field.DateTime
+ */
 $.field.Trigger.extend('$.field.DateTime field.datetime', {
     baseClasses: 'x-field x-field-text x-field-trigger x-field-datetime'
 

@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Tip
+ */
 $.Component.extend('$.Tip tip', {
 	baseClasses: 'x-tip'
 	

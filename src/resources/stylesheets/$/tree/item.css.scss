@@ -27,6 +27,12 @@ $x-tree-item-padding: 0 10px 0 16px;
     }
   }
 
+  &.x-selected {
+    > a {
+      background: #F0EDEE;
+    }
+  }
+
   > a {
     color: #222222;
     text-decoration: none;
@@ -36,9 +42,13 @@ $x-tree-item-padding: 0 10px 0 16px;
     line-height: $x-tree-item-height;
     padding: $x-tree-item-padding;
 
-    &:active, &:focus {
-      background: #F0EDEE;
+    &:hover {
+      background: #f6f3f4;
     }
+
+    /*&:active, &:focus {
+      background: #F0EDEE;
+    } */
   }
 
   > ul.x-tree {

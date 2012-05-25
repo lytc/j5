@@ -1,13 +1,14 @@
 //= require ./Observable
 
+/**
+ * @class $.Template
+ */
 (function() {
 	var cache = {};
 	
 	$.Observable.extend('$.Template', {
-		autoEscape: true
-		,exprRegex: /<%= (((?!<%=).)*) %>/g
-	  ,ifRegex: /<% if (.*): %>([\s\S]*)<% endif %>/g
-	  ,forRegex: /<% for (.*): %>([\s\S]*)<% endfor %>/g
+	    evaluateRegex: /<%([\s\S]+?)%>/g
+        ,exprRegex: /<%=([\s\S]+?)%>/g
 
 		,constructor: function(options) {
 			if (arguments.length > 1) {
@@ -37,42 +38,51 @@
 		}
 
 		,compile: function() {
-			if (this.compiledFn) {
-				return this;
-			}
+            if (this.compiledFn) {
+                return this;
+            }
 
-			var me = this;
-			function compile(html) {
-				html = html.replace(me.forRegex, function(m, m1, m2) {
-					return "' + (function(){\
-			      var result = '';\
-			      for " + m1 + " {\
-			        result += ('" + compile(m2) + "');\
-			      }\
-			      return result;\
-			    }).bind(this)() + '";
-				}).replace(me.ifRegex, function(m, m1, m2) {
-					return "' + (function(){\
-				    if " + m1 + " {\
-				      return '" + compile(m2) + "'\
-				    }\
-						return ''\
-				  }).bind(this)() + '";
-				}).replace(me.exprRegex, function(m, m1) {
-					if (me.autoEscape) {
-						return "' + escape(" + m1 + ") + '";
-					}
-					return "' + (" + m1 + ") + '";
-				}).replace(/\n/g, '');
+            var escapes = {
+                '\\':   '\\',
+                "'":    "'",
+                r:      '\r',
+                n:      '\n',
+                t:      '\t',
+                u2028:  '\u2028',
+                u2029:  '\u2029'
+            };
 
-				return html;
-			}
+            for (var key in escapes) escapes[escapes[key]] = key;
+            var escaper = /\\|'|\r|\n|\t|\u2028|\u2029/g;
+            var unescaper = /\\(\\|'|r|n|t|u2028|u2029)/g;
 
-			var _html = compile(this.html);
-			_html = "function escape(v) {return $.String.escape(v)}; return '" + _html + "'";
+            var unescape = function(code) {
+                return code.replace(unescaper, function(match, escape) {
+                    return escapes[escape];
+                });
+            };
 
-			this.compiledFn = new Function(_html);
-			return this;
+            var source = '';
+
+            // add helpers
+            $.each($.Template.helpers, function(fn, name) {
+                source += 'var ' + name + '=' + fn.toString() + ';';
+            });
+
+            source += "var _t=''; _t+='" + this.html
+                .replace(escaper, function(match) {
+                    return '\\' + escapes[match];
+                })
+                .replace(this.exprRegex, function(match, code) {
+                    return "'+\n(" + unescape(code) + ")+\n'";
+                })
+                .replace(this.evaluateRegex, function(match, code) {
+                    return "';\n" + unescape(code) + "\n;_t+='";
+                })
+                + "';\nreturn _t;\n";
+
+            this.compiledFn = new Function(source);
+            return this;
 		}
 
 		,render: function(data) {
@@ -80,24 +90,29 @@
 			return this.compiledFn.bind(data)();
 		}
 	});
-	
-	$.Template.get = function(options) {
-		var key;
-		if (arguments.length > 1) {
-			key = arguments.join('');
-		} else {
-			if ('string' == typeof options) {
-				key = options;
-			} else if (options && options.url) {
-				key = options.url;
-			}
-		}
-		
-		if (key && cache[key]) {
-			return cache[key];
-		}
-		var tpl = new $.Template();
-		tpl.constructor.apply(tpl, arguments);
-		return tpl;
-	}
+
+    $.extend($.Template, {
+        get: function(options) {
+            var key;
+            if (arguments.length > 1) {
+                key = arguments.join('');
+            } else {
+                if ('string' == typeof options) {
+                    key = options;
+                } else if (options && options.url) {
+                    key = options.url;
+                }
+            }
+
+            if (key && cache[key]) {
+                return cache[key];
+            }
+            var tpl = new $.Template(options);
+            return tpl;
+        }
+
+        ,helpers: {
+
+        }
+    });
 })();

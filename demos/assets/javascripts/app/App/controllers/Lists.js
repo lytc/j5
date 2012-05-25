@@ -5,6 +5,7 @@ App.controllers.Lists = App.Controller.extend({
             ,width: 200
             ,styles: {
                 marginBottom: '20px'
+                ,padding: '50px'
             }
 
             ,children: [
@@ -32,6 +33,7 @@ App.controllers.Lists = App.Controller.extend({
             ,defaults: {
                 width: 100
                 ,height: 100
+                ,clickToToggle: true
             }
 
             ,children: [

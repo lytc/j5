@@ -1,3 +1,7 @@
+//= require ../Component
+/**
+ * @class $.button.Group
+ */
 $.Component.extend('$.button.Group button.group', {
     baseClasses: 'x-button-group'
     ,defaultChildType: 'button'

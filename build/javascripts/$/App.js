@@ -1,6 +1,9 @@
 //= require ./Observable
 //= require ./Navigator
 
+/**
+ * @class $.App
+ */
 $.Observable.extend('$.App', {
 	path: '/assets/app'
 	,defaultController: 'index'
@@ -17,7 +20,7 @@ $.Observable.extend('$.App', {
 		}, this);
 		
 		$.Navigator.on('change', function(path) {
-			this.dispatch(path);	
+			this.dispatch(path);
 		}, this);
 		
 		$.ready(function() {
@@ -30,25 +33,28 @@ $.Observable.extend('$.App', {
 	
 	,dispatch: function(path) {
 		var matches, controller, action, id;
-		if (matches = path.match(/^\/([\w\-]+)$/)) {
+		if (matches = path.match(/^\/([\w\-]+)\/?$/)) {  // controller or controller/
 			controller = matches[1];
 			action = this.defaultAction;
-		}else if(matches = path.match(/^\/([\w\-]+)\/(\d+)$/)) {
+		}else if(matches = path.match(/^\/([\w\-]+)\/(\d+)\/?$/)) { // controller/id or controller/id/
 			controller = matches[1];
 			action = 'view';
 			id = matches[2];
-		} else if (matches = path.match(/^\/([\w\-]+)\/(\d+)\/([\w\-]+)\/?\??(.*)$/)) {
+		} else if (matches = path.match(/^\/([\w\-]+)\/(\d+)\/([\w\-]+)\/?\??(.*)$/)) { // controller/id/customaction or controller/id/customaction?params
 			controller = matches[1];
 			action = matches[3];
 			id = matches[2];
-		} else if (matches = path.match(/^\/([\w\-]+)\/([\w\-]+)\/?\??(.*)$/)) {
+		} else if (matches = path.match(/^\/([\w\-]+)\/([\w\-]+)\/?\??(.*)$/)) { // controller/action or controller/action?params
 			controller = matches[1];
 			action = matches[2];
-		} else {
+		} else if (matches = path.match(/^\/([\w\-]+)\/?\?(.*)$/)) {
+            controller = matches[1];
+            action = this.defaultAction;
+        } else {
 			controller = this.defaultController;
 			action = this.defaultAction;
 		}
-		
+
 		var controllerClassName = $.String.format(this.namespace + '.controllers.{0}', $.String.camelize(controller));
 		var controllerClass = $.getClass(controllerClassName);
 		
@@ -59,7 +65,7 @@ $.Observable.extend('$.App', {
 		var controllerInstance = new controllerClass({
 			id: id
 		});
-		
+
 		var actionMethodName = $.String.camelize(action, true) + this.actionPrefix;
 		if (!controllerInstance[actionMethodName]) {
 			throw new Error($.String.format('Call undefined action {0} in controller {1}', action, controller));

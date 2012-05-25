@@ -1,5 +1,8 @@
 //= require ./Class
 
+/**
+ * @class $.Observable
+ */
 $.Class.extend('$.Observable', {
     constructor: function(options) {
         this.initOptions(options);

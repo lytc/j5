@@ -1,3 +1,6 @@
+/**
+ * @class $.Function
+ */
 $.Function = {
     defer: function(fn, miniseconds) {
         var id = setTimeout(function() {

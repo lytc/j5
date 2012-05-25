@@ -1,5 +1,8 @@
 //= require ../Group
 
+/**
+ * @class $.field.group.Checkbox
+ */
 $.field.Group.extend('$.field.group.Checkbox field.group.checkbox', {
     defaultOptions: $.readOnlyObject({
         defaults: {

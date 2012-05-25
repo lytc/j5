@@ -1,5 +1,8 @@
 //= require ./Observable
 
+/**
+ * @class $.Router
+ */
 $.Observable.extend('$.Router', {
 	constructor: function(routes, options) {
 		this._routes = routes || {};

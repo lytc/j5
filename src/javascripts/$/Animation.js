@@ -1,20 +1,87 @@
 //= require ./Observable
 
+/**
+ * @class $.Animation
+ * @superclass $.Observable
+ */
 $.Observable.extend('$.Animation', {
+    /**
+     * @property Number delay
+     * @default 0
+     */
     delay: 0
+
+    /**
+     * @property String direction
+     * @default normal
+     */
     ,direction: 'normal'// [ normal | reverse | alternate | alternate-reverse ] [, [ normal | reverse | alternate | alternate-reverse ] ]*
+
+    /**
+     * @property Number duration
+     * @default 1
+     */
     ,duration: 1
+
+    /**
+     * @property String fillMode
+     * @default 'forwards'
+     */
     ,fillMode: 'forwards' // [ none | forwards | backwards | both ] [, [ none | forwards | backwards | both ] ]*
+
+    /**
+     * @property Number iterationCount
+     * @default 1
+     */
     ,iterationCount: 1 // [ infinite | <number> ] [, [ infinite | <number> ] ]*
+
+    /**
+     * @property String playState
+     * @default running
+     */
     ,playState: 'running' // [ running | paused ] [, [ running | paused ] ]*
+
+    /**
+     * @property String timingFunction
+     * @default ease
+     */
     ,timingFunction: 'ease' // [ ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(<number>[, [ start | end ] ]?) | cubic-bezier(<number>, <number>, <number>, <number>) ] [, [ ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(<number>[, [ start | end ] ]?) | cubic-bezier(<number>, <number>, <number>, <number>)] ]*
+
+    /**
+     * @property Function onIteration
+     * @default $.emptyFn
+     */
     ,onIteration: $.emptyFn
+
+    /**
+     * @property Function onEnd
+     * @default $.emptyFn
+     */
     ,onEnd: $.emptyFn
+
+    /**
+     * @property Object keyframe
+     * @default null
+     */
     ,keyframe: null
+
+    /**
+     * @property Boolean concurrent
+     * @default true
+     */
     ,concurrent: true
 
+    /**
+     * @private
+     * @property String simpleSetter
+     */
     ,simpleSetters: 'delay, direction, duration, fillMode, iterationCount, playState, timingFunction, keyframe, concurrent'
 
+    /**
+     * @method constructor
+     * @param String|Element|$.Element el
+     * @param Object [options]
+     */
     ,constructor: function(el, options) {
         this.el = $.Element.get(el);
 
@@ -28,6 +95,11 @@ $.Observable.extend('$.Animation', {
         this.callSuper(options);
     }
 
+    /**
+     * @method play
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,play: function(options) {
         var property = '{name} {duration} {timingFunction} {delay} {iterationCount} {direction} {fillMode}'
             ,name
@@ -90,6 +162,11 @@ $.Observable.extend('$.Animation', {
         return this;
     }
 
+    /**
+     * @private
+     * @method playQueue
+     * @return $.Animation
+     */
     ,playQueue: function() {
         if (!this.queue || !this.queue.length) {
             return this;
@@ -102,11 +179,21 @@ $.Observable.extend('$.Animation', {
         return this;
     }
 
+    /**
+     * @method fade
+     * @param Object [options]
+     * @param Number [opacity]
+     * @return $.Animation
+     */
     ,fade: function(options, opacity) {
         var currentOpacity = parseFloat(this.el.getStyle('opacity'));
         return this[currentOpacity == 1? 'fadeOut' : 'fadeIn'](options, opacity);
     }
 
+    /**
+     * @method fadeInt
+     * @param Object [options]
+     */
     ,fadeIn: function(options) {
         options || (options = {});
 
@@ -122,6 +209,11 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method fadeOut
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,fadeOut: function(options) {
         options || (options = {});
 
@@ -137,7 +229,14 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
-    ,move: function(x, y, options) {
+    /**
+     * @method moveTo
+     * @param Number x
+     * @param Number [y]
+     * @param Object [options]
+     * @return $.Animation
+     */
+    ,moveTo: function(x, y, options) {
         if ('number' !== typeof y) {
             options = y;
             y = x;
@@ -160,7 +259,13 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
-    ,moveX: function(x, options) {
+    /**
+     * @method moveToX
+     * @param Number x
+     * @param Object [options]
+     * @return $.Animation
+     */
+    ,moveToX: function(x, options) {
         options || (options = {});
 
         options.keyframe = {
@@ -174,7 +279,13 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
-    ,moveY: function(y, options) {
+    /**
+     * @method moveToY
+     * @param Number y
+     * @param Object [options]
+     * @return $.Animation
+     */
+    ,moveToY: function(y, options) {
         options || (options = {});
 
         options.keyframe = {
@@ -188,6 +299,11 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method slideUp
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,slideUp: function(options) {
         if (this._originalBeforeFx) {
             return this;
@@ -209,6 +325,11 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method slideDown
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,slideDown: function(options) {
         if (!this._originalBeforeFx) {
             return this;
@@ -229,10 +350,21 @@ $.Observable.extend('$.Animation', {
         return this.play(options);
     }
 
+    /**
+     * @method slide
+     * @param Object [options]
+     * @return $.Animation
+     */
     ,slide: function(options) {
         return this[this._originalBeforeFx? 'slideDown' : 'slideUp'](options);
     }
 
+    /**
+     * @method rotate
+     * @param Object [options]
+     * @param String [property]
+     * @return $.Animation
+     */
     ,rotate: function(options, property) {
         options || (options = {});
         property || (property = 'rotateY(180deg)');

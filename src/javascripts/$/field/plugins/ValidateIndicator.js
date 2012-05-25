@@ -1,3 +1,6 @@
+/**
+ * @class $.field.plugins.ValidateIndicator
+ */
 $.define('$.field.plugins.ValidateIndicator', {
 	constructor: function(field) {
         if (field.isRenderd) {

@@ -1,5 +1,8 @@
 //= require ../Validator
 
+/**
+ * @class $.validator.Date
+ */
 $.Validator.types['date'] =
 
     $.Validator.extend('$.validator.Date', {

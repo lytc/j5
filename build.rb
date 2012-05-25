@@ -2,7 +2,7 @@ require 'sprockets'
 require 'yui/compressor'
 require 'sass'
 
-module J5Helper
+module Build
     SRC_DIR = 'src/'
     BUILD_DIR = 'build/'
 

@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Tab
+ */
 $.Component.extend('$.Tab tab', {
     tag: 'article'
     ,baseClasses: 'x-tab'

@@ -1,5 +1,8 @@
 //= require ./Regex
 
+/**
+ * @class $.validator.AlphaNum
+ */
 $.Validator.types['aplphanum'] =
 
 $.validator.Regex.extend('$.validator.AlphaNum', {

@@ -1,5 +1,8 @@
 //= require ../Validator
 
+/**
+ * @class $.validator.Number
+ */
 $.Validator.types['number'] =
 
 $.Validator.extend('$.validator.Number', {

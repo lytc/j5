@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Modal
+ */
 $.Component.extend('$.Modal modal', {
     baseClasses: 'x-modal'
 

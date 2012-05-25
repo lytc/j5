@@ -17,14 +17,14 @@ App.run({
                             ,children: [
                                 {
                                     html: 'Button'
-                                    ,pushstate: '/buttons'
+                                    ,pushState: '/buttons'
                                     ,children: [
                                         {
                                             html: 'Button Group'
-                                            ,pushstate: '/buttons/group'
+                                            ,pushState: '/buttons/group'
                                         },{
                                             html: 'Button Menu'
-                                            ,pushstate: '/buttons/menu'
+                                            ,pushState: '/buttons/menu'
                                         }
                                     ]
                                 },{
@@ -32,92 +32,92 @@ App.run({
                                     ,children: [
                                         {
                                             html: 'Trigger'
-                                            ,pushstate: '/fields/trigger'
+                                            ,pushState: '/fields/trigger'
                                         },{
                                             html: 'Select'
-                                            ,pushstate: '/fields/select'
+                                            ,pushState: '/fields/select'
                                         },{
                                             html: 'Date'
-                                            ,pushstate: '/fields/date'
+                                            ,pushState: '/fields/date'
                                         },{
                                             html: 'Range'
-                                            ,pushstate: '/fields/range'
+                                            ,pushState: '/fields/range'
                                         },{
                                             html: 'Group'
-                                            ,pushstate: '/fields/group'
+                                            ,pushState: '/fields/group'
                                         }
                                     ]
                                 },{
                                     html: 'Form'
-                                    ,pushstate: '/forms'
+                                    ,pushState: '/forms'
                                     ,children: [
 
                                     ]
                                 },{
                                     html: 'Slider'
-                                    ,pushstate: '/sliders'
+                                    ,pushState: '/sliders'
                                 },{
                                     html: 'List'
-                                    ,pushstate: '/lists'
+                                    ,pushState: '/lists'
                                 },{
                                     html: 'Menu'
-                                    ,pushstate: '/menus'
+                                    ,pushState: '/menus'
                                 },{
                                     html: 'Tree'
-                                    ,pushstate: '/trees'
+                                    ,pushState: '/trees'
                                 },{
                                     html: 'Table'
-                                    ,pushstate: '/tables'
+                                    ,pushState: '/tables'
                                 },{
                                     html: 'Modal'
-                                    ,pushstate: '/modals'
+                                    ,pushState: '/modals'
                                 },{
                                     html: 'Alert'
-                                    ,pushstate: '/alerts'
+                                    ,pushState: '/alerts'
                                 },{
                                     html: 'Notifications'
-                                    ,pushstate: '/notifications'
+                                    ,pushState: '/notifications'
                                 },{
                                     html: 'Progress Bar'
-                                    ,pushstate: '/progress-bars'
+                                    ,pushState: '/progress-bars'
                                 },{
                                     html: 'Loading'
-                                    ,pushstate: '/loading'
+                                    ,pushState: '/loading'
                                 },{
                                     html: 'Section'
-                                    ,pushstate: '/sections'
+                                    ,pushState: '/sections'
                                     ,children: [
                                         {
                                             html: 'Accordion'
-                                            ,pushstate: '/sections/accordion'
+                                            ,pushState: '/sections/accordion'
                                         }
                                     ]
                                 },{
                                     html: 'Tab'
-                                    ,pushstate: '/tabs'
+                                    ,pushState: '/tabs'
                                 },{
                                     html: 'Calendar'
-                                    ,pushstate: '/calendars'
+                                    ,pushState: '/calendars'
                                 },{
                                     html: 'Paging'
-                                    ,pushstate: '/paging'
+                                    ,pushState: '/paging'
                                 },{
                                     html: 'Color Palette'
-                                    ,pushstate: '/color-palettes'
+                                    ,pushState: '/color-palettes'
                                 }
                             ]
                         },{
                             html: 'Drag & Drop'
-                            ,pushstate: '/drag-drop'
+                            ,pushState: '/drag-drop'
                         },{
                             html: 'Animation'
-                            ,pushstate: '/animations'
+                            ,pushState: '/animations'
                         },{
                             html: 'Event'
-                            ,pushstate: '/events'
+                            ,pushState: '/events'
                         },{
                             html: 'Key Listener'
-                            ,pushstate: '/key-listeners'
+                            ,pushState: '/key-listeners'
                         },{
 							html: 'Application'
 						}
@@ -137,8 +137,8 @@ App.run({
 			}
 		});
 		
-		function initPushState(root) {
-			$.Element.get(root).selectAll('a[pushstate]').on('click', function(e) {
+		function initpushState(root) {
+			$.Element.get(root).selectAll('a[pushState]').on('click', function(e) {
 				e.preventDefault();
 				$.Navigator.navigate(this.getAttr('href'), {
 					title: this.getAttr('title')
@@ -146,10 +146,10 @@ App.run({
 			});
 		}
 		
-		//initPushState('#nav');
+		//initpushState('#nav');
 		
 		// $.Element.get('#view').on('change', function() {
-		// 			initPushState(this);
+		// 			initpushState(this);
 		// 		});
 	}
 });

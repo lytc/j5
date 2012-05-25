@@ -1,3 +1,6 @@
+/**
+ * @class $.Array
+ */
 (function() {
 	var extend = {
 		splice: function(array, index, count) {

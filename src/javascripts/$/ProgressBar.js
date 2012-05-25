@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.ProgressBar
+ */
 $.Component.extend('$.ProgressBar progressbar', {
     baseClasses: 'x-progressbar'
     

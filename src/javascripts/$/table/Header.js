@@ -1,5 +1,8 @@
 //= require ../Component
 
+/**
+ * @class $.table.Header
+ */
 $.Component.extend('$.table.Header table.header', {
     tag: 'thead'
     ,baseClasses: 'x-header'

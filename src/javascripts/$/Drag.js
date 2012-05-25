@@ -1,5 +1,8 @@
 //= require ./Observable
 
+/**
+ * @class $.Drag
+ */
 $.Observable.extend('$.Drag', {
     data: null
 

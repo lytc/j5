@@ -1,11 +1,34 @@
 //= require ./Component
+/**
+ * @class $.Button
+ * @superclass $.Component
+ */
 $.Component.extend('$.Button button', {
+    /**
+     * @property String tag
+     * @default a
+     */
 	tag: 'a'
+
+    /**
+     * @property String baseClasses
+     * @default x-button
+     */
     ,baseClasses: 'x-button'
+
+    /**
+     * @property Object defaultOptions
+     * @default {scale: 'small'}
+     */
     ,defaultOptions: $.readOnlyObject({
         scale: 'small'
     })
 
+    /**
+     * @private
+     * @method initElement
+     * @return $.Button
+     */
     ,initElement: function() {
         this.callSuper();
         this.el.setAttr('tabindex', 0);
@@ -13,8 +36,14 @@ $.Component.extend('$.Button button', {
             dom: '<span>'
             ,classes: 'x-text'
         });
+        return this;
     }
-	
+
+    /**
+     * @method setType
+     * @params String type
+     * @return $.Button
+     */
 	,setType: function(type) {
 		this.el.setAttr('type', type);
 		return this;

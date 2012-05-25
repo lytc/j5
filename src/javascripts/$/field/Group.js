@@ -1,6 +1,9 @@
 //= require ./Field
 //= require ./mixins/Labelable
 
+/**
+ * @class $.field.Group
+ */
 $.field.Field.extend('$.field.Group field.group', {
     baseClasses: 'x-field x-field-group'
     ,includes: [$.field.mixins.Labelable]

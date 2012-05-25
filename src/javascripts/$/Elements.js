@@ -1,3 +1,6 @@
+/**
+ * @class $.Elements
+ */
 $.Elements = function(doms) {
 	this.doms = doms;
 	

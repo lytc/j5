@@ -1,6 +1,9 @@
 //= require ./Field
 //= require ./mixins/Labelable
 
+/**
+ * @class $.field.Range
+ */
 $.field.Field.extend('$.field.Range field.range', {
     baseClasses: 'x-field x-field-range'
     ,includes: [$.field.mixins.Labelable]

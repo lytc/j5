@@ -1,5 +1,8 @@
 //= require ./Ajax
 
+/**
+ * @class $.Collection
+ */
 $.Observable.extend('$.Collection', {
 	url: ''
 	,totalProperty: 'total'
@@ -40,6 +43,9 @@ $.Observable.extend('$.Collection', {
 
 	,load: function(options) {
         options || (options = {});
+        if ('function' == typeof options) {
+            options = {callback: options}
+        }
 		options.url = options.url || this.url || this.model.prototype.url;
 
         options.success = function(responseText) {
@@ -47,6 +53,9 @@ $.Observable.extend('$.Collection', {
             me.total = response[me.totalProperty];
             me.setData(response[me.root]);
             me.trigger('load', response[me.root], me);
+            if (options.callback) {
+                options.callback.call(me, response[me.root], me);
+            }
         };
 
         options.complete = function(xhr, ajax) {

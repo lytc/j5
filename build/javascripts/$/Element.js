@@ -2,6 +2,9 @@
 //= require ./Elements
 //= require ./Animation
 
+/**
+ * @class $.Element
+ */
 $.Observable.extend('$.Element element', {
     constructor: function(options) {
         options || (options = {});

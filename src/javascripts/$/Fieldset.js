@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Fieldset
+ */
 $.Component.extend('$.Fieldset fieldset', {
 	baseClasses: 'x-fieldset'
 	,tag: 'fieldset'

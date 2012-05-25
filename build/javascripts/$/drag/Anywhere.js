@@ -1,5 +1,8 @@
 //= require ../Drag
 
+/**
+ * @class $.drag.Anywhere
+ */
 $.Drag.extend('$.drag.Anywhere', {
     constructor: function() {
         this.callSuper(arguments);

@@ -1,5 +1,8 @@
 //= require ../Observable
 
+/**
+ * @class $.table.Column
+ */
 $.table.Cell.extend('$.table.Column table.column', {
     defaultCellType: 'table.row.cell'
 

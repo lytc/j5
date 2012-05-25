@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.NavBar
+ */
 $.Component.extend('$.NavBar navbar', {
 	baseClasses: 'x-navbar'
 

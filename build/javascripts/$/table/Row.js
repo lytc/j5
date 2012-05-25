@@ -1,4 +1,8 @@
 //= require ../list/Item
+
+/**
+ * @class $.table.Row
+ */
 $.list.Item.extend('$.table.Row table.row', {
     tag: 'tr'
     ,baseClasses: 'x-item x-row'

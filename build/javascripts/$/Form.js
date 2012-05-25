@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Form
+ */
 $.Component.extend('$.Form form', {
 	tag: 'form'
 	,baseClasses: 'x-form'

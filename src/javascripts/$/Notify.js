@@ -1,5 +1,8 @@
 //= require ./Alert
 
+/**
+ * @class $.Notify
+ */
 $.Alert.extend('$.Notify notify', {
     baseClasses: 'x-notify x-alert'
 

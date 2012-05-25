@@ -1,4 +1,9 @@
 //= require ./Observable
+
+/**
+ *
+ * @class $.KeyListener
+ */
 $.KeyListener = $.Class.extend({
     alias: $.readOnlyObject({
         esc:        $.Event.KEY_ESCAPE

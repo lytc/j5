@@ -1,5 +1,8 @@
 //= require ../Component
 
+/**
+ * @class $.field.Field
+ */
 $.Component.extend('$.field.Field', {
 	baseClasses: 'x-field'
 

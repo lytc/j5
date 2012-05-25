@@ -1,0 +1,10 @@
+{
+    "name": "J5",
+    "description": "J5 JavaScript Framework",
+    "version": "1.0",
+    "url": "https://github.com/lytc/j5",
+    "options": {
+        "paths": ["test/"],
+        "outdir": "/docs"
+    }
+}

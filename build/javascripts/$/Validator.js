@@ -1,3 +1,6 @@
+/**
+ * @class $.Validator
+ */
 $.Observable.extend('$.Validator', {
 	getValue: $.emptyFn
 	,validate: $.emptyFn

@@ -1,3 +1,6 @@
+/**
+ * @class $.ReadOnlyObject
+ */
 $.ReadOnlyObject = function(values) {
     var obj = {};
     for (var i in values) {

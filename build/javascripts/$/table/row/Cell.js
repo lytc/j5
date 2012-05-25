@@ -1,6 +1,9 @@
 //= require ../Cell
 //= require ../Row
 
+/**
+ * @class $.table.row.Cell
+ */
 $.table.Cell.extend('$.table.row.Cell table.row.cell', {
     constructor: function(row, options) {
         this.row = row;

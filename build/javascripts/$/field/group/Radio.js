@@ -1,5 +1,8 @@
 //= require ../Group
 
+/**
+ * @class $.field.group.Radio
+ */
 $.field.Group.extend('$.field.group.Radio field.group.radio', {
     defaultOptions: $.readOnlyObject({
         defaults: {

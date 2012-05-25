@@ -1,7 +1,10 @@
 //= require ../Component
 
+/**
+ * @class $.menu.Item
+ */
 $.list.Item.extend('$.menu.Item menu.item', {
-	baseClasses: 'x-item x-menu-item'
+    baseClasses: 'x-item x-menu-item'
     ,defaultChildType: 'menu'
 
     ,constructor: function() {
@@ -16,9 +19,9 @@ $.list.Item.extend('$.menu.Item menu.item', {
         }, this);
     }
 
-	,initElement: function() {
-		this.callSuper();
-		this.anchorEl = this.el.append({
+    ,initElement: function() {
+        this.callSuper();
+        this.anchorEl = this.el.append({
             dom: '<a>'
             ,attr: {
                 //href: '#'
@@ -40,7 +43,7 @@ $.list.Item.extend('$.menu.Item menu.item', {
         this.el.setKeyListener({
             right: this.focusMenu.bind(this)
         });
-	}
+    }
 
     ,setIcon: function(icon) {
         this.iconEl.removeClasses(/^icon(.*)$/)
@@ -48,41 +51,41 @@ $.list.Item.extend('$.menu.Item menu.item', {
         return this;
     }
 
-	,setHtml: function(html) {
+    ,setHtml: function(html) {
         this.textEl.setHtml(html);
-		return this;
-	}
-	
-	,setHref: function(href) {
-		this.anchorEl.setAttr('href', href);
-		return this;
-	}
-	
-	,setPushstate: function(url) {
-		this.setHref(url);
+        return this;
+    }
 
-		if (!this._pushstateCallback) {
-			this._pushstateCallback = function(e) {
+    ,setHref: function(href) {
+        this.anchorEl.setAttr('href', href);
+        return this;
+    }
+
+    ,setPushState: function(url) {
+        this.setHref(url);
+
+        if (!this._pushStateCallback) {
+            this._pushStateCallback = function(e) {
                 e.cancelBubble();
                 e.stop();
-				$.Navigator.navigate(this.anchorEl.getAttr('href'));
-			}.bind(this);
+                $.Navigator.navigate(this.anchorEl.getAttr('href'));
+            }.bind(this);
 
-            this.on('click', this._pushstateCallback);
-		}
-		return this;
-	}
-	
-	,setChildren: function(children) {
+            this.on('click', this._pushStateCallback);
+        }
+        return this;
+    }
+
+    ,setChildren: function(children) {
         var childClass = $.alias(this.defaultChildType);
 
-		if (!(children instanceof childClass)) {
+        if (!(children instanceof childClass)) {
             children = new childClass({children: children});
-		}
-		this.child = this.add(children);
+        }
+        this.child = this.add(children);
         this.setData('hasChild', true);
-		return this;
-	}
+        return this;
+    }
 
     ,focusMenu: function() {
         var menu = this.query('> .x-menu');

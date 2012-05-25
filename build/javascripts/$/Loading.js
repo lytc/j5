@@ -1,5 +1,8 @@
 //= require ./Component
 
+/**
+ * @class $.Loading
+ */
 $.Component.extend('$.Loading', {
     baseClasses: 'x-loading'
 
