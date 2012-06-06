@@ -50,27 +50,58 @@
         }
 
         $.extend(d, {
+            /**
+             * @method clone
+             * @return $.Date
+             */
             clone: function() {
                 return $.Date(this.getTime());
             }
 
+            /**
+             * @method from
+             * @param String input
+             * @param String [format]
+             * @return $.Date
+             */
             ,from: function(input, format) {
                 var d = $.Date.parse(input, format);
                 this.setTime(d.getTime());
+                return this;
             }
 
+            /**
+             * @method isValid
+             * @return Boolean
+             */
             ,isValid: function() {
                 return !isNaN(this.getTime());
             }
 
+            /**
+             * @method next
+             * @param String format
+             * @return $.Date
+             */
             ,next: function(format) {
                 return $.Date.parse('next ' + format, this.clone());
             }
 
+            /**
+             * @method last
+             * @param String format
+             * @return $.Date
+             */
             ,last: function(format) {
                 return $.Date.parse('last ' + format, this.clone());
             }
 
+            /**
+             * @method add
+             * @param String|Number value
+             * @param String type
+             * @return $.Date
+             */
             ,add: function(value, type) {
                 if (!type) {
                     var operator = value[0];
@@ -147,6 +178,10 @@
                 return this;
             }
 
+            /**
+             * @method getSuffix
+             * @return String
+             */
             ,getSuffix: function() {
                 switch (this.getDate()) {
                     case 1:
@@ -167,38 +202,70 @@
                 }
             }
 
+            /**
+             * @method getDayOfYear
+             * @return Number
+             */
             ,getDayOfYear: function() {
                 var c = new Date(this.getFullYear(), 0, 1);
                 return Math.ceil((this - c) / 86400000) - 1;
             }
 
+            /**
+             * @method getWeekOfYear
+             * @return Number
+             */
             ,getWeekOfYear: function() {
                 var c = new Date(this.getFullYear(), 0, 1);
                 return Math.ceil((((this - c) / 86400000) + c.getDay() + 1) / 7);
             }
 
+            /**
+             * @method getDaysInMonth
+             * @return Number
+             */
             ,getDaysInMonth: function() {
                 var c = new Date(this.getFullYear(), this.getMonth() + 1, 0);
                 return c.getDate();
             }
 
+            /**
+             * @method getFirstDateOfMonth
+             * @return $.Date
+             */
             ,getFirstDateOfMonth : function() {
                 return $.Date(this.getFullYear(), this.getMonth(), 1);
             }
 
+            /**
+             * @method getLastDateOfMonth
+             * @return $.Date
+             */
             ,getLastDateOfMonth : function() {
                 return $.Date(this.getFullYear(), this.getMonth(), this.getDaysInMonth());
             }
 
+            /**
+             * @method getLastDayOfMonth
+             * @return $.Date
+             */
             ,getLastDayOfMonth : function() {
                 return this.getLastDateOfMonth().getDay();
             }
 
+            /**
+             * @method isLeapYear
+             * @return Boolean
+             */
             ,isLeapYear: function() {
                 var y = this.getFullYear();
                 return !(y % 4) && (y % 100) || !(y % 400) ? true : false;
             }
 
+            /**
+             * @method toInternetTime
+             * @return String
+             */
             ,toInternetTime: function(n) {
                 var s   = this.getUTCSeconds()
                     ,m  = this.getUTCMinutes()
@@ -212,10 +279,19 @@
                 return '000'.concat(beats).slice(beats.length - length);
             }
 
+            /**
+             * @method isDst
+             * @return Boolean
+             */
             ,isDst: function() {
                 return this.toString().match(/(E|C|M|P)(S|D)T/)[2] == 'D';
             }
 
+            /**
+             * @method getGmtOffset
+             * @param Boolean separate
+             * @return String
+             */
             ,getGmtOffset: function(separate) {
                 var offset = this.getTimezoneOffset();
                 return (offset > 0? '-' : '+')
@@ -224,10 +300,19 @@
                     + ('0' + Math.abs(offset % 60)).substr(-2)
             }
 
+            /**
+             * @method getAbbr
+             * @return String
+             */
             ,getAbbr: function() {
                 return this.toString().replace(/(.*) ([A-Z]{1,4})(\-|\+)\d{4} (.*)/, '$2');
             }
 
+            /**
+             * @method format
+             * @param String [format]
+             * @return String
+             */
             ,format: function(format) {
                 return format.replace(/\w/g, function(m, index) {
                     if ('\\' == format.charAt(index - 1)) {
@@ -394,9 +479,24 @@
     };
 
     $.extend($.Date, {
+        /**
+         * @static
+         * @property Array dayNames
+         */
         dayNames: dayNames
+
+        /**
+         * @static
+         * @property Array monthNames
+         */
         ,monthNames: monthNames
 
+        /**
+         * @method parse
+         * @param String input
+         * @param String format
+         * @return $.Date
+         */
         ,parse: function(input, format) {
             if (/^(\+|\-|next |last )/.test(input)) {
                 format instanceof Date || (format = new Date);
@@ -428,7 +528,7 @@
                         offset += (7 * (value - 1));
                     }
 
-                    fm = $.String.format('{0}{1} days', operator, offset);
+                    fm = '{0}{1} days'.format(operator, offset);
                 }
 
                 index = monthNames.indexOf(matches[3]);
@@ -447,11 +547,11 @@
                         offset += (12 * (value - 1));
                     }
 
-                    fm = $.String.format('{0}{1} months', operator, offset);
+                    fm = '{0}{1} months'.format(operator, offset);
                 }
 
                 if (!fm) {
-                    fm = $.String.format('{0}{1} {2}', operator, value, matches[3]);
+                    fm = '{0}{1} {2}'.format(operator, value, matches[3]);
                 }
 
                 return d.add(fm);
@@ -464,7 +564,7 @@
             var index = 0
                 ,map = {};
 
-            format = $.String.escapeRegex(format).replace(/\w/g, function(m, index) {
+            format = format.escapeRegex().replace(/\w/g, function(m, index) {
                 if ('\\' == format.charAt(index - 1)) {
                     return m;
                 }
@@ -721,7 +821,7 @@
                 }
             });
 
-            var dateString = $.String.format('{Y}-{m}-{d}T{H}:{i}:{s}{P}', {
+            var dateString = '{Y}-{m}-{d}T{H}:{i}:{s}{P}'.format({
                 Y: ('00' + Y).substr(-4)
                 ,m: ('0' + m).substr(-2)
                 ,d: ('0' + d).substr(-2)

@@ -20,7 +20,7 @@ $.Function = {
         var timerId;
 
         return function() {
-            var callArgs = args || Array.prototype.slice.call(arguments, 0),
+            var callArgs = args || [].slice.call(arguments, 0),
                 me = scope || this;
 
             if (timerId) {
@@ -33,3 +33,14 @@ $.Function = {
         };
     }
 }
+
+$.each($.Function, function(fn, name) {
+    if (!Function.prototype[name]) {
+        Function.prototype[name] = function() {
+            var args = arguments;
+            [].unshift.call(args, this);
+
+            return fn.apply(this, args);
+        }
+    }
+});

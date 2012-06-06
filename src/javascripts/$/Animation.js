@@ -81,13 +81,14 @@ $.Observable.extend('$.Animation', {
      * @method constructor
      * @param String|Element|$.Element el
      * @param Object [options]
+     *
      */
     ,constructor: function(el, options) {
         this.el = $.Element.get(el);
 
         this.queue || (this.queue = []);
 
-        this.buffered = $.Function.createBuffered(this.playQueue);
+        this.buffered = this.playQueue.createBuffered();
         this.el.on('animationend', function() {
             this.playQueue();
         }, this);
@@ -141,7 +142,7 @@ $.Observable.extend('$.Animation', {
                 ,html: keyframes
             });
 
-            animation = $.String.format(property, {
+            animation = property.format({
                 name: name
                 ,duration: this.duration + 's'
                 ,timingFunction: this.timingFunction

@@ -48,35 +48,69 @@ $.Component.extend('$.Button button', {
 		this.el.setAttr('type', type);
 		return this;
 	}
-	
+
+    /**
+     * @method setClick
+     * @param Function callback
+     * @return $.Button
+     */
 	,setClick: function(callback) {
-		return this.el.on('click', callback);
+		this.el.on('click', callback);
+        return this;
 	}
-	
+
+    /**
+     * @method enable
+     * @return $.Button
+     */
 	,enable: function() {
         this.el.removeAttr('disabled');
 		return this;
 	}
-	
+
+    /**
+     * @method disable
+     * @return $.Button
+     */
 	,disable: function() {
 		this.el.setAttr('disabled', 'disabled');
 		return this;
 	}
-	
+
+    /**
+     * @method setDisabled
+     * @param Boolean bool
+     * @return $.Button
+     */
 	,setDisabled: function(bool) {
 		return this[bool? 'disable' : 'enable']();
 	}
 
+    /**
+     * @method setScale
+     * @param String scale
+     * @return $.Button
+     */
     ,setScale: function(scale) {
         this.setAttr('x-scale', scale);
         return this;
     }
 
+    /**
+     * @method setHtml
+     * @param String html
+     * @return $.Button
+     */
     ,setHtml: function(html) {
         this.textEl.setHtml(html);
         return this;
     }
 
+    /**
+     * @method setIcon
+     * @param String icon
+     * @return $.Button
+     */
     ,setIcon: function(icon) {
         if (!this.iconEl) {
             this.iconEl = this.el.insert(0, {
@@ -90,6 +124,11 @@ $.Component.extend('$.Button button', {
         return this;
     }
 
+    /**
+     * @method setMenu
+     * @param Object options
+     * @return $.Button
+     */
     ,setMenu: function(options) {
         options || (options = {});
         !(options instanceof Array) || (options = {children: options});
@@ -103,6 +142,11 @@ $.Component.extend('$.Button button', {
         return this;
     }
 
+    /**
+     * @method setToggleable
+     * @param Boolean bool
+     * @return $.Button
+     */
     ,setToggleable: function(bool) {
         if (bool) {
             if (!this._toggleableCallback) {
@@ -122,6 +166,10 @@ $.Component.extend('$.Button button', {
         return this;
     }
 
+    /**
+     * @method press
+     * @return $.Button
+     */
     ,press: function() {
         if (this.pressed) {
             return this;
@@ -133,6 +181,10 @@ $.Component.extend('$.Button button', {
         return this;
     }
 
+    /**
+     * @method release
+     * @return $.Button
+     */
     ,release: function() {
         if (!this.pressed) {
             return this;
@@ -144,10 +196,19 @@ $.Component.extend('$.Button button', {
         return this;
     }
 
+    /**
+     * @method toggle
+     * @return $.Button
+     */
     ,toggle: function() {
         return this[this.pressed? 'release' : 'press']();
     }
 
+    /**
+     * @method setRadioable
+     * @param Boolean bool
+     * @return $.Button
+     */
     ,setRadioable: function(bool) {
         if (bool) {
             if (!this._radioableCallback) {

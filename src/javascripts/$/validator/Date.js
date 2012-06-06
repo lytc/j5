@@ -35,7 +35,7 @@ $.Validator.types['date'] =
                 ,d = $.Date.parse(value, format);
 
             if (false === d || !d.isValid()) {
-                this.messages.push($.String.format(this.invalidMessage, value, format));
+                this.messages.push(this.invalidMessage.format(value, format));
                 isValid = false;
             } else {
                 if (this.min) {
@@ -43,7 +43,7 @@ $.Validator.types['date'] =
                         this.min = $.Date.parse(this.min, this.field.calendar.format);
                     }
                     if (this.min.getTime() > d.getTime()) {
-                        this.messages.push($.String.format(this.minMessage, this.min.format(format)));
+                        this.messages.push(this.minMessage.format(this.min.format(format)));
                         isValid = false;
                     }
                 }
@@ -54,7 +54,7 @@ $.Validator.types['date'] =
                     }
 
                     if (this.max.getTime() < d.getTime()) {
-                        this.messages.push($.String.format(this.maxMessage, this.max.format(format)));
+                        this.messages.push(this.maxMessage.format(this.max.format(format)));
                         isValid = false;
                     }
                 }

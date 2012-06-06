@@ -3,14 +3,50 @@
 
 /**
  * @class $.App
+ * @superclass $.Observable
  */
 $.Observable.extend('$.App', {
+    /**
+     * @property String path
+     * @default ''
+     */
 	path: '/assets/app'
+
+    /**
+     * @property String defaultController
+     * @default index
+     */
 	,defaultController: 'index'
+
+    /**
+     * @property String defaultAction
+     * @default index
+     */
 	,defaultAction: 'index'
+
+    /**
+     * @property String Action
+     * @default Action
+     */
 	,actionPrefix: 'Action'
+
+    /**
+     * @property String namespace
+     * @default App
+     */
 	,namespace: 'App'
-	
+
+    /**
+     * @property Function ready
+     * @default $.emptyFn
+     */
+    ,ready: $.emptyFn
+
+    /**
+     * @method run
+     * @param Object [options]
+     * @return $.App
+     */
 	,run: function(options) {
 		$.extend(this, options);
 		$.Loader.addPath(this.namespace, this.path);
@@ -27,10 +63,14 @@ $.Observable.extend('$.App', {
 			this.ready();
 			this.dispatch(history.pushState? window.location.pathname : window.location.hash.replace(/^#/, ''));
 		}, this);
+        return this;
 	}
-	
-	,ready: $.emptyFn
-	
+
+    /**
+     * @method dispatch
+     * @param String path
+     * @return $.App
+     */
 	,dispatch: function(path) {
 		var matches, controller, action, id;
 		if (matches = path.match(/^\/([\w\-]+)\/?$/)) {  // controller or controller/

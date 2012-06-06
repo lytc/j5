@@ -2,16 +2,32 @@
 
 /**
  * @class $.Calendar
+ * @superclass $.Component
  */
 $.Component.extend('$.Calendar calendar', {
+    /**
+     * @private
+     * @property String baseClasses
+     * @default x-calendar
+     */
     baseClasses: 'x-calendar'
 
+    /**
+     * @private
+     * @property Object defaultOptions
+     * @default {format: 'm/d/Y', timeSelect: false}
+     */
     ,defaultOptions: $.readOnlyObject({
         format: 'm/d/Y'
         ,timeSelect: false
     })
 
-    ,constructor: function() {
+    /**
+     * @method constructor
+     * @param Object [options]
+     * @return $.Calendar
+     */
+    ,constructor: function(options) {
         this.callSuper(arguments);
 
         this.on('change', function() {
@@ -42,7 +58,7 @@ $.Component.extend('$.Calendar calendar', {
             var daysInMonth = value.getDaysInMonth()
                 ,firstDay = value.getFirstDateOfMonth().getDay();
 
-            var range = $.Array.range(1, daysInMonth + 1);
+            var range = [].range(1, daysInMonth + 1);
 
             if (firstDay > 0) {
                 var daysInMonthOfLastMonth = value.last('1 month').getDaysInMonth();
@@ -52,7 +68,7 @@ $.Component.extend('$.Calendar calendar', {
                 }
             }
 
-            var notActivePrev = $.Array.range(0, firstDay);
+            var notActivePrev = [].range(0, firstDay);
             var notActiveNext = [];
             for (var i = 1, end = 42 - range.length; i <= end; i++) {
                 range.push(i);
@@ -96,6 +112,11 @@ $.Component.extend('$.Calendar calendar', {
         update();
     }
 
+    /**
+     * @private
+     * @method initElement
+     * @return $.Calendar
+     */
     ,initElement: function() {
         this.callSuper();
 
@@ -377,8 +398,14 @@ $.Component.extend('$.Calendar calendar', {
                 }
             ]
         });
+
+        return this;
     }
 
+    /**
+     * @method toggleDisplayMonthYearPicker
+     * @return $.Calendar
+     */
     ,toggleDisplayMonthYearPicker: function() {
         this.monthYearPickerPanel.toggleClasses('x-hidden');
         if (this.monthYearPickerPanel.hasClasses('x-hidden')) {
@@ -398,8 +425,16 @@ $.Component.extend('$.Calendar calendar', {
 
         var month = this.getValue().getMonth();
         this.monthPickerPanel.child(month).radioClasses('x-selected');
+
+        return this;
     }
 
+    /**
+     * @method setValue
+     * @param Mixed value
+     * @param String format
+     * @return $.Calendar
+     */
     ,setValue: function(value, format) {
         if ('string' == typeof value) {
             this.getValue().from(value, format);
@@ -410,6 +445,10 @@ $.Component.extend('$.Calendar calendar', {
         return this;
     }
 
+    /**
+     * @method getValue
+     * @return $.Date
+     */
     ,getValue: function() {
         if (!this.value) {
             this.value = $.Date();
@@ -417,11 +456,23 @@ $.Component.extend('$.Calendar calendar', {
         return this.value;
     }
 
+    /**
+     * @private
+     * @method change
+     * @param Function callback
+     * @return $.Calendar
+     */
     ,change: function(callback) {
         callback();
         this.trigger('change');
+        return this;
     }
 
+    /**
+     * @method setFormat
+     * @param String format
+     * @return $.Calendar
+     */
     ,setFormat: function(format) {
         this.format = format;
         this.fullInfo.setHtml(this.getValue().format(this.format));
@@ -429,15 +480,30 @@ $.Component.extend('$.Calendar calendar', {
         return this;
     }
 
+    /**
+     * @method from
+     * @param String input
+     * @param String format
+     * @return $.Calendar
+     */
     ,from: function(input, format) {
-        this.setValue(input, format);
+        return this.setValue(input, format);
     }
 
+    /**
+     * @method setTimeSelect
+     * @param Boolean bool
+     * @return $.Calendar
+     */
     ,setTimeSelect: function(bool) {
         this.timeSelect = bool;
         return this;
     }
 
+    /**
+     * @method toString
+     * @return String
+     */
     ,toString: function() {
         return this.getValue().format(this.format);
     }

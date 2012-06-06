@@ -1,10 +1,15 @@
-$.Class = function() {
-}
-
 /**
  * @class $.Class
  */
+$.Class = function() {
+}
+
 $.extend($.Class, {
+    /**
+     * @static
+     * @method staticMethods
+     * @return Array
+     */
     staticMethods: function() {
         var methods = [];
         for (i in this) {
@@ -15,6 +20,11 @@ $.extend($.Class, {
         return methods;
     }
 
+    /**
+     * @static
+     * @method methods
+     * @return Array
+     */
     ,methods: function() {
         var methods = [];
         for (var i in this.prototype) {
@@ -25,10 +35,22 @@ $.extend($.Class, {
         return methods;
     }
 
+    /**
+     * @static
+     * @method hasMethod
+     * @param String name
+     * @return Boolean
+     */
     ,hasMethod: function(name) {
         return 'function' == typeof this.prototype[name];
     }
 
+    /**
+     * @method addProperties
+     * @param String|Object name
+     * @param Mixed [value]
+     * @return $.Class
+     */
     ,addProperties: function(name, value) {
         if ('string' == typeof name) {
             if ('function' == typeof value) {
@@ -47,6 +69,12 @@ $.extend($.Class, {
         return this;
     }
 
+    /**
+     * @static
+     * @method include
+     * @param $.Class modules
+     * @return $.Class
+     */
     ,includes: function(modules) {
         this.$includes || (this.$includes = []);
 
@@ -59,7 +87,13 @@ $.extend($.Class, {
         return this;
     }
 
-
+    /**
+     * @static
+     * @method extend
+     * @param String name
+     * @param Object [overrides]
+     * @return $.Class
+     */
     ,extend: function(name, overrides) {
         if ('string' != typeof name) {
             overrides = name;
@@ -139,6 +173,12 @@ $.extend($.Class, {
 });
 
 $.extend($.Class.prototype, {
+    /**
+     * @method callSuper
+     * @param String|Array [methodName]
+     * @param Array [args]
+     * @return Mixed
+     */
     callSuper: function(methodName, args) {
         var parent;
 
@@ -153,6 +193,11 @@ $.extend($.Class.prototype, {
         return parent.prototype[methodName].apply(this, args || []);
     }
 
+    /**
+     * @method applyOptions
+     * @param Object options
+     * @return $.Class
+     */
     ,applyOptions: function(options) {
         this.options || (this.options = {});
         options || (options = {});
@@ -169,17 +214,34 @@ $.extend($.Class.prototype, {
         return this;
     }
 
+    /**
+     * @private
+     * @method initOptions
+     * @param Object options
+     * @return $.Class
+     */
     ,initOptions: function(options) {
         options = $.extend({}, this.defaultOptions, options, true);
         this.applyOptions(options);
         return this;
     }
 
+    /**
+     * @method createAlias
+     * @param String method
+     * @return Function
+     */
     ,createAlias: function(method) {
         return this[method].bind(this);
     }
 
+    /**
+     * @method defer
+     * @param String method
+     * @param Number miniseconds
+     * @return Object
+     */
     ,defer: function(method, miniseconds) {
-        return $.Function.defer(this.createAlias(method), miniseconds);
+        return this.createAlias(method).defer(miniseconds);
     }
 });

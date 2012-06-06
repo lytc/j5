@@ -52,7 +52,7 @@ $.Observable.extend('$.App', {
 		$.Loader.addPath(this.namespace, this.path);
 		
 		$.each(['models', 'collections', 'controllers', 'views', 'plugins'], function(item) {
-			$.namespace($.String.format('{0}.{1}', this.namespace, item));
+			$.namespace('{0}.{1}'.format(this.namespace, item));
 		}, this);
 		
 		$.Navigator.on('change', function(path) {
@@ -95,20 +95,20 @@ $.Observable.extend('$.App', {
 			action = this.defaultAction;
 		}
 
-		var controllerClassName = $.String.format(this.namespace + '.controllers.{0}', $.String.camelize(controller));
+		var controllerClassName = (this.namespace + '.controllers.{0}').format(controller.camelize());
 		var controllerClass = $.getClass(controllerClassName);
 		
 		if (!controllerClass) {
-			throw new Error($.String.format('Controller {0} not found.', controller));
+			throw new Error('Controller {0} not found.'.format(controller));
 		}
 		
 		var controllerInstance = new controllerClass({
 			id: id
 		});
 
-		var actionMethodName = $.String.camelize(action, true) + this.actionPrefix;
+		var actionMethodName = action.camelize(true) + this.actionPrefix;
 		if (!controllerInstance[actionMethodName]) {
-			throw new Error($.String.format('Call undefined action {0} in controller {1}', action, controller));
+			throw new Error('Call undefined action {0} in controller {1}'.format(action, controller));
 		}
 		controllerInstance.before();
 		controllerInstance[actionMethodName]();

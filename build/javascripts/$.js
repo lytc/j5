@@ -255,7 +255,7 @@ $.extend($, {
                 })
             }
         }
-        return obj;
+        return _obj;
     }
 
     /**

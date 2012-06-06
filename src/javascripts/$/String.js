@@ -42,7 +42,7 @@ $.String = {
 		var parts = str.split(/\s+|\-|_/);
 		var result = '';
 		for (var i = 0; i < parts.length; i ++) {
-			result += $.String.ucfirst(parts[i], false);
+			result += parts[i].ucfirst(false);
 		}
 		if (lowerFirst) {
 			result = result[0].toLowerCase() + result.substr(1);

@@ -55,7 +55,7 @@ $.Component.extend('$.Form form', {
 		
 		var setter;
 		$.each(['action', 'method'], function(name) {
-			setter = 'set' + $.String.camelize(name);
+			setter = 'set' + name.camelize();
 			this[setter] = function(value) {
 				this.el.setAttr(name, value);
 				return this;

@@ -72,10 +72,10 @@ $.Alert.extend('$.Notify notify', {
 
     ,setHideDelay: function(miniseconds) {
         if (this.isVisible()) {
-            $.Function.defer(this.hide.bind(this), miniseconds);
+            this.hide.bind(this).defer(miniseconds);
         }
         this.on('show', function() {
-            $.Function.defer(this.hide.bind(this), miniseconds);
+            this.hide.bind(this).defer(miniseconds);
         });
     }
 });

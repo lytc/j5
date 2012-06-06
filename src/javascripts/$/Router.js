@@ -36,7 +36,7 @@ $.Observable.extend('$.Router', {
 	}
 	
 	,remove: function(route) {
-		$.Array.remove(this._route, (route + '').replace(/^\/(.*)\/$/, '$1').replace(/\\/, '\\\\'));
+        this._route.remove((route + '').replace(/^\/(.*)\/$/, '$1').replace(/\\/, '\\\\'));
 		return this;
 	}
 });

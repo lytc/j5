@@ -2,36 +2,39 @@
 //= require ./Element
 
 /**
- * Base class for all Ext components. All subclasses of Component may participate in the automated Ext component
- * lifecycle of creation, rendering and destruction which is provided by the {@link Ext.container.Container Container}
- * class. Components may be added to a Container through the {@link Ext.container.Container#cfg-items items} config option
- * at the time the Container is created, or they may be added dynamically via the
- * {@link Ext.container.Container#method-add add} method.
- *
- * The Component base class has built-in support for basic hide/show and enable/disable and size control behavior.
- *
- * All Components are registered with the {@link Ext.ComponentManager} on construction so that they can be referenced at
- * any time via {@link Ext#getCmp Ext.getCmp}, passing the {@link #id}.
- *
- * All user-developed visual widgets that are required to participate in automated lifecycle and size management should
- * subclass Component.
- *
- * See the Creating new UI controls chapter in [Component Guide][1] for details on how and to either extend
- * or augment Ext JS base classes to create custom Components.
- *
- * Every component has a specific xtype, which is its Ext-specific type name, along with methods for checking the xtype
- * like {@link #getXType} and {@link #isXType}. See the [Component Guide][1] for more information on xtypes and the
- * Component hierarchy.
- *
  * @class $.Component
  */
 $.Observable.extend('$.Component component', {
+    /**
+     * @property String tag
+     * @default div
+     */
 	tag: 'div'
+
+    /**
+     * @protected
+     * @property String baseClasses
+     * @default x-comp
+     */
 	,baseClasses: 'x-comp'
+
+    /**
+     * @property String defaultChildType
+     * @default component
+     */
 	,defaultChildType: 'component'
-	
+
+    /**
+     * @private
+     * @property fallbackFunctions
+     */
 	,fallbackFunctions: 'setWidth, getWidth, setHeight, getHeight, getLeft, setLeft, getTop, setTop, getRight, setRight, getAttr, setAttr, setStyles, getStyle, setHtml, addClasses, getClasses, hasClasses, removeClasses, toggleClasses, switchClasses, radioClasses, deRadioClasses, setClickRadioClasses, show, hide, collapse, expand, isRendered, setData, getData, setName, getName, setValue, getValue, index'
 
+    /**
+     * @method constructor
+     * @param Object [options]
+     * @return $.Component
+     */
     ,constructor: function(options) {
         options || (options = {});
         this.items = [];
@@ -56,6 +59,12 @@ $.Observable.extend('$.Component component', {
         this.callSuper([options]);
     }
 
+    /**
+     * @protected
+     * @method initElement
+     * @param String|Element|$.Element
+     * @return $.Component
+     */
     ,initElement: function(el) {
         if (el instanceof $.Element) {
             this.el = el;
@@ -66,17 +75,35 @@ $.Observable.extend('$.Component component', {
         this.setClasses('');
         this.trigger('render');
         this.rendered = true;
+        return this;
     }
 
+    /**
+     * @method isRendered
+     * @return Boolean
+     */
     ,isRendered: function() {
         return this.el? this.el.isRendered() : false;
     }
 
+    /**
+     * @method addPlugin
+     * @param $.Class|Array
+     * @return $.Component
+     */
     ,addPlugin: function(plugin) {
         plugin = $.getClass(plugin);
         new plugin(this);
+        return this;
     }
-	
+
+    /**
+     * @method on
+     * @param String|Object events
+     * @param Function [callback]
+     * @param Mixed [scope]
+     * @return $.Component
+     */
 	,on: function(events, callback, scope) {
         if ('object' == typeof events) {
             scope = callback;
@@ -96,7 +123,14 @@ $.Observable.extend('$.Component component', {
 		
 		return this;
 	}
-	
+
+    /**
+     * @method un
+     * @param String|Object events
+     * @param Function [callback]
+     * @param Mixed [scope]
+     * @return $.Component
+     */
 	,un: function(events, callback, scope) {
 		var _events = events.split(/\s+/);
         var me = this;
@@ -112,7 +146,12 @@ $.Observable.extend('$.Component component', {
 		}, this);
 		return this;
 	}
-	
+
+    /**
+     * @method setEl
+     * @param Object options
+     * @return $.Component
+     */
 	,setEl: function(options) {
         if (options instanceof $.Element) {
             this.el = options;
@@ -121,35 +160,69 @@ $.Observable.extend('$.Component component', {
         }
 		return this;
 	}
-	
+
+    /**
+     * @method setAppendTo
+     * @param Element|$.Element|$.Component
+     * @return $.Component
+     */
 	,setAppendTo: function(target) {
+        if (target instanceof $.Component) {
+            target = target.el;
+        }
 		this.el.appendTo(target);
 		return this;
 	}
-	
+
+    /**
+     * @method setClasses
+     * @param String classes
+     * @return $.Component
+     */
 	,setClasses: function(classes) {
 		classes = 'x-comp ' + this.baseClasses + ' ' + classes;
 		classes = classes.trim();
 		classes = classes.split(/\s+/g);
-		classes = $.Array.uniq(classes).join(' ');
+		classes = classes.uniq().join(' ');
 		this.el.setAttr('class', classes);
 		return this;
 	}
 
+    /**
+     * @method setData
+     * @param Mixed data
+     * @return $.Component
+     */
     ,set$data: function(data) {
         this.$data = data;
         return this;
     }
 
+    /**
+     * @method setHidden
+     * @param Boolean bool
+     * @return $.Component
+     */
     ,setHidden: function(bool) {
-        return this.switchClasses(bool, 'x-hidden');
+        this.switchClasses(bool, 'x-hidden');
+        return this;
     }
 
+    /**
+     * @method setDefault
+     * @param Object options
+     * @return $.Component
+     */
     ,setDefaults: function(options) {
         this.defaults = options;
         return this;
     }
 
+    /**
+     * @method add
+     * @param Objec|$.Component|Array
+     * @return $.Component
+     */
 	,add: function(components) {
         if (components instanceof Array) {
 			return $.each(components, function(component) {
@@ -179,7 +252,12 @@ $.Observable.extend('$.Component component', {
 			return components;
 		}
 	}
-	
+
+    /**
+     * @method setChildren
+     * @param Object... children
+     * @return @.Component
+     */
 	,setChildren: function() {
 		var result = this.add.apply(this, arguments);
 
@@ -187,18 +265,33 @@ $.Observable.extend('$.Component component', {
         this.trigger('inititem');
         return result;
 	}
-	
+
+    /**
+     * @method contains
+     * @param $.Component
+     * @return Boolean
+     */
 	,contains: function(comp) {
 		return this.el.contains(comp.el);
 	}
-	
+
+    /**
+     * @mehtod query
+     * @param String query
+     * @return $.Component
+     */
 	,query: function(query) {
 		var el = this.el.query(query);
 		if (el && el.dom.$comp) {
 			return el.dom.$comp;
 		}
 	}
-	
+
+    /**
+     * @method queryAll
+     * @param String query
+     * @return Array
+     */
 	,queryAll: function(query) {
 		var result = [];
 		var els = this.el.queryAll(query);
@@ -210,7 +303,12 @@ $.Observable.extend('$.Component component', {
 		});
 		return result;
 	}
-	
+
+    /**
+     * @method findAncestor
+     * @param query
+     * @return $.Component
+     */
 	,findAncestor: function(query) {
 		var el = this.el.findAncestor(query);
 		if (el && el.dom.$comp) {
@@ -218,6 +316,11 @@ $.Observable.extend('$.Component component', {
 		}
 	}
 
+    /**
+     * @method child
+     * @param Number at
+     * @return $.Component
+     */
     ,child: function(at) {
         var dom = $.Dom.query('> .x-comp:nth-child(' + (at + 1) + ')', this.el.dom);
         if (dom && dom.$comp) {
@@ -225,17 +328,29 @@ $.Observable.extend('$.Component component', {
         }
     }
 
+    /**
+     * @method firstChild
+     * @return $.Component
+     */
     ,firstChild: function() {
         return this.child(0);
     }
 
+    /**
+     * @method lastChild
+     * @return $.Component
+     */
     ,lastChild: function() {
         var dom = $.Dom.query('> .x-comp:last-child', this.el.dom);
         if (dom && dom.$comp) {
             return dom.$comp;
         }
     }
-	
+
+    /**
+     * @method children
+     * @return Array
+     */
 	,children: function() {
 		var result = [], doms = $.Dom.queryAll('> .x-comp', this.el.dom);
 		
@@ -246,6 +361,10 @@ $.Observable.extend('$.Component component', {
 		return result;
 	}
 
+    /**
+     * @method getNext
+     * @return $.Component
+     */
     ,getNext: function() {
         var el = this.el.getNext();
         if (el && el.dom.$comp) {
@@ -253,13 +372,21 @@ $.Observable.extend('$.Component component', {
         }
     }
 
+    /**
+     * @method getPrev
+     * @return $.Component
+     */
     ,getPrev: function() {
         var el = this.el.getPrev();
         if (el && el.dom.$comp) {
             return el.dom.$comp;
         }
     }
-	
+
+    /**
+     * @method empty
+     * @return $.Component
+     */
 	,empty: function() {	
 		$.each(this.el.dom.children, function(child) {
 			if (child.$comp) {
@@ -271,7 +398,10 @@ $.Observable.extend('$.Component component', {
         this.el.empty();
 		return this;
 	}
-	
+
+    /**
+     * @method destroy
+     */
 	,destroy: function() {
 		this.empty();
 		this.el.destroy();
@@ -290,6 +420,12 @@ $.Observable.extend('$.Component component', {
     });
 })();
 
+/**
+ * @static
+ * @method get
+ * @param String query
+ * @return $.Component
+ */
 $.Component.get = function(query) {
 	var el = $.Element.get(query);
 	if (el.dom.$comp) {

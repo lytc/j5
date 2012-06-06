@@ -2,10 +2,23 @@
  * @class $.Dom
  */
 $.Dom = {
+    /**
+     * @static
+     * @method is
+     * @param obj
+     * @return Boolean
+     */
 	is: function(obj) {
 		return obj instanceof HTMLElement;
 	}
-	
+
+    /**
+     * @method query
+     * @param String selectors
+     * @param Element [root]
+     * @param Boolean [all]
+     * @return Element
+     */
 	,query: function(selectors, root, all) {
 		root || (root = document);
 		
@@ -61,11 +74,21 @@ $.Dom = {
 		
 		return result;
 	}
-	
+
+    /**
+     * @method queryAll
+     * @param String selectors
+     * @param Element [root]
+     * @return Array
+     */
 	,queryAll: function(selectors, root) {
 		return this.query(selectors, root, true);
 	}
-	
+
+    /**
+     * @method create
+     * @param Object [options]
+     */
 	,create: function(options) {
 		options || (options = {});
 		('string' != typeof options) || (options = {tag: options});
@@ -92,12 +115,17 @@ $.Dom = {
 		});
 		return dom;
 	}
-	
+
+    /**
+     * @method toElement
+     * @param Element dom
+     * @return $.Element
+     */
 	,toElement: function(dom /* or query */) {
 		if ('string' == typeof dom) {
 			dom = $.Dom.query(dom);
 			if (!dom) {
-				throw new Error($.String.format('Dom element with query "{0}" not found', dom));
+				throw new Error('Dom element with query "{0}" not found'.format(dom));
 			}
 		}
 		

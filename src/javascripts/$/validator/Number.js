@@ -29,12 +29,12 @@ $.Validator.extend('$.validator.Number', {
 		
 		value = parseInt(value);
 		if (this.min && this.min > value) {
-			this.messages.push($.String.format(this.minMessage, this.min));
+			this.messages.push(this.minMessage.format(this.min));
 			isValid = false;
 		}
 		
 		if (this.max && this.max < value) {
-			this.messages.push($.String.format(this.maxMessage, this.max));
+			this.messages.push(this.maxMessage.format(this.max));
 			isValid = false;
 		}
 		

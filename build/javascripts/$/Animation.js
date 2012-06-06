@@ -6,7 +6,7 @@
  */
 $.Observable.extend('$.Animation', {
     /**
-     * @property Int delay
+     * @property Number delay
      * @default 0
      */
     delay: 0
@@ -18,7 +18,7 @@ $.Observable.extend('$.Animation', {
     ,direction: 'normal'// [ normal | reverse | alternate | alternate-reverse ] [, [ normal | reverse | alternate | alternate-reverse ] ]*
 
     /**
-     * @property Int duration
+     * @property Number duration
      * @default 1
      */
     ,duration: 1
@@ -30,7 +30,7 @@ $.Observable.extend('$.Animation', {
     ,fillMode: 'forwards' // [ none | forwards | backwards | both ] [, [ none | forwards | backwards | both ] ]*
 
     /**
-     * @property Int iterationCount
+     * @property Number iterationCount
      * @default 1
      */
     ,iterationCount: 1 // [ infinite | <number> ] [, [ infinite | <number> ] ]*
@@ -81,6 +81,7 @@ $.Observable.extend('$.Animation', {
      * @method constructor
      * @param String|Element|$.Element el
      * @param Object [options]
+     * @return $.Animation
      */
     ,constructor: function(el, options) {
         this.el = $.Element.get(el);

@@ -62,7 +62,7 @@ $.Component.extend('$.field.Field', {
         return this.setDisabled(true);
     }
 	
-	,setValidates: function(validates) {
+	,setValidates11: function(validates) {
 		this.validators = [];
 		
 		(validates instanceof Array) || (validates = [validates]);

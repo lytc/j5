@@ -3,6 +3,7 @@
 //= require ./plugins/ValidateIndicator
 //= require ./mixins/SelectOnFocusable
 //= require ./mixins/Placeholderable
+//= require ./mixins/Validateable
 
 /**
  * @class $.field.Text
@@ -13,9 +14,9 @@ $.field.Field.extend('$.field.Text field.text', {
         $.field.mixins.Labelable
         ,$.field.mixins.Placeholderable
         ,$.field.mixins.SelectOnFocusable
+        ,$.field.mixins.Validateable
     ]
 	,plugins: [
-		//'$.field.plugins.Labelable'
 		'$.field.plugins.ValidateIndicator'
 	]
 

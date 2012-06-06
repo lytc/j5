@@ -68,7 +68,7 @@ $.Class.extend('$.Event', {
             e.KEY_DOWN
         ];
 
-        return !$.Array(cannotModifyKeys).has(this.getKey());
+        return !cannotModifyKeys.has(this.getKey());
     }
 
     ,getTargetComponent: function(componentClass, rootComponent) {

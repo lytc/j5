@@ -71,7 +71,6 @@ $.Component.extend('$.List list', {
             }
         }, this);
 
-        items = $.Array(items);
         if (!this.multiSelect) {
             $.each(this.getSelection(), function(item) {
                 if (!items.has(item)) {

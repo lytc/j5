@@ -115,7 +115,7 @@ $.Component.extend('$.Paginator paginator', {
                 ,totalItem: this.totalItem
             };
 
-        this.info.setHtml($.String.format(this.infoHtml, info));
+        this.info.setHtml(this.infoHtml.format(info));
         return this;
     }
 });

@@ -36,14 +36,11 @@ $.KeyListener = $.Class.extend({
         this.listenOn = event;
         var me = this;
         this._callback = function(e) {
-            if (me.stopEvent) {
-                e.stop();
-            }
-
             var alt = e.altKey
                 ,ctrl = e.ctrlKey
                 ,shift = e.shiftKey
-                ,key = e.key || e.charCode || e.keyCode || e.which;
+                ,key = e.key || e.charCode || e.keyCode || e.which
+                ,has = false;
 
             $.each(me.listeners, function(item) {
                 if (item.alt && !alt || item.ctrl && !ctrl || item.shift && !shift) {
@@ -56,8 +53,14 @@ $.KeyListener = $.Class.extend({
                     }
                 }
 
+                has = true;
+
                 item.callback.call(item.scope || null, e);
             }, me);
+
+            if (has && me.stopEvent) {
+                e.stop();
+            }
         }
 
         this.el.on(this.listenOn, this._callback);
@@ -79,7 +82,6 @@ $.KeyListener = $.Class.extend({
             $.each(options, function(option) {
                 _options = {};
                 option = option.trim().split(/\s+/);
-                option = $.Array(option);
 
                 _options.alt = option.has('alt');
                 _options.ctrl = option.has('ctrl');

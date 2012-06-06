@@ -3,7 +3,7 @@
  */
 $.define('$.field.plugins.ValidateIndicator', {
 	constructor: function(field) {
-        if (field.isRenderd) {
+        if (field.isRendered()) {
             render();
         } else {
             field.on('render:input', function() {

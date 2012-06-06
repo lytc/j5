@@ -63,7 +63,7 @@ $.Component.extend('$.ProgressBar progressbar', {
             this.html = html;
         }
 
-        html = $.String.format(html, Math.round(this.percentage) + '%');
+        html = html.format(Math.round(this.percentage) + '%');
         this.textBackEl.setHtml(html);
         this.textEl.setHtml(html);
 

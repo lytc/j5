@@ -54,7 +54,7 @@ $.Component.extend('$.Slider slider', {
                 }
             }
             ,keyListener: {
-                listenOn: 'keypress'
+                listenOn: 'keydown'
                 ,stopEvent: true
                 ,right: this.goNext.bind(this)
                 ,up:    this.goNext.bind(this)

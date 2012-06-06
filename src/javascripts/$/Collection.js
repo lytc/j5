@@ -2,12 +2,38 @@
 
 /**
  * @class $.Collection
+ * @superclass $Observable
  */
 $.Observable.extend('$.Collection', {
+    /**
+     * @property String url
+     */
 	url: ''
+
+    /**
+     * @property String totalProperty
+     * @default total
+     */
 	,totalProperty: 'total'
+
+    /**
+     * @property String root
+     * @default rows
+     */
 	,root: 'rows'
+
+    /**
+     * @property Number total
+     * @default null
+     */
 	,total: null
+
+    /**
+     * @method constructor
+     * @param Object [data]
+     * @param Object [options]
+     * @return $.Collection
+     */
 	,constructor: function(data, options) {
         this.callSuper([options]);
 
@@ -15,6 +41,10 @@ $.Observable.extend('$.Collection', {
 		this.setData(data || {});
 	}
 
+    /**
+     * @method getAjax
+     * @return $.Ajax
+     */
 	,getAjax: function() {
 		if (!this._ajax) {
 			this._ajax = new $.Ajax();
@@ -25,6 +55,11 @@ $.Observable.extend('$.Collection', {
 		return this._ajax;
 	}
 
+    /**
+     * @method setData
+     * @param Object data
+     * @return $.Collection
+     */
 	,setData: function(data) {
         this.models = [];
         var model;
@@ -41,6 +76,11 @@ $.Observable.extend('$.Collection', {
 		return this;
 	}
 
+    /**
+     * @method load
+     * @param Object options
+     * @return $.Collection
+     */
 	,load: function(options) {
         options || (options = {});
         if ('function' == typeof options) {
@@ -71,6 +111,12 @@ $.Observable.extend('$.Collection', {
 		return this;
 	}
 
+    /**
+     * @method each
+     * @param Function callback
+     * @param Mixed [scope]
+     * @return $.Collection
+     */
 	,each: function(callback, scope) {
 		scope || (scope = this);
 		$.each(this.models, function(model, index, models) {
@@ -79,14 +125,30 @@ $.Observable.extend('$.Collection', {
 		return this;
 	}
 
+    /**
+     * @method get
+     * @param String id
+     * @return Mixed
+     */
 	,get: function(id) {
 		return this.findOneBy(this.model.prototype.idProperty, id);
 	}
 
+    /**
+     * @method at
+     * @param Number index
+     * @return Mixed
+     */
 	,at: function(index) {
 		return this.models[index];
 	}
 
+    /**
+     * @method findOneBy
+     * @param String property
+     * @param Mixed value
+     * @return $.Model|Boolean
+     */
 	,findOneBy: function(property, value) {
 		var result;
 		this.each(function(model, index, models) {
@@ -98,7 +160,12 @@ $.Observable.extend('$.Collection', {
 		return result;
 	}
 
-	,findBy: function(property, name) {
+    /**
+     * @method findBy
+     * @param String property
+     * @return Array
+     */
+	,findBy: function(property) {
 		var results = [];
 		this.each(function(model, index, models) {
 			if (model.get(property) === value) {
@@ -108,11 +175,25 @@ $.Observable.extend('$.Collection', {
 		return results;
 	}
 
+    /**
+     * @method sort
+     * @param Function callback
+     * @param Mixed scope
+     * @return $.Collection
+     */
 	,sort: function(callback, scope) {
 		this.models.sort(callback.bind(scope || this));
 		this.trigger('sort', this);
+        return this;
 	}
 
+    /**
+     * @method sortBy
+     * @param String property
+     * @param String direction
+     * @default ASC
+     * @return $.Collection
+     */
 	,sortBy: function(property, direction) {
 		direction || (direction = 'ASC');
 		var callback = function(a, b) {
@@ -135,18 +216,38 @@ $.Observable.extend('$.Collection', {
 		return this.sort(callback);
 	}
 
+    /**
+     * @method sortDescBy
+     * @param String property
+     * @return $.Collection
+     */
 	,sortDescBy: function(property) {
 		return this.sortBy(property, 'DESC');
 	}
 
+    /**
+     * @method filter
+     * @param Function callback
+     * @param Mixed scope
+     * @return Array
+     */
 	,filter: function(callback, scope) {
 		return this.models.filter(callback, scope);
 	}
 
+    /**
+     * @method indexOf
+     * @param $.Model model
+     * @return Number
+     */
     ,indexOf: function(model) {
         return this.models.indexOf(model);
     }
 
+    /**
+     * @method toJson
+     * @return Array
+     */
 	,toJson: function() {
 		var result =[];
 		this.each(function(model) {
@@ -155,6 +256,11 @@ $.Observable.extend('$.Collection', {
 		return result;
 	}
 
+    /**
+     * @method setPaginator
+     * @param Object [options]
+     * @return $.Collection
+     */
     ,setPaginator: function(options) {
         if (!this.paginator) {
             var me = this;
@@ -175,6 +281,10 @@ $.Observable.extend('$.Collection', {
         return this;
     }
 
+    /**
+     * @param getPaginator
+     * @return $.Paginator
+     */
     ,getPaginator: function() {
         this.setPaginator();
         return this.paginator;

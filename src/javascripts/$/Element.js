@@ -6,6 +6,11 @@
  * @class $.Element
  */
 $.Observable.extend('$.Element element', {
+    /**
+     * @method constructor
+     * @param Object [options]
+     * @return $.Element
+     */
     constructor: function(options) {
         options || (options = {});
 
@@ -26,7 +31,7 @@ $.Observable.extend('$.Element element', {
                 var query = dom;
                 dom = $.Dom.query(query);
                 if (!dom) {
-                    throw new Error($.String.format('Dom element with query "{0}" not found', query));
+                    throw new Error('Dom element with query "{0}" not found'.format(query));
                 }
             }
         }
@@ -37,6 +42,11 @@ $.Observable.extend('$.Element element', {
         this.callSuper([options]);
     }
 
+    /**
+     * @method on
+     * @param String|Object events
+     * @return $.Element
+     */
     ,on: function(events) {
         this.callSuper(arguments);
 
@@ -66,6 +76,11 @@ $.Observable.extend('$.Element element', {
         return this;
     }
 
+    /**
+     * @method un
+     * @param String|Object events
+     * @return $.Element
+     */
     ,un: function(events) {
         this.callSuper(arguments);
 
@@ -97,6 +112,12 @@ $.Observable.extend('$.Element element', {
         return this;
     }
 
+    /**
+     * @method setAttr
+     * @param String name
+     * @param Mixed value
+     * @return $.Element
+     */
     ,setAttr: function(name, value) {
         if ('string' != typeof name) {
             $.each(name, function(v, k) {
@@ -108,15 +129,30 @@ $.Observable.extend('$.Element element', {
         return this;
     }
 
+    /**
+     * @method getAttr
+     * @param String name
+     * @return String
+     */
     ,getAttr: function(name) {
         return this.dom.getAttribute(name);
     }
 
+    /**
+     * @method removeAttr
+     * @param String name
+     * @return $.Element
+     */
     ,removeAttr: function(name) {
         this.dom.removeAttribute(name);
         return this;
     }
 
+    /**
+     * @method toggleAttr
+     * @param String name
+     * @return $.Element
+     */
     ,toggleAttr: function(name) {
         if (this.dom.hasAttribute(name)) {
             return this.removeAttr(name);
@@ -124,19 +160,38 @@ $.Observable.extend('$.Element element', {
         return this.addAttr(name, value !== undefined? value : true);
     }
 
+    /**
+     * @method switchAttr
+     * @param Boolean bool
+     * @param String name
+     * @param String value
+     * @return $.Element
+     */
     ,switchAttr: function(bool, name, value) {
         (undefined !== value) || (value = true);
         return this[bool? 'setAttr' : 'removeAttr'](name, value);
     }
 
+    /**
+     * @method setFocusable
+     * @param Boolean bool
+     */
     ,setFocusable: function(bool) {
         this.setAttr('tabindex', bool? 0 : -1);
     }
 
+    /**
+     * @method isFocused
+     * @return Boolean
+     */
     ,isFocused: function() {
         return document.activeElement == this.dom;
     }
 
+    /**
+     * @method focus
+     * @return $.Element
+     */
     ,focus: function() {
         if (!this.isFocused()) {
             this.dom.focus();
@@ -144,6 +199,10 @@ $.Observable.extend('$.Element element', {
         return this;
     }
 
+    /**
+     * @method blur
+     * @return $.Element
+     */
     ,blur: function() {
         if (this.isFocused()) {
             this.dom.blur();
@@ -151,16 +210,31 @@ $.Observable.extend('$.Element element', {
         return this;
     }
 
+    /**
+     * @method select
+     * @return $.Element
+     */
     ,select: function() {
         this.dom.select();
         return this;
     }
 
+    /**
+     * @method setId
+     * @param String id
+     * @return $.Element
+     */
     ,setId: function(id) {
         this.dom.id = id;
         return this;
     }
 
+    /**
+     * @method setData
+     * @param String name
+     * @param Mixed value
+     * @return $.Element
+     */
     ,setData: function(name, value) {
         if ('object' == typeof name) {
             $.each(name, function(v, n) {
@@ -172,16 +246,30 @@ $.Observable.extend('$.Element element', {
         return this;
     }
 
+    /**
+     * @method getData
+     * @param String name
+     * @return String
+     */
     ,getData: function(name) {
         return this.dom.dataset[name];
     }
 
+    /**
+     * @method setName
+     * @param String name
+     * @return $.Element
+     */
     ,setName: function(name) {
         this.setAttr('name', name);
         this.setData('name', name);
         return this;
     }
 
+    /**
+     * @method getName
+     * @return $.Element
+     */
     ,getName: function() {
         var name = this.getAttr('name');
         if (!name) {
@@ -190,6 +278,11 @@ $.Observable.extend('$.Element element', {
         return name;
     }
 
+    /**
+     * @method setValue
+     * @param Mixed value
+     * @return $.Element
+     */
     ,setValue: function(value) {
         this.dom.value = value;
         this.setAttr('value', value);
@@ -197,19 +290,37 @@ $.Observable.extend('$.Element element', {
         return this;
     }
 
+    /**
+     * @method getValue
+     * @return String
+     */
     ,getValue: function() {
         return this.dom.value || this.getAttr('value') || this.getData('value');
     }
 
+    /**
+     * @method setClasses
+     * @param String classes
+     * @return $.Element
+     */
     ,setClasses: function(classes) {
         this.setAttr('class', '');
         return this.addClasses(classes);
     }
 
+    /**
+     * @method getClasses
+     * @return ClassList
+     */
     ,getClasses: function() {
         return this.dom.classList;
     }
 
+    /**
+     * @method hasClasses
+     * @param String classes
+     * @return Boolean
+     */
     ,hasClasses: function(classes) {
         classes = classes.trim().split(/\s+/);
         var has = true, classList = this.getClasses();
@@ -222,14 +333,24 @@ $.Observable.extend('$.Element element', {
         return has;
     }
 
+    /**
+     * @method addClasses
+     * @param String classes
+     * @return $.Element
+     */
     ,addClasses: function(classes) {
         classes = (this.getAttr('class') || '') + ' ' + classes;
         classes = classes.trim();
         classes = classes.split(/\s+/g);
-        classes = $.Array(classes).uniq().join(' ');
+        classes = classes.uniq().join(' ');
         return this.setAttr('class', classes);
     }
 
+    /**
+     * @method removeClasses
+     * @param String classes
+     * @return $.Element
+     */
     ,removeClasses: function(classes) {
         var classList = this.getClasses();
         if (!classList.length) {
@@ -534,6 +655,10 @@ $.Observable.extend('$.Element element', {
         return el;
     }
 
+    ,setAppendTo: function(el) {
+        return this.appendTo(el);
+    }
+
     ,wrap: function(el) {
         el || (el = '<div>');
         el = $.Element.get(el);
@@ -617,7 +742,7 @@ $.Observable.extend('$.Element element', {
         !this._showHideDefer || (this._showHideDefer.cancel());
 
         if (defer) {
-            this._showHideDefer = $.Function.defer(this.hide.bind(this), true === defer? 1 : defer);
+            this._showHideDefer = this.hide.bind(this).defer(true === defer? 1 : defer);
             return this;
         }
 
@@ -634,7 +759,7 @@ $.Observable.extend('$.Element element', {
         !this._showHideDefer || (this._showHideDefer.cancel());
 
         if (defer) {
-            this._showHideDefer = $.Function.defer(this.show.bind(this), true === defer? 1 : defer);
+            this._showHideDefer = this.show.bind(this).defer(true === defer? 1 : defer);
             return this;
         }
 

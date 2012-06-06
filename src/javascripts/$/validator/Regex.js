@@ -16,7 +16,7 @@ $.Validator.extend('$.validator.Regex', {
 		}
 		
 		var isValid = this.pattern.test(value);
-		this.messages = isValid? [] : [$.String.format(this.message, this.pattern.toString())];
+		this.messages = isValid? [] : [this.message.format(this.pattern.toString())];
 		return isValid;
 	}
 });

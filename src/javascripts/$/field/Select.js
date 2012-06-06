@@ -137,7 +137,7 @@ $.field.Trigger.extend('$.field.Select field.select', {
     ,filter: function() {
         var value = this.getValue()
             ,found = false
-            ,regex = new RegExp($.String.format(this.filterRegex, value))
+            ,regex = new RegExp(this.filterRegex.format(value))
             ,menuItems = this.menu.children();
 
         $.each(menuItems, function(item) {

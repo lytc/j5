@@ -2,9 +2,19 @@
 
 /**
  * @class $.ColorPalette
+ * @superclass $.List
  */
 $.List.extend('$.ColorPalette colorpalette', {
+    /**
+     * @private
+     * @property String baseClasses
+     */
     baseClasses: 'x-list x-color-palette'
+
+    /**
+     * @private
+     * @property Object defaultOptions
+     */
     ,defaultOptions: $.readOnlyObject({
         colors: [
             '000000', '993300', '333300', '003300', '003366', '000080', '333399', '333333',
@@ -16,8 +26,19 @@ $.List.extend('$.ColorPalette colorpalette', {
         ,multiSelect: false
         ,columns: 8
     })
+
+    /**
+     * @property Number itemSize
+     * @default 18
+     *
+     */
     ,itemSize: 18
 
+    /**
+     * @method setColors
+     * @param Array colors
+     * @return $.ColorPalette
+     */
     ,setColors: function(colors) {
         this.empty();
 
@@ -32,8 +53,14 @@ $.List.extend('$.ColorPalette colorpalette', {
                 }
             });
         }, this);
+        return this;
     }
 
+    /**
+     * @method setItemSize
+     * @param Number size
+     * @return $.ColorPalette
+     */
     ,setItemSize: function(size) {
         $.each(this.children(), function(item) {
             item.setSize(size);
@@ -42,17 +69,31 @@ $.List.extend('$.ColorPalette colorpalette', {
         return this;
     }
 
+    /**
+     * @method setColumns
+     * @param Number columns
+     * @return $.ColorPalette
+     */
     ,setColumns: function(columns) {
         this.setWidth((this.itemSize + 4) * columns);
         return this;
     }
 
+    /**
+     * @method setValue
+     * @param String value
+     * @return $.ColorPalette
+     */
     ,setValue: function(value) {
         var item = this.query('> .x-item[data-value=\\#' + value + ']');
         item.select();
         return this;
     }
 
+    /**
+     * @method getValue
+     * @return String
+     */
     ,getValue: function() {
         var selected = this.getFirstSelected();
         if (selected) {

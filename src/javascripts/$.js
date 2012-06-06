@@ -353,11 +353,11 @@ $.extend($, {
             undefined !== camelize || (camelize = true);
 
             if (camelize) {
-                name = $.String.camelize(name, true);
+                name = name.camelize(true);
             }
 
             if (!(name in dom.style)) {
-                name = $.getCssPrefix(!camelize) + (camelize? $.String.ucfirst(name, false) : name);
+                name = $.getCssPrefix(!camelize) + (camelize? name.ucfirst(false) : name);
             }
             return name;
         }
