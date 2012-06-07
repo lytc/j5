@@ -561,8 +561,27 @@ $.Observable.extend('$.Element element', {
         return this.dom.childElementCount;
     }
 
+    ,setIndex: function(index) {
+        var targetEl = this.getParent().at(index);
+        if (!targetEl) {
+            return this;
+        }
+
+        return this.insertBefore(targetEl);
+    }
+
     ,getIndex: function() {
         return [].indexOf.call(this.dom.parentElement.children, this.dom);
+    }
+
+    ,up: function(offset) {
+        offset || (offset = 1);
+        return this.setIndex(this.getIndex() - offset);
+    }
+
+    ,down: function(offset) {
+        offset || (offset = 1);
+        return this.up(-offset - 1);
     }
 
     ,first: function(query, uniq) {
