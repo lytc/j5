@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   get '/' do
     @total = 12345
-    @page = params[:page].to_i || 1
+    @page = params[:page]? params[:page].to_i : 1
     @rows = []
     sleep 1
     (1..10).to_a.each do |index|

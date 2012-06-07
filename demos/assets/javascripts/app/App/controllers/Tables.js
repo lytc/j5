@@ -16,6 +16,8 @@ App.controllers.Tables = App.Controller.extend({
             ,styles: {
                 marginBottom: '10px'
             }
+            ,stripedRow: true
+            ,stripedCol: true
             ,columns: [
                 {
                     xtype: 'table.column.rownumberer'
@@ -46,7 +48,6 @@ App.controllers.Tables = App.Controller.extend({
 
         collection = new App.collections.Posts();
 
-        collection.load();
 
         table2 = new $.Table({
             appendTo: '#view'
@@ -84,5 +85,8 @@ App.controllers.Tables = App.Controller.extend({
             ]
             ,collection: collection
         });
+
+        collection.load();
+
     }
 });

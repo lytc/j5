@@ -2,12 +2,44 @@
   width: 100%;
   border: 1px solid #ddd;
   border-collapse: separate;
-  border-radius: 4px;
+  line-height: 28px;
 
-  &.x-striped {
-    > .x-body {
-      > .x-row:nth-child(odd) {
-        > .x-cell {
+  > thead, > tbody {
+    > tr {
+      > td, > th {
+        border: 1px solid #ccc;
+        border-width: 1px 1px 0 0;
+        &:last-child {
+          border-right: 0;
+        }
+
+        padding: 0 2px;
+      }
+    }
+  }
+
+  > thead {
+    > tr {
+      > th {
+        border-top: 0;
+      }
+    }
+  }
+
+  &.x-striped-row {
+    > tbody {
+      > tr:nth-child(odd) {
+        > td {
+          background: rgba(#ccc, .2);
+        }
+      }
+    }
+  }
+
+  &.x-striped-col {
+    > colgroup {
+      > col {
+        &:nth-child(odd) {
           background: rgba(#ccc, .2);
         }
       }

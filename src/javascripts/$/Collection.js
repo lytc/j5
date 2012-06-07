@@ -29,6 +29,12 @@ $.Observable.extend('$.Collection', {
 	,total: null
 
     /**
+     * @property Boolean hasLoaded
+     * @default false
+     */
+    ,hasLoaded: false
+
+    /**
      * @method constructor
      * @param Object [data]
      * @param Object [options]
@@ -93,6 +99,9 @@ $.Observable.extend('$.Collection', {
             me.total = response[me.totalProperty];
             me.setData(response[me.root]);
             me.trigger('load', response[me.root], me);
+
+            me.hasLoaded = true;
+
             if (options.callback) {
                 options.callback.call(me, response[me.root], me);
             }
