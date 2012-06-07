@@ -26,7 +26,7 @@ $.table.Cell.extend('$.table.cell.RowNumberer', {
      * @return $.table.cell.RowNumberer
      */
     ,refresh: function() {
-        this.setHtml(this.row.index() + this.offset);
+        this.setHtml(this.row.getIndex() + this.offset);
         return this;
     }
 });

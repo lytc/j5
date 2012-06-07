@@ -561,7 +561,7 @@ $.Observable.extend('$.Element element', {
         return this.dom.childElementCount;
     }
 
-    ,index: function() {
+    ,getIndex: function() {
         return [].indexOf.call(this.dom.parentElement.children, this.dom);
     }
 

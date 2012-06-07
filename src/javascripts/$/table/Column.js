@@ -65,10 +65,10 @@ $.Component.extend('$.table.Column table.column', {
 
     ,getCell: function(row) {
         row = this.table.getRow(row);
-        return row.getCell(this.index());
+        return row.getCell(this.getIndex());
     }
 
     ,getAllCell: function() {
-        return this.table.tbody.queryAll('> tr > td:nth-child(' + this.index() + ')');
+        return this.table.tbody.queryAll('> tr > td:nth-child(' + this.getIndex() + ')');
     }
 });

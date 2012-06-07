@@ -181,7 +181,7 @@ $.Component.extend('$.Calendar calendar', {
                 ,listeners: {
                     click: function(e, el) {
                         me.change(function() {
-                            me.getValue().setMonth(el.index());
+                            me.getValue().setMonth(el.getIndex());
                         });
                     }
                 }

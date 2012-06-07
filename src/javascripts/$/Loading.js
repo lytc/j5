@@ -34,7 +34,7 @@ $.Component.extend('$.Loading', {
         this.spinnerEl.children().each(function(el) {
             el.setStyles({
                 animationDuration: duration + 's'
-                ,animationDelay: (delay * el.index()) + 's'
+                ,animationDelay: (delay * el.getIndex()) + 's'
             });
         });
         return this;

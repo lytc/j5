@@ -9,7 +9,7 @@ $.Component.extend('$.table.Row table.row', {
 
     ,getCell: function(col) {
         col = this.table.getCol(col);
-        return this.child(col.index());
+        return this.child(col.getIndex());
     }
 
     ,getAllCell: function() {
