@@ -1,10 +1,12 @@
-//= require ../Observable
+//= require ../Component
 
 /**
  * @class $.table.Column
  */
-$.table.Cell.extend('$.table.Column table.column', {
-    defaultCellType: 'table.row.cell'
+$.Component.extend('$.table.Column table.column', {
+    tag: 'col'
+    ,align: 'left'
+    ,dataField: null
 
     ,constructor: function(table, options) {
         this.table = table;
@@ -18,31 +20,23 @@ $.table.Cell.extend('$.table.Column table.column', {
 
     ,setEditable: function(bool) {
         this.editable = bool;
+        return this;
     }
 
     ,setAlign: function(align) {
-        this.callSuper(arguments);
         this.align = align;
-    }
-
-    ,setWidth: function(width) {
-        this.callSuper(arguments);
-        this.width = width;
+        return this;
     }
 
     ,setHidden: function(bool) {
-        this.callSuper(arguments);
+        this[bool? 'hide' : 'show']();
+    }
 
-        if (this.isRendered()) {
-            var index = this.index();
-
-            $.each(this.table.bodyComponent.children(), function(row) {
-                row.child(index).setHidden(bool);
-            });
+    ,renderer: function(value, rowData) {
+        if ([undefined, null].has(value)) {
+            value = '';
         }
-
-        this.hidden = bool;
-        return this;
+        return value;
     }
 
     ,setRenderer: function(renderer) {
@@ -51,23 +45,30 @@ $.table.Cell.extend('$.table.Column table.column', {
     }
 
     ,hide: function() {
-        return this.setHidden(true);
+        this.setStyles('visibility', 'collapse');
+        return this;
     }
 
     ,show: function() {
-        return this.setHidden(false);
+        this.removeStyles('visibility');
+        return this;
     }
 
-    ,createCell: function(row, index) {
-        var cellClass = $.alias(this.defaultCellType);
-
-        return new cellClass(row, {
-            renderer: this.renderer
-            ,html: row.data[this.dataField]
-            ,editable: this.editable
-            ,align: this.align
-            ,hidden: this.hidden
-            ,width: this.width
+    ,createCell: function(row, rowData) {
+        return new $.table.Cell(row, {
+            html: this.renderer(rowData[this.dataField])
+            ,attr: {
+                align: this.align
+            }
         });
+    }
+
+    ,getCell: function(row) {
+        row = this.table.getRow(row);
+        return row.getCell(this.index());
+    }
+
+    ,getAllCell: function() {
+        return this.table.tbody.queryAll('> tr > td:nth-child(' + this.index() + ')');
     }
 });

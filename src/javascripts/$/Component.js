@@ -247,6 +247,7 @@ $.Observable.extend('$.Component component', {
 			}
 			this.el.append(components.el);
 			this.trigger('add', components);
+            components.trigger('appendto', this);
 			this.items.push(components);
 
 			return components;
@@ -281,6 +282,10 @@ $.Observable.extend('$.Component component', {
      * @return $.Component
      */
 	,query: function(query) {
+        if ('number' == typeof query) {
+            return this.child(query);
+        }
+
 		var el = this.el.query(query);
 		if (el && el.dom.$comp) {
 			return el.dom.$comp;
@@ -295,7 +300,7 @@ $.Observable.extend('$.Component component', {
 	,queryAll: function(query) {
 		var result = [];
 		var els = this.el.queryAll(query);
-		
+
 		els.each(function(el) {
 			if (el.dom.$comp) {
 				result.push(el.dom.$comp);
@@ -420,15 +425,17 @@ $.Observable.extend('$.Component component', {
     });
 })();
 
-/**
- * @static
- * @method get
- * @param String query
- * @return $.Component
- */
-$.Component.get = function(query) {
-	var el = $.Element.get(query);
-	if (el.dom.$comp) {
-		return el.dom.$comp;
-	}
-};
+$.extend($.Component, {
+    /**
+     * @static
+     * @method get
+     * @param String query
+     * @return $.Component
+     */
+    get: function(query) {
+        var el = $.Element.get(query);
+        if (el.dom.$comp) {
+            return el.dom.$comp;
+        }
+    }
+});
