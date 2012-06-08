@@ -41,6 +41,24 @@ App.controllers.Tables = App.Controller.extend({
                     ,dataField: 'value'
                     ,width: 300
                     ,align: 'center'
+                },{
+                    xtype: 'table.column.action'
+                    ,html: 'Action'
+                    ,items: [
+                        {
+                            html: 'View'
+                            ,callback: function(row) {
+                                console.log(row);
+                            }
+                        },{
+                            html: 'Edit'
+                        },{
+                            html: 'Delete'
+                            ,callback: function(row) {
+                                row.destroy();
+                            }
+                        }
+                    ]
                 }
             ]
             ,data: data
